@@ -16,6 +16,7 @@ private:
     int age;
     int numMember;
 public:
+    void getAccount();
     void changeInfo();
     void showTravelInfo();
     void changeTravelInfo();
