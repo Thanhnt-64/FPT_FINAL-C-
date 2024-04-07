@@ -1,0 +1,340 @@
+ThanhNT176
+ThanhNT
+Nguyen Tien Thanh
+22
+Ha Nam
+3
+transport
+Car
+Honda
+Ha Nam
+Ha Noi
+100000
+(xx/yy/zz/gggg)-giờ ngày-tháng-năm: string
+transport
+Flight
+Boeing
+Ha Noi
+HCM City
+2000000
+(xx/yy/zz/gggg)-giờ ngày-tháng-năm: string
+hotel
+Phuong Nam
+Ha Noi
+Vip
+(xx/yy/zz/gggg)
+(xx/yy/zz/gggg)
+3000000
+hotel
+Phuong Bac
+Ha Nam
+normal
+(xx/yy/zz/gggg)
+(xx/yy/zz/gggg)
+4000000
+ThanhNT176
+ThanhNT
+Nguyen Tien Thanh
+22
+Ha Nam
+3
+transport
+Car
+Honda
+Ha Nam
+Ha Noi
+100000
+(xx/yy/zz/gggg)-giờ ngày-tháng-năm: string
+transport
+Flight
+Boeing
+Ha Noi
+HCM City
+2000000
+(xx/yy/zz/gggg)-giờ ngày-tháng-năm: string
+hotel
+Phuong Nam
+Ha Noi
+Vip
+(xx/yy/zz/gggg)
+(xx/yy/zz/gggg)
+3000000
+hotel
+Phuong Bac
+Ha Nam
+normal
+(xx/yy/zz/gggg)
+(xx/yy/zz/gggg)
+4000000
+ThanhNT176
+ThanhNT
+Nguyen Tien Thanh
+22
+Ha Nam
+3
+transport
+Car
+Honda
+Ha Nam
+Ha Noi
+100000
+(xx/yy/zz/gggg)-giờ ngày-tháng-năm: string
+transport
+Flight
+Boeing
+Ha Noi
+HCM City
+2000000
+(xx/yy/zz/gggg)-giờ ngày-tháng-năm: string
+hotel
+Phuong Nam
+Ha Noi
+Vip
+(xx/yy/zz/gggg)
+(xx/yy/zz/gggg)
+3000000
+hotel
+Phuong Bac
+Ha Nam
+normal
+(xx/yy/zz/gggg)
+(xx/yy/zz/gggg)
+4000000
+ThanhNT176
+ThanhNT
+Nguyen Tien Thanh
+22
+Ha Nam
+3
+transport
+Car
+Honda
+Ha Nam
+Ha Noi
+100000
+(xx/yy/zz/gggg)-giờ ngày-tháng-năm: string
+transport
+Flight
+Boeing
+Ha Noi
+HCM City
+2000000
+(xx/yy/zz/gggg)-giờ ngày-tháng-năm: string
+hotel
+Phuong Nam
+Ha Noi
+Vip
+(xx/yy/zz/gggg)
+(xx/yy/zz/gggg)
+3000000
+hotel
+Phuong Bac
+Ha Nam
+normal
+(xx/yy/zz/gggg)
+(xx/yy/zz/gggg)
+4000000
+ThanhNT176
+ThanhNT
+Nguyen Tien Thanh
+22
+Ha Nam
+3
+transport
+Car
+Honda
+Ha Nam
+Ha Noi
+100000
+(xx/yy/zz/gggg)-giờ ngày-tháng-năm: string
+transport
+Flight
+Boeing
+Ha Noi
+HCM City
+2000000
+(xx/yy/zz/gggg)-giờ ngày-tháng-năm: string
+hotel
+Phuong Nam
+Ha Noi
+Vip
+(xx/yy/zz/gggg)
+(xx/yy/zz/gggg)
+3000000
+hotel
+Phuong Bac
+Ha Nam
+normal
+(xx/yy/zz/gggg)
+(xx/yy/zz/gggg)
+4000000
+ThanhNT176
+ThanhNT
+Nguyen Tien Thanh
+22
+Ha Nam
+3
+transport
+Car
+Honda
+Ha Nam
+Ha Noi
+100000
+(xx/yy/zz/gggg)-giờ ngày-tháng-năm: string
+transport
+Flight
+Boeing
+Ha Noi
+HCM City
+2000000
+(xx/yy/zz/gggg)-giờ ngày-tháng-năm: string
+hotel
+Phuong Nam
+Ha Noi
+Vip
+(xx/yy/zz/gggg)
+(xx/yy/zz/gggg)
+3000000
+hotel
+Phuong Bac
+Ha Nam
+normal
+(xx/yy/zz/gggg)
+(xx/yy/zz/gggg)
+4000000
+ThanhNT176
+ThanhNT
+Nguyen Tien Thanh
+22
+Ha Nam
+3
+transport
+Car
+Honda
+Ha Nam
+Ha Noi
+100000
+(xx/yy/zz/gggg)-giờ ngày-tháng-năm: string
+transport
+Flight
+Boeing
+Ha Noi
+HCM City
+2000000
+(xx/yy/zz/gggg)-giờ ngày-tháng-năm: string
+hotel
+Phuong Nam
+Ha Noi
+Vip
+(xx/yy/zz/gggg)
+(xx/yy/zz/gggg)
+3000000
+hotel
+Phuong Bac
+Ha Nam
+normal
+(xx/yy/zz/gggg)
+(xx/yy/zz/gggg)
+4000000
+ThanhNT176
+ThanhNT
+Nguyen Tien Thanh
+22
+Ha Nam
+3
+transport
+Car
+Honda
+Ha Nam
+Ha Noi
+100000
+(xx/yy/zz/gggg)-giờ ngày-tháng-năm: string
+transport
+Flight
+Boeing
+Ha Noi
+HCM City
+2000000
+(xx/yy/zz/gggg)-giờ ngày-tháng-năm: string
+hotel
+Phuong Nam
+Ha Noi
+Vip
+(xx/yy/zz/gggg)
+(xx/yy/zz/gggg)
+3000000
+hotel
+Phuong Bac
+Ha Nam
+normal
+(xx/yy/zz/gggg)
+(xx/yy/zz/gggg)
+4000000
+ThanhNT176
+ThanhNT
+Nguyen Tien Thanh
+22
+Ha Nam
+3
+transport
+Car
+Honda
+Ha Nam
+Ha Noi
+100000
+(xx/yy/zz/gggg)-giờ ngày-tháng-năm: string
+transport
+Flight
+Boeing
+Ha Noi
+HCM City
+2000000
+(xx/yy/zz/gggg)-giờ ngày-tháng-năm: string
+hotel
+Phuong Nam
+Ha Noi
+Vip
+(xx/yy/zz/gggg)
+(xx/yy/zz/gggg)
+3000000
+hotel
+Phuong Bac
+Ha Nam
+normal
+(xx/yy/zz/gggg)
+(xx/yy/zz/gggg)
+4000000
+ThanhNT176
+ThanhNT
+Nguyen Tien Thanh
+22
+Ha Nam
+3
+transport
+Car
+Honda
+Ha Nam
+Ha Noi
+100000
+(xx/yy/zz/gggg)-giờ ngày-tháng-năm: string
+transport
+Flight
+Boeing
+Ha Noi
+HCM City
+2000000
+(xx/yy/zz/gggg)-giờ ngày-tháng-năm: string
+hotel
+Phuong Nam
+Ha Noi
+Vip
+(xx/yy/zz/gggg)
+(xx/yy/zz/gggg)
+3000000
+hotel
+Phuong Bac
+Ha Nam
+normal
+(xx/yy/zz/gggg)
+(xx/yy/zz/gggg)
+4000000
