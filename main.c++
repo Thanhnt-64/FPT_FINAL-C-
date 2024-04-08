@@ -140,7 +140,6 @@ bool doubleCheckAccount(const string &s, vector<string> &m_list){
     }
     return false;
 }
-
 bool validateCheckAccount(const string &s){
     for (auto i : s){
         if((i < 48 || (i > 57 && i < 65) ||( i > 90 && i < 97 )|| i > 122)){
