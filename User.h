@@ -6,8 +6,14 @@
 #include "Travel.h"
 using namespace std;
 
+
 class User
 {
+
+
+
+class User{
+
 private:
     string account;
     string password;
@@ -15,6 +21,7 @@ private:
     string address;
     int age;
     int numMember;
+
     vector<Travel> myTravel;
 public:
     /* Constructor */
@@ -25,6 +32,11 @@ public:
     /* Destructor */
     virtual ~User() {}
     /* Change user infomation */
+
+public: 
+    User(){}
+    User(string account, string password)
+        : account(account), password(password){}
     void changeInfo();
     /* Displays traveling information */
     void showTravelInfo();

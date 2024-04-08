@@ -14,6 +14,7 @@ private:
     vector<Hotel> hotels;
     vector<Transport> transports;
 public:
+
     static Admin& getInstance();
     void showListInfoUser();
     void changeUser(User& user);
@@ -25,6 +26,7 @@ public:
     void deleteService(Travel& travel, Hotel& hotel, Transport& transport);
     void loadData();
     void saveData();
+
 };
 
 #endif // ADMIN_H
