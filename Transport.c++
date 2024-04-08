@@ -2,17 +2,17 @@
 
 
 void Transport::input(){
-	cout << "Input vehicle name: ";
+	cout << "Input Transport Name: ";
 	validate_name(name);
-	cout << "Input brand: ";
+	cout << "Input Brand: ";
 	validate_brand(brand);
-	cout << "Input from: ";
+	cout << "Input From: ";
 	validate_from(from);
-	cout << "Input destination: ";
+	cout << "Input Destination: ";
 	validate_destination(destination);
-	cout << "Input time(hh/dd/mm/yyyy): ";
+	cout << "Input Time(hh/dd/mm/yyyy): ";
 	validate_time();
-    cout<<"Input cost: ";
+    cout<<"Input Cost: ";
     validate_cost();
 }
 void Transport::validate_cost(){
@@ -21,7 +21,7 @@ void Transport::validate_cost(){
             break;
         }
         else{
-            cout<<"Input cost: ";
+            cout<<"Input Cost: ";
             cin.clear(); // Xóa cờ lỗi
             cin.ignore(numeric_limits<std::streamsize>::max(), '\n'); // Xóa bộ nhớ đệm
         }
@@ -31,11 +31,11 @@ void Transport::validate_time() {
 	while (1) {
 		getline(cin, time);
 		if (time.length() != 13) {
-			cout << "Input time" << endl;
+			cout << "Input Time" << endl;
 			continue;
 		}
 		if (time[2] != '/' || time[5] != '/' || time[8] != '/') {
-			cout << "Input time: ";
+			cout << "Input Time: ";
 			continue;
 		}
 
@@ -97,7 +97,7 @@ void Transport::validate_time() {
 			break;
 		}
 
-		cout << "input time: ";
+		cout << "Input Time: ";
 	}
 }
 bool Transport::validate_string(string &s) {
