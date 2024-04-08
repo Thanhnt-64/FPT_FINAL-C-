@@ -13,7 +13,6 @@ class Hotel{
     int total_cost;
     public:
     void showRoomInfo();
-
-
+    void showRoomInfoBooked();
 };
 #endif // HOTEL_H

@@ -158,4 +158,10 @@ bool Transport::operator < (Transport& t) {
 	return false;
 }
 
+int main()
+{
+	Transport t;
+	t.input();
+	t.output();
+}
 

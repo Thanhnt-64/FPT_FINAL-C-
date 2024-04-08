@@ -20,6 +20,8 @@ public:
 	void input();//input name,brand,from,destination,time;
 	void validate_time();
     void validate(string&);
+	//Transport Name |Brand |From |Destination |Cost |Time
+	//20 digit      |20 digit |20 digit |20 digit |20 digit |20 digit
     void output();
 	string get() {
 		return name;
