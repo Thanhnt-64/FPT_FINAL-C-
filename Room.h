@@ -17,6 +17,6 @@ class Room{
         string getName();
         string getStartTime();
         string getEndTime();
-}
+};
 
 #endif // ROOM_H

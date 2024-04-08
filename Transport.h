@@ -3,6 +3,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <iomanip>
 
 using namespace std;
 
@@ -18,8 +19,10 @@ public:
 		, brand(brand), from(from), destination(destination), time(time), cost(cost){}
 	void input();//input name,brand,from,destination,time;
 	void validate_time();
+    void validate(string&);
+    void output();
 	string get() {
-		return time;
+		return name;
 	}
 	bool operator > (Transport& c);
 	bool operator < (Transport& c);
