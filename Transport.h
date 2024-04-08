@@ -2,24 +2,27 @@
 #define TRANSPORT_H 
 #include <iostream>
 #include <vector>
+#include <string>
 
 using namespace std;
 
 class Transport{
 private:
-    string name; // validate name
-    string brand; // validate brand
-    string from;   // validate from
-    string destination; // validate destination
-    int cost;
-    string time; // hh/mm/dd/yyyy
+	string name, brand, from, destination;
+	int cost;
+	string time;//hh/mm/dd/yyyy;
+	int hour, day, month, year;
 public:
-    friend bool operator > (Transport t1, Transport t2);
-    friend bool operator < (Transport t1, Transport t2);
-    friend bool operator == (Transport t1, Transport t2);
-    int calCost(){
-        return cost;
-    };
+	Transport() {}
+	Transport(string name, string brand, string from, string destination, string time, int cost) :name(name)
+		, brand(brand), from(from), destination(destination), time(time), cost(cost){}
+	void input();//input name,brand,from,destination,time;
+	void validate_time();
+	string get() {
+		return time;
+	}
+	bool operator > (Transport& c);
+	bool operator < (Transport& c);
 };
 
 #endif // TRANSPORT_H
