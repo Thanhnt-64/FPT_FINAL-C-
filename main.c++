@@ -8,6 +8,7 @@
 int main()
 {
     //
+    System sys;
     int menu;
     // Display menu
     do
@@ -21,5 +22,18 @@ int main()
         cin >> menu;
     } while (menu != 1 && menu != 2);
 
+    switch (menu)
+    {
+        //Login user account or admin account
+    case 1:
+        sys.logInAccount();
+        break;
+        //Register new account
+    case 2:
+        sys.registerAccount();
+        break;
+    default:
+        break;
+    }
 
 }

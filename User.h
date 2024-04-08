@@ -6,6 +6,8 @@
 #include "Travel.h"
 using namespace std;
 
+
+
 class User{
 private:
     string account;
@@ -15,7 +17,10 @@ private:
     vector<Travel> myTravel;
     int age;
     int numMember;
-public:
+public: 
+    User(){}
+    User(string account, string password)
+        : account(account), password(password){}
     void changeInfo();
     void showTravelInfo();
     void changeTravelInfo();
