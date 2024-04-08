@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <vector>
+#include <iomanip>
 #include "Travel.h"
 using namespace std;
 
@@ -18,7 +19,6 @@ private:
     string address;
     int age;
     int numMember;
-
     vector<Travel> myTravel;
 public:
     /* Constructor */
@@ -29,19 +29,41 @@ public:
     /* Destructor */
     virtual ~User() {}
     /* Change user infomation */
-
-public: 
-    User(){}
-    User(string account, string password)
-        : account(account), password(password){}
-    void changeInfo();
+    void changeInfo(const Travel& travel);
     /* Displays traveling information */
-    void showTravelInfo();
+    void showTravelInfo(const Travel& travel);
     /* Change traveling information */
     void changeTravelInfo(const Travel& travel);
     /* Cancel the travel */
     void cancelTravel(const Travel& travel);
     bool validateAccount() const;
+    /* Input */
+    void inputAccount()
+    {
+        getline(cin, account);
+    }
+    void inputPassword()
+    {
+        getline(cin, password);
+    }
+    void inputFullName()
+    {
+        getline(cin, fullName);
+    }
+    void inputAddress()
+    {
+        getline(cin, address);
+    }
+    void inputAge()
+    {
+        cin >> age; cin.ignore();
+    }
+    void inputNumMember()
+    {
+        cin >> numMember; cin.ignore();
+    }
+    /* Show user information */
+    void showUser();
     /* Getter and setter */
     const string& getAccount() const { return account; }
     const string& getPassword() const { return password; }
