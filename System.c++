@@ -4,8 +4,9 @@ User* System::logInAccount(User &u1){
     cout << "Enter user_name and password: " << endl;
     cout << "Account: ";  u1.inputAccount();
     cout << "Password: "; u1.inputPassword();
-    if(searchAccount(u1) && searchPassword(u1)){
-        return &u1;
+    if(searchAccount(u1.getAccount()) && searchPassword(u1.getPassword())){
+        auto it = std::find(users.begin(), users.end(), u1);
+        return (it != users.end()) ? &u1 : nullptr;
     }
     return nullptr;
 }
@@ -13,6 +14,10 @@ User* System::registerAccount(User &u1){
     while(1){
         cout << setw(10) << "user_name: ";
         u1.inputAccount();
+        if(doubleCheckAccount(u1.getAccount())){
+            cout << "Tai khoan da ton tai truoc do\n";
+            cout << "Moi ban nhap lai tai khoan\n";
+        }
         if(validateAccount(u1.getAccount()) == false){ // them check double
             cout << "Ten tai khoan khong dung dinh dang\n";
             cout << "Moi ban nhap lai\n";
@@ -32,6 +37,7 @@ User* System::registerAccount(User &u1){
         }
     }
     users.push_back(u1);    
+    return &users.back();
 }
 bool System::searchAccount(const string &s){
     for(auto i:users){
@@ -110,30 +116,76 @@ bool System::validateName(const string &s){
     }
     return true; 
 }
+bool System::doubleCheckAccount(const string &s){
+    int r = users.size() - 1;
+    int l = 0;
+    while(l <= r){
+        int mid = l + (r - l) / 2;
+        if(s == users[mid].getAccount()){
+            return true;
+        }
+        if(s < users[mid].getAccount()){
+            r = mid - 1;
+        }
+        if(s > users[mid].getAccount()){
+            l = mid + 1;
+        }
+    }
+    return false;
+}
 void System::run(){
-    int choice;
-    cout << "Menu:" << endl;
-    cout << std::setw(20) << "1. Log In" << endl;
-    cout << std::setw(21) << "2. Sign Up" << endl;
-    cout << "Enter the number range 1-2: ";
-    cin >> choice; cin.ignore();
     
-    switch (choice)
-    {
-    case 1:
-        logInAccount();
-        break;
-    case 2:
-        
-        registerAccount();
-        break;
-    default:
-        break;
+}
+
+static int partitionInt(vector<int> &m_list, int low, int high){
+    int pivot = m_list[high];
+    int left = low;
+    int right = high - 1;
+    while(true){
+        while(left <= right && m_list[left] < pivot) left++;
+        while(left <= right && m_list[right] > pivot) right--;
+        if(left >= right) break;
+        swap(m_list[left], m_list[right]);
+        left++;
+        right--;
+    }
+    swap(m_list[left], m_list[high]);
+    return left;
+}
+
+void sortWithCost(vector<int> &m_list, int low, int high){
+    if(low < high){
+        int pi = partitionInt(m_list, low, high);
+        sortWithCost(m_list, low, pi - 1);
+        sortWithCost(m_list, pi + 1, high);
+    }
+}
+
+
+static int parition(vector<float> &m_list, int low, int high){
+    float pivot = m_list[high];
+    int left = low;
+    int right = high - 1;
+    while(true){
+        while(left <= right && m_list[left] < pivot) left++;
+        while(left <= right && m_list[right] > pivot) right--;
+        if(left >= right) break;
+        swap(m_list[left], m_list[right]);
+        left++;
+        right--;
+    }
+    swap(m_list[left], m_list[high]);
+    return left;
+}
+void sortWithTime(vector<float> &m_list, int low, int high){
+    if(low < high){
+        int pi = parition(m_list, low, high);
+        sortWithTime(m_list, low, pi - 1);
+        sortWithTime(m_list, pi + 1, high);
     }
 }
 
 int main(){
-    System system;
     
     return 0;
 }

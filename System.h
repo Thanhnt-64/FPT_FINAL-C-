@@ -6,12 +6,15 @@
 #include "User.h"
 #include "Admin.h"
 #include <iomanip>
+#include <algorithm>
 using namespace std;
 
 class System{
 private:
     Admin admin;
     vector<User> users;
+    vector<Travel> travels;
+    int sumCost;
 public:
     User* logInAccount(User &u1);
     User* registerAccount(User &u1);
@@ -22,6 +25,7 @@ public:
     bool validateAccount(const string &s);
     bool validatePassword(const string &s);
     bool validateName(const string &s);
+    bool doubleCheckAccount(const string &s);
     bool searchAccount(const string &s);
     bool searchPassword(const string &s);
     void run();
