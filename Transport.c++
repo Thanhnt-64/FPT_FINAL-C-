@@ -10,6 +10,14 @@ void Transport::input(){
 	validate_from(from);//chứa kí tự từ A->z và chứa cả dấu cách ,không chứa các kí tự đặc biệt
 	cout << "Input Destination: ";
 	validate_destination(destination);//chứa kí tự từ A->z và chứa cả dấu cách ,không chứa các kí tự đặc biệt
+	cout << "Input Transport Name: ";
+	validate_name(name);
+	cout << "Input Brand: ";
+	validate_brand(brand);
+	cout << "Input From: ";
+	validate_from(from);
+	cout << "Input Destination: ";
+	validate_destination(destination);
 	cout << "Input Time(hh/dd/mm/yyyy): ";
 	validate_time();
     cout<<"Input Cost: ";
@@ -96,8 +104,7 @@ void Transport::validate_time() {
 			hour = sum;
 			break;
 		}
-
-		cout << "input Time: ";
+		cout << "Input Time: ";
 	}
 }
 bool Transport::validate_string(string &s) {
@@ -123,7 +130,6 @@ bool Transport::validate_string(string &s) {
 void Transport::validate_name(string &s){
     while(1){
         getline(cin,s);
-        cout<<s;
         if(s=="Flight" || s=="Car"){
             break;
         }

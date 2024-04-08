@@ -7,7 +7,9 @@ using namespace std;
 class Admin : virtual public User
 {
 private:
-    Admin() : User("admin", "Admin123") {}
+    Admin() {
+        
+    }
     static Admin* instance;
     vector<User> users;
     vector<Travel> travels;
