@@ -21,6 +21,5 @@ int main()
         cin >> menu;
     } while (menu != 1 && menu != 2);
 
-    
 
 }
