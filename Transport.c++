@@ -2,17 +2,17 @@
 
 
 void Transport::input(){
-	cout << "Input vehicle name: ";
-	validate_name(name);
-	cout << "Input brand: ";
-	validate_brand(brand);
-	cout << "Input from: ";
-	validate_from(from);
-	cout << "Input destination: ";
-	validate_destination(destination);
-	cout << "Input time(hh/dd/mm/yyyy): ";
+	cout << "Input transport Name: ";
+	validate_name(name);//chỉ nhận chuỗi là Flight và Car
+	cout << "Input Brand: ";
+	validate_brand(brand);//chứa kí tự từ A->z và chứa cả dấu cách ,không chứa các kí tự đặc biệt
+	cout << "Input From: ";
+	validate_from(from);//chứa kí tự từ A->z và chứa cả dấu cách ,không chứa các kí tự đặc biệt
+	cout << "Input Destination: ";
+	validate_destination(destination);//chứa kí tự từ A->z và chứa cả dấu cách ,không chứa các kí tự đặc biệt
+	cout << "Input Time(hh/dd/mm/yyyy): ";
 	validate_time();
-    cout<<"Input cost: ";
+    cout<<"Input Cost: ";
     validate_cost();
 }
 void Transport::validate_cost(){
@@ -21,7 +21,7 @@ void Transport::validate_cost(){
             break;
         }
         else{
-            cout<<"Input cost: ";
+            cout<<"Input Cost: ";
             cin.clear(); // Xóa cờ lỗi
             cin.ignore(numeric_limits<std::streamsize>::max(), '\n'); // Xóa bộ nhớ đệm
         }
@@ -31,11 +31,11 @@ void Transport::validate_time() {
 	while (1) {
 		getline(cin, time);
 		if (time.length() != 13) {
-			cout << "Input time" << endl;
+			cout << "Input Time" << endl;
 			continue;
 		}
 		if (time[2] != '/' || time[5] != '/' || time[8] != '/') {
-			cout << "Input time: ";
+			cout << "Input Time: ";
 			continue;
 		}
 
@@ -97,7 +97,7 @@ void Transport::validate_time() {
 			break;
 		}
 
-		cout << "input time: ";
+		cout << "input Time: ";
 	}
 }
 bool Transport::validate_string(string &s) {
@@ -122,11 +122,13 @@ bool Transport::validate_string(string &s) {
 }
 void Transport::validate_name(string &s){
     while(1){
-        if(validate_string(s)){
+        getline(cin,s);
+        cout<<s;
+        if(s=="Flight" || s=="Car"){
             break;
         }
         else{
-            cout<<"Input again name: ";
+            cout<<"Input again Transport Name: ";
         }
     }
 }
@@ -136,7 +138,7 @@ void Transport::validate_brand(string &s){
             break;
         }
         else{
-            cout<<"Input again brand:";
+            cout<<"Input again Brand:";
         }
     }
 }
@@ -146,7 +148,7 @@ void Transport::validate_from(string &s){
             break;
         }
         else{
-            cout<<"Input again from: ";
+            cout<<"Input again From: ";
         }
     }
 }
@@ -156,7 +158,7 @@ void Transport::validate_destination(string &s){
             break;
         }
         else{
-            cout<<"Input agian destination: ";
+            cout<<"Input agian Destination: ";
         }
     }
 }
