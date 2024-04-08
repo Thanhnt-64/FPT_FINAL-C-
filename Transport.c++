@@ -14,8 +14,6 @@ void Transport::input(){
 	validate_time();
     cout<<"Input cost: ";
     validate_cost();
-    
-	
 }
 void Transport::validate_cost(){
     while(1){
