@@ -7,8 +7,11 @@
 #include "Travel.h"
 using namespace std;
 
-class User
-{
+
+
+
+class User{
+
 private:
     string account;
     string password;

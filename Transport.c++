@@ -1,5 +1,6 @@
 #include "Transport.h"
 
+
 void Transport::input(){
 	cout << "input vehicle name: ";
 	validate(name);
@@ -87,21 +88,32 @@ void Transport::validate_time() {
 		cout << "nhap lai: ";
 	}
 }
-void validate(string s) {
+void Transport::validate(string &s) {
 	while (1) {
 		getline(cin, s);
 		for (int i = 0; i < s.length(); i++) {
+            if(s[i] == ' '){
+                if(i==s.length()-1){
+                    return;
+                }
+                continue;
+            }
 			if ((s[i] >= 'A' && s[i] <= 'Z') || (s[i] >= 'a' && s[i] <= 'z') || (s[i] >= '0' && s[i] <= '9')) {
 				if (i == s.length() - 1) {
 					return;
 				}
 			}
 			else {
-				cout << "nhap lai ten: ";
+				cout << "nhap lai : ";
 				break;
 			}
 		}
+        
 	}
+}
+void Transport::output(){
+    cout<<left<<setw(25)<<name<<setw(25)<<brand<<setw(25)
+        <<from<<setw(25)<<destination<<setw(25)<<time<<endl;
 }
 bool Transport::operator > (Transport& t) {
 	if (year > t.year) {
