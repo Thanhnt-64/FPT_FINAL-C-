@@ -1,162 +1,255 @@
 #include <iostream>
-#include <fstream>
-#include <string>
 #include <vector>
+using namespace std;
 
-// Định nghĩa cấu trúc cho các phần tử trong travel
-struct Transport {
-    std::string name;
-    std::string brand;
-    std::string from;
-    std::string destination;
-    int cost;
-    std::string time;
-};
+#include <iostream>
+#include <sstream>
 
-struct Hotel {
-    std::string name;
-    std::string address;
-    std::string typeRoom;
-    std::string startTime;
-    std::string endTime;
-    int cost;
-};
+using namespace std;
 
-struct MyTravel {
-    std::vector<Transport> transports;
-    std::vector<Hotel> hotels;
-};
+class Time {
+private:
+    int hour;
+    int day;
+    int month;
+    int year;
 
-struct User {
-    std::string account;
-    std::string password;
-    std::string fullname;
-    int age;
-    std::string address;
-    int numMember;
-    MyTravel myTravel;
-};
+public:
+    Time(){}
+    Time(string timeInput) {
+        stringstream ss(timeInput);
+        char delimiter;
 
-// Hàm để ghi dữ liệu vào tệp văn bản
-void writeToFile(const std::vector<User>& users, const std::string& filename) {
-    std::ofstream file(filename);
-    if (!file.is_open()) {
-        std::cerr << "Không thể mở tệp để ghi\n";
-        return;
-    }
+        ss >> hour >> delimiter >> day >> delimiter >> month >> delimiter >> year;
 
-    for (const auto& user : users) {
-        file << user.account << "\n";
-        file << user.password << "\n";
-        file << user.fullname << "\n";
-        file << user.age << "\n";
-        file << user.address << "\n";
-        file << user.numMember << "\n";
-
-        for (const auto& transport : user.myTravel.transports) {
-            file << "transport\n";
-            file << transport.name << "\n";
-            file << transport.brand << "\n";
-            file << transport.from << "\n";
-            file << transport.destination << "\n";
-            file << transport.cost << "\n";
-            file << transport.time << "\n";
-        }
-
-        for (const auto& hotel : user.myTravel.hotels) {
-            file << "hotel\n";
-            file << hotel.name << "\n";
-            file << hotel.address << "\n";
-            file << hotel.typeRoom << "\n";
-            file << hotel.startTime << "\n";
-            file << hotel.endTime << "\n";
-            file << hotel.cost << "\n";
+        // Kiểm tra lỗi dữ liệu đầu vào nếu cần
+        if (ss.fail() || ss.get() != EOF) {
+            cerr << "Invalid input format!" << endl;
+            // Xử lý ngoại lệ tùy theo yêu cầu
         }
     }
 
-    std::cout << "Dữ liệu đã được ghi vào tệp " << filename << "." << std::endl;
+    void displayTime() {
+        cout << hour << " : " << day << " : " << month << " : " << year << endl;
+    }
+    friend bool operator<(const Time &t1, const Time &t2);
+    friend bool operator>(const Time &t1, const Time &t2);
+    friend bool operator==(const Time &t1, const Time &t2);
+    friend istream &operator>>(istream &in, Time &t2);
+};
+
+istream &operator>>(istream &in, Time &t2){
+    char delimiter;
+        in >> t2.hour >> delimiter >> t2.day 
+            >> delimiter >> t2.month >> delimiter >> t2.year;
+    return in;
 }
-
-// Hàm để đọc dữ liệu từ tệp văn bản
-std::vector<User> readFromFile(const std::string& filename) {
-    std::vector<User> users;
-    std::ifstream file(filename);
-    if (!file.is_open()) {
-        std::cerr << "Không thể mở tệp để đọc\n";
-        return users;
-    }
-
-    User user;
-    Transport transport;
-    Hotel hotel;
-    std::string line;
-    while (std::getline(file, line)) {
-        user.account = line;
-        std::getline(file, user.password);
-        std::getline(file, user.fullname);
-        file >> user.age;
-        file.ignore(); // Loại bỏ ký tự '\n'
-        std::getline(file, user.address);
-        file >> user.numMember;
-        file.ignore(); // Loại bỏ ký tự '\n'
-
-        while (std::getline(file, line)) {
-            if (line == "transport") {
-                Transport transport;
-                std::getline(file, transport.name);
-                std::getline(file, transport.brand);
-                std::getline(file, transport.from);
-                std::getline(file, transport.destination);
-                file >> transport.cost;
-                file.ignore(); // Loại bỏ ký tự '\n'
-                std::getline(file, transport.time);
-                user.myTravel.transports.push_back(transport);
-            } else if (line == "hotel") {
-                Hotel hotel;
-                std::getline(file, hotel.name);
-                std::getline(file, hotel.address);
-                std::getline(file, hotel.typeRoom);
-                std::getline(file, hotel.startTime);
-                std::getline(file, hotel.endTime);
-                file >> hotel.cost;
-                file.ignore(); // Loại bỏ ký tự '\n'
-                user.myTravel.hotels.push_back(hotel);
+bool operator<(const Time &t1, const Time &t2) {
+    if(t1.year < t2.year) return true;
+    if(t1.year == t2.year) {
+        if(t1.month < t2.month) return true;
+        if(t1.month == t2.month) {
+            if(t1.day < t2.day) return true;
+            if(t1.day == t2.day) {
+                if(t1.hour < t2.hour) return true;
             }
         }
-
-        users.push_back(user);
-        user.myTravel.transports.clear();
-        user.myTravel.hotels.clear();
     }
-
-    std::cout << "Dữ liệu đã được đọc từ tệp " << filename << "." << std::endl;
-    return users;
+    return false;
 }
 
-int main() {
-    // Tạo một mảng chứa 10 đối tượng dữ liệu người dùng
-    std::vector<User> users;
-    for (int i = 0; i < 10; ++i) {
-        User user;
-        user.account = "ThanhNT176";
-        user.password = "ThanhNT";
-        user.fullname = "Nguyen Tien Thanh";
-        user.age = 22;
-        user.address = "Ha Nam";
-        user.numMember = 3;
-        // Thêm các thông tin về myTravel vào đối tượng dữ liệu
-        user.myTravel.transports.push_back(Transport{"Car", "Honda", "Ha Nam", "Ha Noi", 100000, "(xx/yy/zz/gggg)-giờ ngày-tháng-năm: string"});
-        user.myTravel.transports.push_back(Transport{"Flight", "Boeing", "Ha Noi", "HCM City", 2000000, "(xx/yy/zz/gggg)-giờ ngày-tháng-năm: string"});
-        user.myTravel.hotels.push_back(Hotel{"Phuong Nam", "Ha Noi", "Vip", "(xx/yy/zz/gggg)", "(xx/yy/zz/gggg)", 3000000});
-        user.myTravel.hotels.push_back(Hotel{"Phuong Bac", "Ha Nam", "normal", "(xx/yy/zz/gggg)", "(xx/yy/zz/gggg)", 4000000});
-        users.push_back(user);
+bool operator>(const Time &t1, const Time &t2) {
+    if(t1.year > t2.year) return true;
+    if(t1.year == t2.year) {
+        if(t1.month > t2.month) return true;
+        if(t1.month == t2.month) {
+            if(t1.day > t2.day) return true;
+            if(t1.day == t2.day) {
+                if(t1.hour > t2.hour) return true;
+            }
+        }
     }
+    return false;
+}
+bool operator==(const Time &t1, const Time &t2) {
+    if(t1.year == t2.year && t1.month == t2.month && t1.day == t2.day && t1.hour == t2.hour) 
+    {
+        return true;
+    }
+    return false;
+}
 
-    // Ghi dữ liệu vào tệp văn bản
-    writeToFile(users, "text.txt");
+bool checkFormat(string s){
+    if(s.length() != 13){
+        cout << "Sai format\n";
+        return false;
+    }
+    if(s[2] != '/' || s[5] != '/' || s[8] != '/'){
+        return false;
+    }
+    for(auto i:s){
+        if (i == '/'){
+            continue;
+        }
+        if(i < 48 || i > 57)
+        {
+            return false;
+        }
+    }
+    return true;
+}
+bool validateCheckAge(const int &age){
+    if(age < 1 || age > 100){
+        cout << "Tuoi khong hop le\n";
+        return false;
+    }
+    if(age < 16 || age > 80){
+        cout << "Ban chua du tuoi hoac qua gia de su dung dich vu\n";
+        return false;
+    }
+    return true;
+}
+bool validateCheckName(const string &s){
+    for(auto i:s){
+        if(i == 32){
+            continue;
+        }
+        if((i < 65 || (i > 90 && i < 97) || i > 122)){
+            cout << "Ten khong hop le\n";
+            return false;
+        }
+    }
+    return true;
+}
 
-    // Đọc dữ liệu từ tệp văn bản
-    std::vector<User> readUsers = readFromFile("text.txt");
+/* Using Binary Search*/
+bool doubleCheckAccount(const string &s, vector<string> &m_list){
+    int r = m_list.size() - 1;
+    int l = 0;
+    while(l <= r){
+        int mid = l + (r - l) / 2;
+        if(s == m_list[mid]){
+            return true;
+        }
+        if(s < m_list[mid]){
+            r = mid - 1;
+        }
+        if(s > m_list[mid]){
+            l = mid + 1;
+        }
+    }
+    return false;
+}
 
+bool validateCheckAccount(const string &s){
+    for (auto i : s){
+        if((i < 48 || (i > 57 && i < 65) ||( i > 90 && i < 97 )|| i > 122)){
+            return false;
+        }
+    }
+    return true;
+}
+bool validateCheckPassword(const string &s){
+    int numNums = 0;
+    int numLower = 0;
+    int numUpper = 0;
+    int numSpecial = 0;
+    if(s.length() < 8){
+        cout << "Do dai mat khau it nhat la 8 ky tu\n";
+        return false;
+    }
+    for(auto i:s){
+        if(i >= 48 && i <= 57){
+            numNums++;
+        }
+        if(i >= 65 && i <= 90){
+            numUpper++;
+        }
+        if(i >= 97 && i <= 122){
+            numLower++;
+        }
+        if(i == 33 || (i >= 35 && i <= 38) || i == 64){
+            numSpecial++;
+        }
+    }
+    if(numNums && numUpper && numLower &&numSpecial){
+        return true;
+    }
+    cout << "Password bao gom it nhat 1 ky tu hoa, 1 ky tu thuong, 1 ky tu so va 1 ky tu dac biet (! # $ % & @)\n";
+    return false;
+}
+
+
+void searchHotelInPlace(vector<string> &m_list){
+
+}
+void searchVehicleInPlace(vector<string> &m_list){
+
+}
+/* Using quick sort*/
+static int parition(vector<Time> &m_list, int low, int high){
+    Time pivot = m_list[high];
+    int left = low;
+    int right = high - 1;
+    while(true){
+        while(left <= right && m_list[left] < pivot) left ++;
+        while(left <= right && m_list[right] > pivot) right ++;
+        if(left > right){
+            break;
+        }
+        swap(m_list[left], m_list[right]);
+        left ++;
+        right --;
+    }
+    swap(m_list[left], m_list[right]);
+    return left;
+}
+void sortWithTime(vector<Time> &m_list, int low, int high){
+    if(low < high){
+        int pi = parition(m_list, low, high);
+        sortWithTime(m_list, low, pi - 1);
+        sortWithTime(m_list, pi + 1, high);
+    }
+}
+
+static int partitionInt(vector<int> &m_list, int low, int high){
+    int pivot = m_list[high];
+    int left = low;
+    int right = high - 1;
+    while(true){
+        while(left <= right && m_list[left] < pivot) left++;
+        while(left <= right && m_list[right] > pivot) right--;
+        if(left >= right) break;
+        swap(m_list[left], m_list[right]);
+        left++;
+        right--;
+    }
+    swap(m_list[left], m_list[high]);
+    return left;
+}
+
+void sortWithCost(vector<int> &m_list, int low, int high){
+    if(low < high){
+        int pi = partitionInt(m_list, low, high);
+        sortWithCost(m_list, low, pi - 1);
+        sortWithCost(m_list, pi + 1, high);
+    }
+}
+
+/* bubble sort*/
+
+int main(){
+    vector<Time> mylist;
+    Time s;
+    for(int i = 0; i < 10; i++){
+        cout << "Nhap phan tu thu " << i << " : ";
+        cin >> s;
+        mylist.push_back(s);
+    }
+    cout << endl << endl;
+    sortWithTime(mylist, 0, mylist.size() - 1);
+    for(auto i:mylist){
+        cout << i << " " << endl;
+    }
     return 0;
 }

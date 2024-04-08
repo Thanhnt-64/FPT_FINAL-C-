@@ -12,6 +12,6 @@ class Travel{
         void showTravelInfo();
         void changeTravelInfo();
         void cancelTravel();
-}
+};
 
 #endif // TRAVEL_H
