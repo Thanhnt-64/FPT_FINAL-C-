@@ -7,9 +7,6 @@
 using namespace std;
 
 
-class User
-{
-
 
 
 class User{
