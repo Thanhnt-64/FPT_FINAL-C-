@@ -25,9 +25,10 @@ public:
     /* Destructor */
     virtual ~User() {}
     /* Change user infomation */
-    void changeInfo(const Travel& travel);
+    void setFullname(const string& newFullName) { fullName = newFullName; }
+    void changeInfo();
     /* Displays traveling information */
-    void showTravelInfo(const Travel& travel);
+    void showTravelInfo();
     /* Change traveling information */
     void changeTravelInfo(const Travel& travel);
     /* Cancel the travel */
@@ -46,7 +47,7 @@ public:
     const string& getPassword() const { return password; }
     void setPassword(const string& newPassword) { password = newPassword; }
     const string& getFullname() const { return fullName; }
-    void setFullname(const string& newFullName) { fullName = newFullName; }
+    
     const string& getAddress() const { return address; }
     void setAddress(const string& newAddress) { address = newAddress; }
     int getAge() const { return age; }

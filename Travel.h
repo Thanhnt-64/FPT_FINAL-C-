@@ -9,9 +9,12 @@ class Travel{
         vector<Hotel> hotels;
         vector<Transport> transports;
     public:
+        //Show travel info
+        // Hotel Name|Room Name |Type Room |Start Time  |End Time  |Cost |Transport |Brand |From |To |Time |Cost     
         void showTravelInfo();
-        void changeTravelInfo();
-        void cancelTravel();
+        vector<Hotel> getHotel();
+        vector<Transport> getTransport();
+        
 };
 
 #endif // TRAVEL_H
