@@ -1,4 +1,4 @@
-#include <Hotel.h>
+#include "Hotel.h"
 
 void Hotel::showRoomInfo()
 {
@@ -70,20 +70,64 @@ vector <Room>& Hotel::getRooms()
 {
     return rooms;
 }
+bool Hotel::validateString(string &s){
+    while(1){
+        getline(cin, s);
+	    for (int i = 0; i < s.length(); i++) {
+            if(s[i] == ' '){
+                if(i==s.length()-1){
+                     return true;
+                }
+                continue;
+            }
+		    if ((s[i] >= 'A' && s[i] <= 'Z') || (s[i] >= 'a' && s[i] <= 'z') || (s[i] >= '0' && s[i] <= '9')) {
+			    if (i == s.length() - 1) {
+		    		return true;
+			    }
+	    	}
+            else{
+                return false;
+            }   
+        } 
+        return false;	
+        }
+}
 void Hotel::setName(){
-    string name;
-    cout << "Enter your name: ";
-    getline(cin, name);
+    cout<<"Input again Name: ";
+    while(1){
+        if(validateString(name)){
+            break;
+        }
+        else{
+            cout<<"Input again Name: ";
+        }
+    }
 }
 
 void Hotel::setAddress(){
-    string address;
-    cout << "Enter your address: ";
-    getline(cin, address);
+    cout<<"Input again Adress: ";
+    while(1){
+        if(validateString(address)){
+            break;
+        }
+        else{
+            cout<<"Input again Adress: ";
+        }
+    }
 }
 
 void Hotel::setTotalCost(){
-    int total_cost;
-    cout << "Enter total cost: ";
-    cin >> total_cost; cin.ignore();
+    cout<<"Input Cost: ";
+    while(1){
+        if(cin>>total_cost){
+			cin.ignore();
+            break;
+
+        }
+        else{
+            cout<<"Input again Cost: ";
+            cin.clear(); // Xóa cờ lỗi
+            cin.ignore(numeric_limits<std::streamsize>::max(), '\n'); // Xóa bộ nhớ đệm
+        }
+    }
 }

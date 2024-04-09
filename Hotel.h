@@ -4,6 +4,8 @@
 #include <vector>
 #include <iomanip>
 #include "Room.h"
+#include <string>
+#include <limits>
 using namespace std;
 
 class Hotel{
@@ -22,5 +24,6 @@ class Hotel{
     void setName();
     void setAddress();
     void setTotalCost();
+    bool validateString(string &);
 };
 #endif // HOTEL_H
