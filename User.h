@@ -63,6 +63,7 @@ public:
     void showUser();
     /* Getter and setter */
     const string& getAccount() const { return account; }
+    void setAccount(const string& newAccount) { account = newAccount; }
     const string& getPassword() const { return password; }
     void setPassword(const string& newPassword) { password = newPassword; }
     const string& getFullname() const { return fullName; }
@@ -73,5 +74,17 @@ public:
     void setAge(int newAge) { age = newAge; }
     int getNumMember() const { return numMember; }
     void setNumMember(int newNumMember) { numMember = newNumMember; }
+    /* Return the first adress of vector travel */
+    Travel* getFirstTravelAddress() 
+    {
+        if (!myTravel.empty())
+        {
+            return &myTravel[0];
+        }
+        else 
+        {   
+            return nullptr;
+        }
+    }
 };
 #endif // USER_H

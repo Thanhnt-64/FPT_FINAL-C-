@@ -7,22 +7,20 @@ using namespace std;
 class Admin : virtual public User
 {
 private:
-    Admin() : User("admin", "Admin123") {}
+    Admin( "admin", "Admin123") : setAccount(admin), setPassword(Admin123) {}
     static Admin* instance;
     vector<User> users;
     vector<Travel> travels;
-    vector<Hotel> hotels;
-    vector<Transport> transports;
 public:
     static Admin& getInstance();
     void showListInfoUser();
     void changeUser(User& user);
     void deleteAccountUser(User& user);
     void editTravelInfo(Travel& travel);
-    void editHotelInfo(Hotel& hotel);
+    void editHotelInfo(Travel& travel);
     void viewServiceInfo();
-    void addService(Travel& travel, Hotel& hotel, Transport& transport);
-    void deleteService(Travel& travel, Hotel& hotel, Transport& transport);
+    void addService(Travel& travel);
+    void deleteService(Travel& travel);
     void loadData();
     void saveData();
 };

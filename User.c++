@@ -59,16 +59,6 @@ void User::changeInfo()
     } 
 }
 
-void User::showTravelInfo(const Travel& travel)
-{
-    
-}
-
-void User::changeTravelInfo(const Travel& travel)
-{
-    travel.changeTravelInfo();  
-}
-
 void User::showUser()
 {
     cout<<setw(20)<<left<<account

@@ -24,12 +24,39 @@ void Admin::showListInfoUser()
     }
 }
 /*  */
-void Admin::changeUser(User& user) {
-    // Code to 
+void Admin::changeUser(User& user)
+{
+    /* Find the user in users list */
+    auto it = find(users.begin(), users.end(), user);
+    if (it != users.end()) {
+        cout << "Enter new information for user:" << endl;
+        string newFullname;
+        int newAge;
+        string newAddress;
+        cout << "Fullname: ";
+        getline(cin, newFullname);
+        cout << "Age: ";
+        cin >> newAge;
+        cout << "Address: ";
+        getline(cin, newAddress);
+        it->setFullname(newFullname);
+        it->setAge(newAge);
+        it->setAddress(newAddress);
+    } else {
+        cout << "User not found." << endl;
+    }
 }
 
 void Admin::deleteAccountUser(User& user) {
-    // Code to delete a user account
+    /* Find the user in users list */
+    auto it = find(users.begin(), users.end(), user);
+    if (it != users.end()) {
+        /* Delete the user from users list */
+        users.erase(it);
+        cout << "User account deleted." << endl;
+    } else {
+        cout << "User not found.\n";
+    }
 }
 
 void Admin::editTravelInfo(Travel& travel) {
