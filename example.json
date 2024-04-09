@@ -1,0 +1,22 @@
+[
+    {
+        "account": "ThanhTK3",
+        "age": 20,
+        "name": "ThanhTK",
+        "travel": {
+            "hotel": {
+                "name": "Phuong Nam"
+            }
+        }
+    },
+    {
+        "account": "ThanhTK31",
+        "age": 21,
+        "name": "ThanhTK1",
+        "travel": {
+            "hotel": {
+                "name": "Phuong Nam1"
+            }
+        }
+    }
+]

@@ -14,7 +14,8 @@ private:
 	string time;//hh/mm/dd/yyyy;
 	int hour, day, month, year;
 public:
-	Transport() {}
+	Transport(){}
+	Transport(string name,string brand,string from,string destination,int cost,string time);
 	Transport(string name, string brand, string from, string destination, string time, int cost) :name(name)
 		, brand(brand), from(from), destination(destination), time(time), cost(cost){}
 	void input();//input name,brand,from,destination,time;

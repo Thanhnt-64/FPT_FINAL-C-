@@ -1,4 +1,4 @@
-#include <Hotel.h>
+#include "Hotel.h"
 
 void Hotel::showRoomInfo()
 {
@@ -70,3 +70,8 @@ vector <Room>& Hotel::getRooms()
 {
     return rooms;
 }
+
+Hotel ::Hotel(string name,string address,int cost,vector<Room> rooms)
+    : name{name},address{address},total_cost{cost},rooms{rooms}
+    {
+    }

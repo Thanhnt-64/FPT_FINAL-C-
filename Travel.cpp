@@ -24,7 +24,9 @@ vector<Transport>& Travel::getTransport()
 }
 
 
-
+Travel ::Travel(vector <Hotel> hotels,vector <Transport> trans)
+:transports(trans),hotels(hotels)
+{}
 
 
 

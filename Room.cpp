@@ -1,7 +1,7 @@
 #include "Room.h"
 
-Room ::Room(string name = nonestring, string startTime = nonestring, string endTime = nonestring, string typeRoom = nonestring)
-    : m_name{name}, m_startTime{startTime}, m_endTime{endTime}, m_typeRoom{typeRoom}
+Room::Room(string name, string startTime , string endTime , string typeRoom, int cost)
+    : m_name{name}, m_startTime{startTime}, m_endTime{endTime}, m_typeRoom{typeRoom}, m_cost{cost}
 {
 }
 
@@ -15,10 +15,6 @@ void Room::setStartTime(string startTime)
     m_startTime = startTime;
 }
 
-void Room::setEndTime(string endTime)
-{
-    m_endTime = endTime;
-}
 
 void Room::setTypeRoom(string typeRoom)
 {
