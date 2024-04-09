@@ -12,8 +12,8 @@ class Hotel{
     string address;
     int total_cost;
     public:
+    Hotel operator=(const Hotel& obj);
     void showRoomInfo();
-
-
+    void showRoomInfoBooked();
 };
 #endif // HOTEL_H
