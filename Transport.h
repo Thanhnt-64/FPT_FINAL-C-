@@ -25,6 +25,9 @@ public:
     void validate_from(string &);
     void validate_destination(string &);
     void validate_cost();
+    void validate(string&);
+	//Transport Name |Brand |From |Destination |Cost |Time
+	//20 digit      |20 digit |20 digit |20 digit |20 digit |20 digit
     void output();
 	bool operator > (Transport& c);
 	bool operator < (Transport& c);
