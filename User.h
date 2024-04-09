@@ -75,5 +75,6 @@ public:
     void setAge(int newAge) { age = newAge; }
     int getNumMember() const { return numMember; }
     void setNumMember(int newNumMember) { numMember = newNumMember; }
+    vector <Travel>& getTravel() {return myTravel;}
 };
 #endif // USER_H
