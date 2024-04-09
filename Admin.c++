@@ -49,14 +49,68 @@ void Admin::deleteAccountUser(vector<User> &users) {
     users.erase(i);
 }
 
-void Admin::editTravelInfo() {
-    cout << "Enter account of travel you want to edit: ";
+void Admin::editTransportInfo(vector<Travel> &travels) {
+    cout << "Enter name of travel you want to edit: ";
+    string tral; getline(std::cin, tral);
+    char choose;
+    cout << "Enter name of vehicle you want to change:";
     string transport; getline(cin, transport);
-    
+    cout << "Change brand?__ ";
+    string brand; getline(cin, brand);
+    cout << "Change Starting point?__ ";
+    string from; getline(cin, from);
+    cout << "Change Destination?__ ";
+    string destination; getline(cin, destination);
+    vector<Travel>::iterator i;
+    for(i = travels.begin(); i != travels.end(); i++) {
+        if(i->getPlace() != tral) {
+            continue;
+        }
+        for(int j = 0; j < i->getTransport().size(); j++) {
+            if(i->getTransport()[j].get_name() == transport) {
+                cout << "Do you want to change this vehicle?(Y/N)\n";
+                cin >> choose; cin.ignore();
+                if(choose == 'Y' || choose == 'y') {
+                    i->getTransport()[j].change_brand(brand);
+                    i->getTransport()[j].change_from(from);
+                    i->getTransport()[j].change_destination(destination);
+                    cout << "Done!\n";
+                }
+                else{
+                    continue;
+                }
+            }
+        }
+    }
 }
 
-void Admin::editHotelInfo() {
-    // Code to edit hotel information
+void Admin::editHotelInfo(vector<Travel> &travels) {
+    cout << "Enter name of travel you want to edit: ";
+    string tral; getline(std::cin, tral);
+    cout << "Enter name of Hotel you want to edit: ";
+    string hotel; getline(std::cin, hotel);
+    char choose;
+    vector<Travel>::iterator i;
+    for(i = travels.begin(); i != travels.end(); i++) {
+        if(i->getPlace() != tral) {
+            continue;
+        }
+        for(int j = 0; j < i->getHotel().size(); j++) {
+            if(i->getHotel()[j].getHotelName() == hotel) {
+                cout << "Do you want to change this Hotel?(Y/N)\n";
+                cin >> choose; cin.ignore();
+                if(choose == 'Y' || choose == 'y') {
+                    i->getTransport()[j].change_brand(brand);
+                    i->getTransport()[j].change_from(from);
+                    i->getTransport()[j].change_destination(destination);
+                    cout << "Done!\n";
+                }
+                else{
+                    continue;
+                }
+            }
+        }
+    }
 }
 
 void Admin::viewServiceInfo() {
