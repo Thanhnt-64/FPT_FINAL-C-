@@ -11,14 +11,16 @@ void Transport::input(){
 	cout << "Input Destination: ";
 	validate_destination(destination);//chứa kí tự từ A->z và chứa cả dấu cách ,không chứa các kí tự đặc biệt
 	cout << "Input Time(hh/dd/mm/yyyy): ";
-	validate_time();
+	validate_time(time);
     cout<<"Input Cost: ";
-    validate_cost();
+    validate_cost(cost);
 }
-void Transport::validate_cost(){
+void Transport::validate_cost(int &a){
     while(1){
-        if(cin>>cost){
+        if(cin>>a){
+			cin.ignore();
             break;
+
         }
         else{
             cout<<"Input Cost: ";
@@ -27,29 +29,29 @@ void Transport::validate_cost(){
         }
     }
 }
-void Transport::validate_time() {
+void Transport::validate_time(string &t) {
 	while (1) {
-		getline(cin, time);
-		if (time.length() != 13) {
+		getline(cin, t);
+		if (t.length() != 13) {
 			cout << "Input Time" << endl;
 			continue;
 		}
-		if (time[2] != '/' || time[5] != '/' || time[8] != '/') {
+		if (t[2] != '/' || t[5] != '/' || t[8] != '/') {
 			cout << "Input Time: ";
 			continue;
 		}
 
-		for (int i = 0; i < time.length(); i++) {
+		for (int i = 0; i < t.length(); i++) {
 			if (i != 2 || i != 5 || i != 8) {
-				if (time[i] < '0' || time[i]>'9') {
+				if (t[i] < '0' || t[i]>'9') {
 					break;
 				}
 
 			}
 		}
 		int sum = 0, temp1 = 1, count = 0;
-		for (int i = time.length() - 1; i >= 0; i--) {
-			if (time[i] == '/') {
+		for (int i = t.length() - 1; i >= 0; i--) {
+			if (t[i] == '/') {
 				count++;
 				if (count == 1) {
 					year = sum;
@@ -89,7 +91,7 @@ void Transport::validate_time() {
 				if (i == 0) {
 					count++;
 				}
-				sum += ((int)time[i] - 48) * temp1;
+				sum += ((int)t[i] - 48) * temp1;
 				temp1 *= 10;
 			}
 		}
@@ -207,23 +209,43 @@ bool Transport::operator < (Transport& t) {
 	}
 	return false;
 }
-void Transport::change_name(string &name){
-	this->name=name;
+void Transport::change_name(){
+	string name1;
+	cout<<"Input Transport Name: ";
+	validate_name(name1);
+	name=name1;
 }
-void Transport::change_brand(string &brand){
-	this->brand=brand;
+void Transport::change_brand(){
+	string brand1;
+	cout<<"Input Transport Brand: ";
+	validate_brand(brand1);
+	brand=brand1;
 }
-void Transport::change_from(string &from){
-	this->from=from;
+void Transport::change_from(){
+	string from1;
+	cout<<"Input Transport from: ";
+	validate_from(from1);
+	from=from1;
 }
-void Transport::change_destination(string &destination){
-	this->destination=destination;
+void Transport::change_destination(){
+	string destination1;
+	cout<<"Input Transport destination: ";
+	validate_destination(destination1);
+	destination=destination1;
 }
-void Transport::change_time(string &time){
-	this->time=time;
+void Transport::change_time(){
+	string time1;
+	cout<<"Input Transport time: ";
+	validate_time(time1);
+	time=time1;
+	cout<<day<<month<<year;
+
 }
-void Transport::change_cost(int &cost){
-	this->cost;
+void Transport::change_cost(){
+	int cost1;
+	cout<<"Input Transport destination: ";
+	validate_cost(cost1);
+	cost=cost1;
 }
 string Transport::get_name(){
 	return name;
@@ -248,5 +270,6 @@ int main(){
     Transport t;
     t.input();
     t.output();
+	t.change_time();
 
 }
