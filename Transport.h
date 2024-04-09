@@ -6,7 +6,6 @@
 #include <iomanip>
 #include <limits>
 using namespace std;
-
 class Transport{
 private:
 	string name, brand, from, destination;
