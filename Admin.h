@@ -11,20 +11,16 @@ private:
         
     }
     static Admin* instance;
-    vector<User> users;
-    vector<Travel> travels;
-    // vector<Hotel> hotels;
-    // vector<Transport> transports;
 public:
     static Admin& getInstance();
-    void showListInfoUser();
-    void changeUser(User& user);
-    void deleteAccountUser(User& user);
-    void editTravelInfo(Travel& travel);
-    void editHotelInfo(Hotel& hotel);
+    void showListInfoUser(vector<User> &users);
+    void changeUser(vector<User> &users);
+    void deleteAccountUser(vector<User> &users);
+    void editTravelInfo();
+    void editHotelInfo();
     void viewServiceInfo();
-    void addService(Travel& travel, Hotel& hotel, Transport& transport);
-    void deleteService(Travel& travel, Hotel& hotel, Transport& transport);
+    void addService();
+    void deleteService();
     void loadData();
     void saveData();
 };
