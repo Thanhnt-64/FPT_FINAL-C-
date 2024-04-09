@@ -1,5 +1,5 @@
 #include "Admin.h"
-
+#include <algorithm>
 Admin* Admin::instance = nullptr;
 Admin& Admin::getInstance()
 {
@@ -25,15 +25,45 @@ void Admin::showListInfoUser()
 }
 /*  */
 void Admin::changeUser(User& user) {
-    // Code to 
+    cout << "Enter account of user you want to change:\n";
+    string account; getline(cin, account);
+    vector<User>::iterator i;
+    for(i = users.begin(); i != users.end(); i++) {
+        if(i->getAccount() == account){
+            break;
+        }
+    }
+    cout << "Change Info you want:\n";
+    i->changeInfo();
 }
 
 void Admin::deleteAccountUser(User& user) {
-    // Code to delete a user account
+    cout << "Enter account of user you want to delete:\n";
+    string account; getline(cin, account);
+    vector<User>::iterator i;
+    for(i = users.begin(); i != users.end(); i++) {
+        if(i->getAccount() == account){
+            break;
+        }
+    }
+    users.erase(i);
 }
 
 void Admin::editTravelInfo(Travel& travel) {
-    // Code to edit travel information
+    cout << "Enter account of travel you want to edit:\n";
+    string transport; getline(cin, transport);
+    vector<Travel>::iterator i;
+    vector<Transport>::iterator j;
+    for(i = travels.begin(); i != travels.end(); i++) {
+        j = i->getTransportPtr();
+        for(j = j->i->getTransportPtr().begin(); j != j->getTransportPtr().end(); j++) {
+            if(j->getTransportPtr() == transport){
+                break;
+            }
+        }
+    }
+    cout << "Edit Info you want:\n";
+    i->editInfo();
 }
 
 void Admin::editHotelInfo(Hotel& hotel) {
@@ -59,3 +89,4 @@ void Admin::loadData() {
 void Admin::saveData() {
     // Code to save data to files
 }
+

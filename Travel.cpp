@@ -13,15 +13,7 @@ void Travel::showTravelInfo()
     }
 }
 
-vector<Hotel> Travel::getHotel()
-{
-    return hotels;
-}
 
-vector<Transport> Travel::getTransport()
-{
-    return transports;
-}
 
 
 

@@ -11,10 +11,11 @@ using namespace std;
 
 class System{
 private:
-    Admin admin;
+    Admin admin = Admin::getInstance();
     vector<User> users;
     vector<Travel> travels;
 public:
+    System(){}
     User* logInAccount(User &u1);
     User* registerAccount(User &u1);
     void signOut();

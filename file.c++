@@ -43,26 +43,33 @@ struct User {
 void writeToFile(const std::vector<User>& users, const std::string& filename) {
     std::ofstream file(filename);
     if (!file.is_open()) {
-        std::cerr << "Không thể mở tệp để ghi\n";
+        std::cerr << "Can't open file to write\n";
         return;
     }
 
     for (const auto& user : users) {
-        file << user.account << "\n";
-        file << user.password << "\n";
-        file << user.fullname << "\n";
-        file << user.age << "\n";
-        file << user.address << "\n";
-        file << user.numMember << "\n";
-
+        file << "{\n";
+        file << "  \"account\": \"" << user.account << "\",\n";
+        file << "  \"password\": \"" << user.password << "\",\n";
+        file << "  \"fullname\": \"" << user.fullname << "\",\n";
+        file << "  \"age\": " << user.age << ",\n";
+        file << "  \"address\": \"" << user.address << "\",\n";
+        file << "  \"numMember\": " << user.numMember << ",\n";
+        file << "  \"myTravel\": {\n";
+        file << "    \"transport\": [\n";
         for (const auto& transport : user.myTravel.transports) {
-            file << "transport\n";
-            file << transport.name << "\n";
-            file << transport.brand << "\n";
-            file << transport.from << "\n";
-            file << transport.destination << "\n";
-            file << transport.cost << "\n";
-            file << transport.time << "\n";
+            file << "      {\n";
+            file << "        \"name\": \"" << transport.name << "\",\n";
+            file << "        \"brand\": \"" << transport.brand << "\",\n";
+            file << "        \"from\": \"" << transport.from << "\",\n";
+            file << "        \"destination\": \"" << transport.destination << "\",\n";
+            file << "        \"cost\": " << transport.cost << ",\n";
+            file << "        \"time\": \"" << transport.time << "\"\n";
+            file << "      }";
+        if (i < user.myTravel.transports.size() - 1) {
+            file << ",";
+        }
+        file << "\n";
         }
 
         for (const auto& hotel : user.myTravel.hotels) {
@@ -76,7 +83,7 @@ void writeToFile(const std::vector<User>& users, const std::string& filename) {
         }
     }
 
-    std::cout << "Dữ liệu đã được ghi vào tệp " << filename << "." << std::endl;
+    std::cout << "Data is save to file: " << filename << "." << std::endl;
 }
 
 // Hàm để đọc dữ liệu từ tệp văn bản
@@ -84,10 +91,9 @@ std::vector<User> readFromFile(const std::string& filename) {
     std::vector<User> users;
     std::ifstream file(filename);
     if (!file.is_open()) {
-        std::cerr << "Không thể mở tệp để đọc\n";
+        std::cerr << "File can not open to read\n";
         return users;
     }
-
     User user;
     Transport transport;
     Hotel hotel;
@@ -131,7 +137,7 @@ std::vector<User> readFromFile(const std::string& filename) {
         user.myTravel.hotels.clear();
     }
 
-    std::cout << "Dữ liệu đã được đọc từ tệp " << filename << "." << std::endl;
+    std::cout << "Data is read from file: " << filename << "." << std::endl;
     return users;
 }
 

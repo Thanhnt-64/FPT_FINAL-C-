@@ -194,6 +194,5 @@ void sortWithTime(vector<float> &m_list, int low, int high){
 }
 
 int main(){
-    
-    return 0;
+    System sys;
 }

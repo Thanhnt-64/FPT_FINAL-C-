@@ -13,8 +13,8 @@ private:
     static Admin* instance;
     vector<User> users;
     vector<Travel> travels;
-    vector<Hotel> hotels;
-    vector<Transport> transports;
+    // vector<Hotel> hotels;
+    // vector<Transport> transports;
 public:
     static Admin& getInstance();
     void showListInfoUser();
