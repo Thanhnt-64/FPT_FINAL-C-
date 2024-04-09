@@ -1,5 +1,5 @@
 #include "Admin.h"
-
+#include <algorithm>
 Admin* Admin::instance = nullptr;
 Admin& Admin::getInstance()
 {
@@ -11,7 +11,7 @@ Admin& Admin::getInstance()
 }
 
 /* Show list of user information */
-void Admin::showListInfoUser()
+void Admin::showListInfoUser(vector<User> &users)
 {
     cout<<setw(20)<<left<<"Account"
         <<setw(20)<<left<<"Full Name"
@@ -24,19 +24,38 @@ void Admin::showListInfoUser()
     }
 }
 /*  */
-void Admin::changeUser(User& user) {
-    // Code to 
+void Admin::changeUser(vector<User> &users) {
+    cout << "Enter account of user you want to change:\n";
+    string account; getline(cin, account);
+    vector<User>::iterator i;
+    for(i = users.begin(); i != users.end(); i++) {
+        if(i->getAccount() == account){
+            break;
+        }
+    }
+    cout << "Change Info you want:\n";
+    i->changeInfo();
 }
 
-void Admin::deleteAccountUser(User& user) {
-    // Code to delete a user account
+void Admin::deleteAccountUser(vector<User> &users) {
+    cout << "Enter account of user you want to delete:\n";
+    string account; getline(cin, account);
+    vector<User>::iterator i;
+    for(i = users.begin(); i != users.end(); i++) {
+        if(i->getAccount() == account){
+            break;
+        }
+    }
+    users.erase(i);
 }
 
-void Admin::editTravelInfo(Travel& travel) {
-    // Code to edit travel information
+void Admin::editTravelInfo() {
+    cout << "Enter account of travel you want to edit: ";
+    string transport; getline(cin, transport);
+    
 }
 
-void Admin::editHotelInfo(Hotel& hotel) {
+void Admin::editHotelInfo() {
     // Code to edit hotel information
 }
 
@@ -44,11 +63,11 @@ void Admin::viewServiceInfo() {
     // Code to view service information (transportation, hotel, room type, car brand, etc.)
 }
 
-void Admin::addService(Travel& travel, Hotel& hotel, Transport& transport) {
+void Admin::addService() {
     // Code to add new service
 }
 
-void Admin::deleteService(Travel& travel, Hotel& hotel, Transport& transport) {
+void Admin::deleteService() {
     // Code to delete a service
 }
 
@@ -59,3 +78,4 @@ void Admin::loadData() {
 void Admin::saveData() {
     // Code to save data to files
 }
+

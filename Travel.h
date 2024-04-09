@@ -14,7 +14,6 @@ class Travel{
         void showTravelInfo();
         vector<Hotel>& getHotel();
         vector<Transport>& getTransport();
-        
 };
 
 #endif // TRAVEL_H

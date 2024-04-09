@@ -23,7 +23,6 @@ public:
 // Transport Name |Brand |From |Destination |Cost |Time Start
 void WriteTitle::writeTitle_Transport()
 {
-
     m_output << setw(20) << left << "|Transport Name";
     m_output << setw(20) << left << "|Brand";
     m_output << setw(20) << left << "|From";
@@ -36,12 +35,7 @@ void WriteTitle::writeTitle_Room()
     m_output << setw(20) << left << "|Room Name"
              << setw(20) << left << "|Type Room"
              << setw(20) << left << "|Total Cost";
-}
 
-void WriteTitle::writeTitle_Hotel()
-{
-    m_output << setw(20) << left << "|Hotel Name";
-    writeTitle_Room();
 }
 
 void WriteTitle::writeTitle_User()
