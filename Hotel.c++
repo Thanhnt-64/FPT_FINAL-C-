@@ -70,3 +70,20 @@ vector <Room>& Hotel::getRooms()
 {
     return rooms;
 }
+void Hotel::setName(){
+    string name;
+    cout << "Enter your name: ";
+    getline(cin, name);
+}
+
+void Hotel::setAddress(){
+    string address;
+    cout << "Enter your address: ";
+    getline(cin, address);
+}
+
+void Hotel::setTotalCost(){
+    int total_cost;
+    cout << "Enter total cost: ";
+    cin >> total_cost; cin.ignore();
+}
