@@ -7,11 +7,7 @@
 #include "Travel.h"
 using namespace std;
 
-
-
-
 class User{
-
 private:
     string account;
     string password;
@@ -36,32 +32,13 @@ public:
     void changeTravelInfo(const Travel& travel);
     /* Cancel the travel */
     void cancelTravel(const Travel& travel);
-    bool validateAccount() const;
     /* Input */
-    void inputAccount()
-    {
-        getline(cin, account);
-    }
-    void inputPassword()
-    {
-        getline(cin, password);
-    }
-    void inputFullName()
-    {
-        getline(cin, fullName);
-    }
-    void inputAddress()
-    {
-        getline(cin, address);
-    }
-    void inputAge()
-    {
-        cin >> age; cin.ignore();
-    }
-    void inputNumMember()
-    {
-        cin >> numMember; cin.ignore();
-    }
+    void inputAccount() {getline(cin, account);}
+    void inputPassword() {getline(cin, password);}
+    void inputFullName() {getline(cin, fullName);}
+    void inputAddress() {getline(cin, address);}
+    void inputAge() {cin >> age; cin.ignore();}
+    void inputNumMember() {cin >> numMember; cin.ignore();}
     /* Show user information */
     void showUser();
     /* Getter and setter */
