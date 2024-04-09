@@ -5,8 +5,11 @@ User* System::logInAccount(vector<User> &users, User &u1){
     cout << "Account: ";  u1.inputAccount();
     cout << "Password: "; u1.inputPassword();
     if(searchAccount(users, u1.getAccount()) && searchPassword(users, u1.getPassword())){
-        auto it = std::find(users.begin(), users.end(), u1);
-        return (it != users.end()) ? &u1 : nullptr;
+        for(int i = 0; i < users.size(); i++){
+            if(users[i].getAccount() == u1.getAccount()){
+                return &users[i];
+            }
+        }
     }
     return nullptr;
 }
@@ -14,13 +17,13 @@ User* System::registerAccount(vector<User> &users, User &u1){
     while(1){
         cout << setw(10) << "user_name: ";
         u1.inputAccount();
-        if(doubleCheckAccount(u1.getAccount())){
-            cout << "Tai khoan da ton tai truoc do\n";
-            cout << "Moi ban nhap lai tai khoan\n";
+        if(doubleCheckAccount(users, u1.getAccount())){
+            cout << "This account is exited before!\n";
+            cout << "Please re-enter your account!\n";
         }
         if(validateAccount(u1.getAccount()) == false){ // them check double
-            cout << "Ten tai khoan khong dung dinh dang\n";
-            cout << "Moi ban nhap lai\n";
+            cout << "The account name is not in the correct format\n";
+            cout << "Please re-enter your account!\n";
         }
         else{
             break;
@@ -30,7 +33,7 @@ User* System::registerAccount(vector<User> &users, User &u1){
         cout << setw(11) << "password: ";
         u1.inputPassword();
         if(validatePassword(u1.getPassword()) == false){
-            cout << "Moi ban nhap lai\n";
+            cout << "Please re-enter your account!\n";
         }
         else{
             break;
@@ -56,24 +59,51 @@ bool System::searchPassword(vector<User> &users, const string &s){
     return false;    
 }
 void System::signOut(){
-
+    System::run();
 }
-void System::searchRoomByPlace(const string &s){
-    // for(auto i:travels){
-    //     if(i.getPlace() == s){
-    //         for(auto j:i.getPlace()){
-    //             cout << j.getName() << endl;
-    //         }
-    //     }
-    // }
-    // cout << "Cac Hotel tai " << s << " la: " << endl;
+void System::searchRoomByPlace(vector<Travel> &travels){
+    cout << "Enter your place, which you want to search: " << endl;
+    string place; getline(cin, place);
+    for(int i = 0; i < travels.size(); i++){
+        if(travels[i].getPlace() != place){
+            continue;
+        }
+        cout << "In the " << place << " we have some rooms: " << endl;
+        for(int j = 0; j < travels[i].getHotel().size(); j++){
+            cout << setw(20) << j+1 << ". " << travels[i].getHotel()[j].getName() << endl;
+            for(int k = 0; k < travels[i].getHotel()[j].getRooms().size(); k++){
+                cout << setw(24) << k+1 << ". " << travels[i].getHotel()[j].getRooms()[k].getName() << endl;
+            }
+            cout << endl;
+        }
+        return;
+    }
+    cout << "We are updating new infomation for this place!\n";
+    cout << "You can choose some similar places!\n";
+}
     
+void System::searchVehicleByPlace(vector<Travel> &travels){
+    cout << "Enter your place, which you want to search: " << endl;
+    string place; getline(cin, place);
+    for(int i = 0; i < travels.size(); i++){
+        if(travels[i].getPlace() != place){
+            continue;
+        }
+        cout << "In the " << place << " we have some vehicles: " << endl;
+        for(int j = 0; j < travels[i].getTransport().size(); j++){
+            cout << setw(20) << j  << travels[i].getTransport()[j].get_name() << endl;
+        }
+        return;
+    }
+    cout << "We are updating new infomation for this place!\n";
+    cout << "You can choose some similar places!\n";
 }
-void System::searchVehicleByPlace(){
-
-}
-void System::listPlace(){
-
+void System::listPlace(vector<Travel> &travels){
+    cout << "Our system support the following places: " << endl;
+    for(int i = 0; i < travels.size(); i++){
+        cout << setw(20) << i << travels[i].getPlace() << endl;
+    }
+    cout << "__________________________________________________\n";
 }
 bool System::validateAccount(const string &s){
     for (auto i : s){
@@ -89,7 +119,7 @@ bool System::validatePassword(const string &s){
     int numUpper = 0;
     int numSpecial = 0;
     if(s.length() < 8){
-        cout << "Do dai mat khau it nhat la 8 ky tu\n";
+        cout << "Password length is at least 8 characters\n";
         return false;
     }
     for(auto i:s){
@@ -109,7 +139,7 @@ bool System::validatePassword(const string &s){
     if(numNums && numUpper && numLower &&numSpecial){
         return true;
     }
-    cout << "Password bao gom it nhat 1 ky tu hoa, 1 ky tu thuong, 1 ky tu so va 1 ky tu dac biet (! # $ % & @)\n";
+    cout << "Password includes an uppercase, lowercase, number, and special character (! # $ % & @)!!\n";
     return false;    
 }
 bool System::validateName(const string &s){
@@ -118,13 +148,13 @@ bool System::validateName(const string &s){
             continue;
         }
         if((i < 65 || (i > 90 && i < 97) || i > 122)){
-            cout << "Ten khong hop le\n";
+            cout << "Invalid name!\n";
             return false;
         }
     }
     return true; 
 }
-bool System::doubleCheckAccount(const string &s){
+bool System::doubleCheckAccount(vector<User> &users, const string &s){
     int r = users.size() - 1;
     int l = 0;
     while(l <= r){
@@ -193,6 +223,3 @@ void sortWithTime(vector<float> &m_list, int low, int high){
     }
 }
 
-int main(){
-    System sys;
-}

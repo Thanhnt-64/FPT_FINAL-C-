@@ -11,23 +11,36 @@ using namespace std;
 
 class System{
 private:
-    Admin admin = Admin::getInstance();
-    vector<User> users;
-    vector<Travel> travels;
+    // Admin admin = Admin::getInstance();
+    // vector<User> users;
+    // vector<Travel> travels;
 public:
     System(){}
+    /* Login in the system*/
     User* logInAccount(vector<User> &users, User &u1);
+    /* Register new account*/
     User* registerAccount(vector<User> &users, User &u1);
+    /* Exit main system, comeback to main menu*/
     void signOut();
-    void searchRoomByPlace(const string &s);
-    void searchVehicleByPlace();
-    void listPlace();
+    /* Search room in a specific place*/
+    void searchRoomByPlace(vector<Travel> &travels);
+    /* Search vehicle in a specific place*/
+    void searchVehicleByPlace(vector<Travel> &travels);
+    /* List all Place support by system*/
+    void listPlace(vector<Travel> &travels);
+    /* Validate account: format check*/
     bool validateAccount(const string &s);
+    /* Validate password: format check*/
     bool validatePassword(const string &s);
+    /* Validate name: format check*/
     bool validateName(const string &s);
-    bool doubleCheckAccount(const string &s);
+    /* Double check account when register new account*/
+    bool doubleCheckAccount(vector<User> &users, const string &s);
+    /* Search account in database*/
     bool searchAccount(vector<User> &users, const string &s);
+    /* Search password to check valid when login*/
     bool searchPassword(vector<User> &users, const string &s);
+    /* Run system*/
     void run();
 };
 
