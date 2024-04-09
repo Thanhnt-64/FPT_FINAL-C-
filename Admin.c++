@@ -55,12 +55,6 @@ void Admin::editTransportInfo(vector<Travel> &travels) {
     char choose;
     cout << "Enter name of vehicle you want to change:";
     string transport; getline(cin, transport);
-    cout << "Change brand?__ ";
-    string brand; getline(cin, brand);
-    cout << "Change Starting point?__ ";
-    string from; getline(cin, from);
-    cout << "Change Destination?__ ";
-    string destination; getline(cin, destination);
     vector<Travel>::iterator i;
     for(i = travels.begin(); i != travels.end(); i++) {
         if(i->getPlace() != tral) {
@@ -71,9 +65,9 @@ void Admin::editTransportInfo(vector<Travel> &travels) {
                 cout << "Do you want to change this vehicle?(Y/N)\n";
                 cin >> choose; cin.ignore();
                 if(choose == 'Y' || choose == 'y') {
-                    i->getTransport()[j].change_brand(brand);
-                    i->getTransport()[j].change_from(from);
-                    i->getTransport()[j].change_destination(destination);
+                    i->getTransport()[j].change_brand();
+                    i->getTransport()[j].change_from();
+                    i->getTransport()[j].change_destination();
                     cout << "Done!\n";
                 }
                 else{
@@ -96,13 +90,13 @@ void Admin::editHotelInfo(vector<Travel> &travels) {
             continue;
         }
         for(int j = 0; j < i->getHotel().size(); j++) {
-            if(i->getHotel()[j].getHotelName() == hotel) {
+            if(i->getHotel()[j].getName() == hotel) {
                 cout << "Do you want to change this Hotel?(Y/N)\n";
                 cin >> choose; cin.ignore();
                 if(choose == 'Y' || choose == 'y') {
-                    i->getTransport()[j].change_brand(brand);
-                    i->getTransport()[j].change_from(from);
-                    i->getTransport()[j].change_destination(destination);
+                    i->getHotel()[j].setName();
+                    i->getHotel()[j].setAddress();
+                    i->getHotel()[j].setTotalCost();
                     cout << "Done!\n";
                 }
                 else{

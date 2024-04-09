@@ -19,5 +19,8 @@ class Hotel{
     string getAddress();
     int getTotalCost();
     vector<Room>& getRooms();
+    void setName();
+    void setAddress();
+    void setTotalCost();
 };
 #endif // HOTEL_H
