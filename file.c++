@@ -3,8 +3,11 @@
 #include <string>
 #include <vector>
 
+using namespace std;
+
 // Định nghĩa cấu trúc cho các phần tử trong travel
-struct Transport {
+struct Transport
+{
     std::string name;
     std::string brand;
     std::string from;
@@ -13,7 +16,8 @@ struct Transport {
     std::string time;
 };
 
-struct Hotel {
+struct Hotel
+{
     std::string name;
     std::string address;
     std::string typeRoom;
@@ -22,12 +26,14 @@ struct Hotel {
     int cost;
 };
 
-struct MyTravel {
+struct MyTravel
+{
     std::vector<Transport> transports;
     std::vector<Hotel> hotels;
 };
 
-struct User {
+struct User
+{
     std::string account;
     std::string password;
     std::string fullname;
@@ -37,7 +43,11 @@ struct User {
     MyTravel myTravel;
 };
 
+// Hàm để ghi dữ liệu vào tệp văn bản dưới dạng JSON
+void singlewriteJsonFile(const User &user, fstream &target_file)
+{
 
+<<<<<<< HEAD
 
 // Hàm để ghi dữ liệu vào tệp văn bản
 void writeToFile(const std::vector<User>& users, const std::string& filename) {
@@ -80,8 +90,35 @@ void writeToFile(const std::vector<User>& users, const std::string& filename) {
             file << hotel.startTime << "\n";
             file << hotel.endTime << "\n";
             file << hotel.cost << "\n";
+=======
+    target_file << "{\n";
+    target_file << "  \"account\": \"" << user.account << "\",\n";
+    target_file << "  \"password\": \"" << user.password << "\",\n";
+    target_file << "  \"fullname\": \"" << user.fullname << "\",\n";
+    target_file << "  \"age\": " << user.age << ",\n";
+    target_file << "  \"address\": \"" << user.address << "\",\n";
+    target_file << "  \"numMember\": " << user.numMember << ",\n";
+    target_file << "  \"myTravel\": {\n";
+    target_file << "    \"transport\": [\n";
+    for (size_t i = 0; i < user.myTravel.transports.size(); ++i)
+    {
+        const auto &transport = user.myTravel.transports[i];
+        target_file << "      {\n";
+        target_file << "        \"name\": \"" << transport.name << "\",\n";
+        target_file << "        \"brand\": \"" << transport.brand << "\",\n";
+        target_file << "        \"from\": \"" << transport.from << "\",\n";
+        target_file << "        \"destination\": \"" << transport.destination << "\",\n";
+        target_file << "        \"cost\": " << transport.cost << ",\n";
+        target_file << "        \"time\": \"" << transport.time << "\"\n";
+        target_file << "      }";
+        if (i < user.myTravel.transports.size() - 1)
+        {
+            target_file << ",";
+>>>>>>> 3b563efc2a96b1bdb421e465e024e58e34c867cd
         }
+        target_file << "\n";
     }
+<<<<<<< HEAD
 
     std::cout << "Data is save to file: " << filename << "." << std::endl;
 }
@@ -139,12 +176,51 @@ std::vector<User> readFromFile(const std::string& filename) {
 
     std::cout << "Data is read from file: " << filename << "." << std::endl;
     return users;
+=======
+    target_file << "    ],\n";
+    target_file << "    \"hotel\": [\n";
+    for (size_t i = 0; i < user.myTravel.hotels.size(); ++i)
+    {
+        const auto &hotel = user.myTravel.hotels[i];
+        target_file << "      {\n";
+        target_file << "        \"name\": \"" << hotel.name << "\",\n";
+        target_file << "        \"address\": \"" << hotel.address << "\",\n";
+        target_file << "        \"typeRoom\": \"" << hotel.typeRoom << "\",\n";
+        target_file << "        \"startTime\": \"" << hotel.startTime << "\",\n";
+        target_file << "        \"endTime\": \"" << hotel.endTime << "\",\n";
+        target_file << "        \"cost\": " << hotel.cost << "\n";
+        target_file << "      }";
+        if (i < user.myTravel.hotels.size() - 1)
+        {
+            target_file << ",";
+        }
+        target_file << "\n";
+    }
+    target_file << "    ]\n";
+    target_file << "  }\n";
+    target_file << "}";
 }
 
-int main() {
+void WriteJsonFile(vector<User> &users, string &filename)
+{
+    fstream target_file;
+    target_file.open(filename, ios::app);
+    for (int i = 0; i < users.size(); i++)
+    {
+        singlewriteJsonFile(users[i], target_file);
+    }
+
+    target_file.close();
+
+>>>>>>> 3b563efc2a96b1bdb421e465e024e58e34c867cd
+}
+
+int main()
+{
     // Tạo một mảng chứa 10 đối tượng dữ liệu người dùng
     std::vector<User> users;
-    for (int i = 0; i < 10; ++i) {
+    for (int i = 0; i < 10; ++i)
+    {
         User user;
         user.account = "ThanhNT176";
         user.password = "ThanhNT";
@@ -160,11 +236,8 @@ int main() {
         users.push_back(user);
     }
 
-    // Ghi dữ liệu vào tệp văn bản
-    writeToFile(users, "text.txt");
-
-    // Đọc dữ liệu từ tệp văn bản
-    std::vector<User> readUsers = readFromFile("text.txt");
-
+    // Ghi dữ liệu từ mảng các đối tượng dữ liệu vào tệp văn bản dưới dạng JSON
+    string filename = "user_data.txt";
+    WriteJsonFile(users, filename);
     return 0;
 }
