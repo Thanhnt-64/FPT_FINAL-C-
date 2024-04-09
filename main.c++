@@ -7,33 +7,36 @@
 #include <iomanip>
 int main()
 {
-    //
     System sys;
-    int menu;
-    // Display menu
-    do
-    {
-        cout << "Menu" << endl;
-        cout << setw(10) << right << "";
-        cout << "1: Login" << endl;
-        cout << setw(10) << right << "";
-        cout << "2: Sign Up" << endl;
-        cout << "Enter number in range 1-2: ";
-        cin >> menu;
-    } while (menu != 1 && menu != 2);
-
-    switch (menu)
-    {
-        //Login user account or admin account
-    case 1:
-        sys.logInAccount();
-        break;
-        //Register new account
-    case 2:
-        sys.registerAccount();
-        break;
-    default:
-        break;
+    Admin &admin = Admin::getInstance();
+    vector<User> users;
+    vector<Travel> travels;
+    vector<Room> rooms;
+    User *user = nullptr;
+    User u1;
+    int choose;
+    while(1){
+        cout << setw(5) << "Menu:\n";
+        cout << setw(10) << "1. Login\n";
+        cout << setw(10) << "2. Register\n";
+        cout << setw(10) << "Choose 1 or 2\n";
+        cin >> choose; cin.ignore();
+        switch (choose)
+        {
+        case 1:
+            user = sys.logInAccount(users, u1);
+            system("cls");
+            if(user != nullptr){
+                cout << setw(5) << "Menu:\n";
+                sys.listPlace(travels);
+                cout << setw(10) << "Choose one travel to see details\n";
+                cin >> choose; cin.ignore();
+                travels[choose-1].showTravelInfo();
+            }
+            break;
+        default:
+            break;
+        }
     }
-
+    return 0;
 }

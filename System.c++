@@ -99,9 +99,9 @@ void System::searchVehicleByPlace(vector<Travel> &travels){
     cout << "You can choose some similar places!\n";
 }
 void System::listPlace(vector<Travel> &travels){
-    cout << "Our system support the following places: " << endl;
+    cout << setw(20) <<"Our system support the following places: " << endl;
     for(int i = 0; i < travels.size(); i++){
-        cout << setw(20) << i << travels[i].getPlace() << endl;
+        cout << setw(20) << i+1 << travels[i].getPlace() << endl;
     }
     cout << "__________________________________________________\n";
 }
