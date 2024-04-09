@@ -58,10 +58,18 @@ bool System::searchPassword(const string &s){
 void System::signOut(){
 
 }
-void System::searchRoom(){
-
+void System::searchRoomByPlace(const string &s){
+    // for(auto i:travels){
+    //     if(i.getPlace() == s){
+    //         for(auto j:i.getPlace()){
+    //             cout << j.getName() << endl;
+    //         }
+    //     }
+    // }
+    // cout << "Cac Hotel tai " << s << " la: " << endl;
+    
 }
-void System::searchVehicle(){
+void System::searchVehicleByPlace(){
 
 }
 void System::listPlace(){

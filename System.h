@@ -14,13 +14,12 @@ private:
     Admin admin;
     vector<User> users;
     vector<Travel> travels;
-    int sumCost;
 public:
     User* logInAccount(User &u1);
     User* registerAccount(User &u1);
     void signOut();
-    void searchRoom();
-    void searchVehicle();
+    void searchRoomByPlace(const string &s);
+    void searchVehicleByPlace();
     void listPlace();
     bool validateAccount(const string &s);
     bool validatePassword(const string &s);
