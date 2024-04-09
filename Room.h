@@ -15,6 +15,7 @@ class Room
 public:
     // Constructor
     Room(){}
+    Room operator=(const Room&);
     Room(string name, string startTime, string endTime, string typeRoom,int cost);
     // : m_name{name}, m_startTime{startTime}, m_endTime{endTime}, m_typeRoom{typeRoom}, m_cost{cost}{};
     // Rename of Room
@@ -40,6 +41,9 @@ public:
     string getEndTime();
     //Get cost of Room
     int getCost();
+
+    void setCost(int cost);
+
 };
 
 #endif // ROOM_H

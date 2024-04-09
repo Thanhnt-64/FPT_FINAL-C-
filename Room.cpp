@@ -1,5 +1,20 @@
 #include "Room.h"
 
+void Room::setCost(int cost)
+{
+    m_cost = cost;
+}
+
+Room Room::operator=(const Room& obj)
+{
+    m_name = obj.m_name;
+    m_startTime = obj.m_startTime;
+    m_endTime = obj.m_endTime;
+    m_typeRoom = obj.m_typeRoom;
+    m_cost = obj.m_cost;
+    return *this;
+}
+
 Room::Room(string name, string startTime , string endTime , string typeRoom, int cost)
     : m_name{name}, m_startTime{startTime}, m_endTime{endTime}, m_typeRoom{typeRoom}, m_cost{cost}
 {
