@@ -41,5 +41,32 @@ Hotel Hotel::operator=(const Hotel& obj)
     name = obj.name;
     address=obj.address;
     total_cost=obj.total_cost;
-    for(int i=0;i<)
+
+    rooms.resize(obj.rooms.size());
+    for(int i=0;i<obj.rooms.size();i++)
+    {
+        rooms[i]=obj.rooms[i];
+    }
+    
+    return *this;
+}
+
+string Hotel::getName()
+{
+    return name;
+}
+
+string Hotel::getAddress()
+{
+    return  address;
+}
+
+int Hotel::getTotalCost()
+{
+    return total_cost;
+}
+
+vector <Room>& Hotel::getRooms()
+{
+    return rooms;
 }

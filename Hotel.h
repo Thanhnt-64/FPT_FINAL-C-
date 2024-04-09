@@ -15,5 +15,9 @@ class Hotel{
     Hotel operator=(const Hotel& obj);
     void showRoomInfo();
     void showRoomInfoBooked();
+    string getName();
+    string getAddress();
+    int getTotalCost();
+    vector<Room>& getRooms();
 };
 #endif // HOTEL_H
