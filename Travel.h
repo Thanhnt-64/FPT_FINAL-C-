@@ -12,8 +12,8 @@ class Travel{
         //Show travel info
         // Hotel Name|Room Name |Type Room |Start Time  |End Time  |Cost |Transport |Brand |From |To |Time |Cost     
         void showTravelInfo();
-        vector<Hotel> getHotel();
-        vector<Transport> getTransport();
+        vector<Hotel>& getHotel();
+        vector<Transport>& getTransport();
         
 };
 
