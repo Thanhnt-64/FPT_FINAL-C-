@@ -20,7 +20,7 @@ public:
     /* Constructor */
     User() {}
     User(string& account, string& password) : account(account), password(password) {}
-    User(string& account, string& password, string& fullName, string& address, int age, int numMember, vector<Travel>& myTravel)
+    User(string account, string password, string fullName, string address, int age, int numMember, vector<Travel>& myTravel)
     : account(account), password(password), fullName(fullName), address(address), age(age), numMember(numMember), myTravel(myTravel) {}
     /* Destructor */
     virtual ~User() {}

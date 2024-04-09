@@ -79,16 +79,4 @@ void User::showTravelInfo()
 
 void User::changeTravelInfo(const Travel& travel)
 {
-    for(int i=0;i<myTravel.size();i++)
-    {
-        for(int j=0;j<myTravel[i].hotels.size();j++)
-        {
-            myTravel[i].hotels[i]=travel.hotels[i];
-        }
-
-        for(int j=0;j<myTravel[i].transports.size();j++)
-        {
-            myTravel[i].transports[i]=travel.transports[i];
-        }
-    }
 }
