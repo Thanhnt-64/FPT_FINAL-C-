@@ -18,6 +18,7 @@ public:
 	Transport(string name, string brand, string from, string destination, string time, int cost) :name(name)
 		, brand(brand), from(from), destination(destination), time(time), cost(cost){}
 	void input();//input name,brand,from,destination,time;
+	// validate input data
 	void validate_time();
     bool validate_string(string&);
     void validate_name(string &);
@@ -26,20 +27,20 @@ public:
     void validate_destination(string &);
     void validate_cost();
     void validate(string&);
+	// set data
 	void change_name(string &);
 	void change_brand(string&);
 	void change_from(string&);
 	void change_destination(string &);
 	void change_time(string &);
 	void change_cost(int &);
+	//get data
 	string get_name();
 	string get_brand();
 	string get_destination();
 	string get_from();
 	string get_time();
 	int get_cost();
-	//Transport Name |Brand |From |Destination |Cost |Time
-	//20 digit      |20 digit |20 digit |20 digit |20 digit |20 digit
     void output();
 	bool operator > (Transport& c);
 	bool operator < (Transport& c);
