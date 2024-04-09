@@ -1,0 +1,451 @@
+{
+  "account": "ThanhNT176",
+  "password": "ThanhNT",
+  "fullname": "Nguyen Tien Thanh",
+  "age": 22,
+  "address": "Ha Nam",
+  "numMember": 3,
+  "myTravel": {
+    "transport": [
+      {
+        "name": "Car",
+        "brand": "Honda",
+        "from": "Ha Nam",
+        "destination": "Ha Noi",
+        "cost": 100000,
+        "time": "(xx/yy/zz/gggg)-giờ ngày-tháng-năm: string"
+      },
+      {
+        "name": "Flight",
+        "brand": "Boeing",
+        "from": "Ha Noi",
+        "destination": "HCM City",
+        "cost": 2000000,
+        "time": "(xx/yy/zz/gggg)-giờ ngày-tháng-năm: string"
+      }
+    ],
+    "hotel": [
+      {
+        "name": "Phuong Nam",
+        "address": "Ha Noi",
+        "typeRoom": "Vip",
+        "startTime": "(xx/yy/zz/gggg)",
+        "endTime": "(xx/yy/zz/gggg)",
+        "cost": 3000000
+      },
+      {
+        "name": "Phuong Bac",
+        "address": "Ha Nam",
+        "typeRoom": "normal",
+        "startTime": "(xx/yy/zz/gggg)",
+        "endTime": "(xx/yy/zz/gggg)",
+        "cost": 4000000
+      }
+    ]
+  }
+}{
+  "account": "ThanhNT176",
+  "password": "ThanhNT",
+  "fullname": "Nguyen Tien Thanh",
+  "age": 22,
+  "address": "Ha Nam",
+  "numMember": 3,
+  "myTravel": {
+    "transport": [
+      {
+        "name": "Car",
+        "brand": "Honda",
+        "from": "Ha Nam",
+        "destination": "Ha Noi",
+        "cost": 100000,
+        "time": "(xx/yy/zz/gggg)-giờ ngày-tháng-năm: string"
+      },
+      {
+        "name": "Flight",
+        "brand": "Boeing",
+        "from": "Ha Noi",
+        "destination": "HCM City",
+        "cost": 2000000,
+        "time": "(xx/yy/zz/gggg)-giờ ngày-tháng-năm: string"
+      }
+    ],
+    "hotel": [
+      {
+        "name": "Phuong Nam",
+        "address": "Ha Noi",
+        "typeRoom": "Vip",
+        "startTime": "(xx/yy/zz/gggg)",
+        "endTime": "(xx/yy/zz/gggg)",
+        "cost": 3000000
+      },
+      {
+        "name": "Phuong Bac",
+        "address": "Ha Nam",
+        "typeRoom": "normal",
+        "startTime": "(xx/yy/zz/gggg)",
+        "endTime": "(xx/yy/zz/gggg)",
+        "cost": 4000000
+      }
+    ]
+  }
+}{
+  "account": "ThanhNT176",
+  "password": "ThanhNT",
+  "fullname": "Nguyen Tien Thanh",
+  "age": 22,
+  "address": "Ha Nam",
+  "numMember": 3,
+  "myTravel": {
+    "transport": [
+      {
+        "name": "Car",
+        "brand": "Honda",
+        "from": "Ha Nam",
+        "destination": "Ha Noi",
+        "cost": 100000,
+        "time": "(xx/yy/zz/gggg)-giờ ngày-tháng-năm: string"
+      },
+      {
+        "name": "Flight",
+        "brand": "Boeing",
+        "from": "Ha Noi",
+        "destination": "HCM City",
+        "cost": 2000000,
+        "time": "(xx/yy/zz/gggg)-giờ ngày-tháng-năm: string"
+      }
+    ],
+    "hotel": [
+      {
+        "name": "Phuong Nam",
+        "address": "Ha Noi",
+        "typeRoom": "Vip",
+        "startTime": "(xx/yy/zz/gggg)",
+        "endTime": "(xx/yy/zz/gggg)",
+        "cost": 3000000
+      },
+      {
+        "name": "Phuong Bac",
+        "address": "Ha Nam",
+        "typeRoom": "normal",
+        "startTime": "(xx/yy/zz/gggg)",
+        "endTime": "(xx/yy/zz/gggg)",
+        "cost": 4000000
+      }
+    ]
+  }
+}{
+  "account": "ThanhNT176",
+  "password": "ThanhNT",
+  "fullname": "Nguyen Tien Thanh",
+  "age": 22,
+  "address": "Ha Nam",
+  "numMember": 3,
+  "myTravel": {
+    "transport": [
+      {
+        "name": "Car",
+        "brand": "Honda",
+        "from": "Ha Nam",
+        "destination": "Ha Noi",
+        "cost": 100000,
+        "time": "(xx/yy/zz/gggg)-giờ ngày-tháng-năm: string"
+      },
+      {
+        "name": "Flight",
+        "brand": "Boeing",
+        "from": "Ha Noi",
+        "destination": "HCM City",
+        "cost": 2000000,
+        "time": "(xx/yy/zz/gggg)-giờ ngày-tháng-năm: string"
+      }
+    ],
+    "hotel": [
+      {
+        "name": "Phuong Nam",
+        "address": "Ha Noi",
+        "typeRoom": "Vip",
+        "startTime": "(xx/yy/zz/gggg)",
+        "endTime": "(xx/yy/zz/gggg)",
+        "cost": 3000000
+      },
+      {
+        "name": "Phuong Bac",
+        "address": "Ha Nam",
+        "typeRoom": "normal",
+        "startTime": "(xx/yy/zz/gggg)",
+        "endTime": "(xx/yy/zz/gggg)",
+        "cost": 4000000
+      }
+    ]
+  }
+}{
+  "account": "ThanhNT176",
+  "password": "ThanhNT",
+  "fullname": "Nguyen Tien Thanh",
+  "age": 22,
+  "address": "Ha Nam",
+  "numMember": 3,
+  "myTravel": {
+    "transport": [
+      {
+        "name": "Car",
+        "brand": "Honda",
+        "from": "Ha Nam",
+        "destination": "Ha Noi",
+        "cost": 100000,
+        "time": "(xx/yy/zz/gggg)-giờ ngày-tháng-năm: string"
+      },
+      {
+        "name": "Flight",
+        "brand": "Boeing",
+        "from": "Ha Noi",
+        "destination": "HCM City",
+        "cost": 2000000,
+        "time": "(xx/yy/zz/gggg)-giờ ngày-tháng-năm: string"
+      }
+    ],
+    "hotel": [
+      {
+        "name": "Phuong Nam",
+        "address": "Ha Noi",
+        "typeRoom": "Vip",
+        "startTime": "(xx/yy/zz/gggg)",
+        "endTime": "(xx/yy/zz/gggg)",
+        "cost": 3000000
+      },
+      {
+        "name": "Phuong Bac",
+        "address": "Ha Nam",
+        "typeRoom": "normal",
+        "startTime": "(xx/yy/zz/gggg)",
+        "endTime": "(xx/yy/zz/gggg)",
+        "cost": 4000000
+      }
+    ]
+  }
+}{
+  "account": "ThanhNT176",
+  "password": "ThanhNT",
+  "fullname": "Nguyen Tien Thanh",
+  "age": 22,
+  "address": "Ha Nam",
+  "numMember": 3,
+  "myTravel": {
+    "transport": [
+      {
+        "name": "Car",
+        "brand": "Honda",
+        "from": "Ha Nam",
+        "destination": "Ha Noi",
+        "cost": 100000,
+        "time": "(xx/yy/zz/gggg)-giờ ngày-tháng-năm: string"
+      },
+      {
+        "name": "Flight",
+        "brand": "Boeing",
+        "from": "Ha Noi",
+        "destination": "HCM City",
+        "cost": 2000000,
+        "time": "(xx/yy/zz/gggg)-giờ ngày-tháng-năm: string"
+      }
+    ],
+    "hotel": [
+      {
+        "name": "Phuong Nam",
+        "address": "Ha Noi",
+        "typeRoom": "Vip",
+        "startTime": "(xx/yy/zz/gggg)",
+        "endTime": "(xx/yy/zz/gggg)",
+        "cost": 3000000
+      },
+      {
+        "name": "Phuong Bac",
+        "address": "Ha Nam",
+        "typeRoom": "normal",
+        "startTime": "(xx/yy/zz/gggg)",
+        "endTime": "(xx/yy/zz/gggg)",
+        "cost": 4000000
+      }
+    ]
+  }
+}{
+  "account": "ThanhNT176",
+  "password": "ThanhNT",
+  "fullname": "Nguyen Tien Thanh",
+  "age": 22,
+  "address": "Ha Nam",
+  "numMember": 3,
+  "myTravel": {
+    "transport": [
+      {
+        "name": "Car",
+        "brand": "Honda",
+        "from": "Ha Nam",
+        "destination": "Ha Noi",
+        "cost": 100000,
+        "time": "(xx/yy/zz/gggg)-giờ ngày-tháng-năm: string"
+      },
+      {
+        "name": "Flight",
+        "brand": "Boeing",
+        "from": "Ha Noi",
+        "destination": "HCM City",
+        "cost": 2000000,
+        "time": "(xx/yy/zz/gggg)-giờ ngày-tháng-năm: string"
+      }
+    ],
+    "hotel": [
+      {
+        "name": "Phuong Nam",
+        "address": "Ha Noi",
+        "typeRoom": "Vip",
+        "startTime": "(xx/yy/zz/gggg)",
+        "endTime": "(xx/yy/zz/gggg)",
+        "cost": 3000000
+      },
+      {
+        "name": "Phuong Bac",
+        "address": "Ha Nam",
+        "typeRoom": "normal",
+        "startTime": "(xx/yy/zz/gggg)",
+        "endTime": "(xx/yy/zz/gggg)",
+        "cost": 4000000
+      }
+    ]
+  }
+}{
+  "account": "ThanhNT176",
+  "password": "ThanhNT",
+  "fullname": "Nguyen Tien Thanh",
+  "age": 22,
+  "address": "Ha Nam",
+  "numMember": 3,
+  "myTravel": {
+    "transport": [
+      {
+        "name": "Car",
+        "brand": "Honda",
+        "from": "Ha Nam",
+        "destination": "Ha Noi",
+        "cost": 100000,
+        "time": "(xx/yy/zz/gggg)-giờ ngày-tháng-năm: string"
+      },
+      {
+        "name": "Flight",
+        "brand": "Boeing",
+        "from": "Ha Noi",
+        "destination": "HCM City",
+        "cost": 2000000,
+        "time": "(xx/yy/zz/gggg)-giờ ngày-tháng-năm: string"
+      }
+    ],
+    "hotel": [
+      {
+        "name": "Phuong Nam",
+        "address": "Ha Noi",
+        "typeRoom": "Vip",
+        "startTime": "(xx/yy/zz/gggg)",
+        "endTime": "(xx/yy/zz/gggg)",
+        "cost": 3000000
+      },
+      {
+        "name": "Phuong Bac",
+        "address": "Ha Nam",
+        "typeRoom": "normal",
+        "startTime": "(xx/yy/zz/gggg)",
+        "endTime": "(xx/yy/zz/gggg)",
+        "cost": 4000000
+      }
+    ]
+  }
+}{
+  "account": "ThanhNT176",
+  "password": "ThanhNT",
+  "fullname": "Nguyen Tien Thanh",
+  "age": 22,
+  "address": "Ha Nam",
+  "numMember": 3,
+  "myTravel": {
+    "transport": [
+      {
+        "name": "Car",
+        "brand": "Honda",
+        "from": "Ha Nam",
+        "destination": "Ha Noi",
+        "cost": 100000,
+        "time": "(xx/yy/zz/gggg)-giờ ngày-tháng-năm: string"
+      },
+      {
+        "name": "Flight",
+        "brand": "Boeing",
+        "from": "Ha Noi",
+        "destination": "HCM City",
+        "cost": 2000000,
+        "time": "(xx/yy/zz/gggg)-giờ ngày-tháng-năm: string"
+      }
+    ],
+    "hotel": [
+      {
+        "name": "Phuong Nam",
+        "address": "Ha Noi",
+        "typeRoom": "Vip",
+        "startTime": "(xx/yy/zz/gggg)",
+        "endTime": "(xx/yy/zz/gggg)",
+        "cost": 3000000
+      },
+      {
+        "name": "Phuong Bac",
+        "address": "Ha Nam",
+        "typeRoom": "normal",
+        "startTime": "(xx/yy/zz/gggg)",
+        "endTime": "(xx/yy/zz/gggg)",
+        "cost": 4000000
+      }
+    ]
+  }
+}{
+  "account": "ThanhNT176",
+  "password": "ThanhNT",
+  "fullname": "Nguyen Tien Thanh",
+  "age": 22,
+  "address": "Ha Nam",
+  "numMember": 3,
+  "myTravel": {
+    "transport": [
+      {
+        "name": "Car",
+        "brand": "Honda",
+        "from": "Ha Nam",
+        "destination": "Ha Noi",
+        "cost": 100000,
+        "time": "(xx/yy/zz/gggg)-giờ ngày-tháng-năm: string"
+      },
+      {
+        "name": "Flight",
+        "brand": "Boeing",
+        "from": "Ha Noi",
+        "destination": "HCM City",
+        "cost": 2000000,
+        "time": "(xx/yy/zz/gggg)-giờ ngày-tháng-năm: string"
+      }
+    ],
+    "hotel": [
+      {
+        "name": "Phuong Nam",
+        "address": "Ha Noi",
+        "typeRoom": "Vip",
+        "startTime": "(xx/yy/zz/gggg)",
+        "endTime": "(xx/yy/zz/gggg)",
+        "cost": 3000000
+      },
+      {
+        "name": "Phuong Bac",
+        "address": "Ha Nam",
+        "typeRoom": "normal",
+        "startTime": "(xx/yy/zz/gggg)",
+        "endTime": "(xx/yy/zz/gggg)",
+        "cost": 4000000
+      }
+    ]
+  }
+}

@@ -207,6 +207,42 @@ bool Transport::operator < (Transport& t) {
 	}
 	return false;
 }
+void Transport::change_name(string &name){
+	this->name=name;
+}
+void Transport::change_brand(string &brand){
+	this->brand=brand;
+}
+void Transport::change_from(string &from){
+	this->from=from;
+}
+void Transport::change_destination(string &destination){
+	this->destination=destination;
+}
+void Transport::change_time(string &time){
+	this->time=time;
+}
+void Transport::change_cost(int &cost){
+	this->cost;
+}
+string Transport::get_name(){
+	return name;
+}
+string Transport::get_brand(){
+	return brand;
+}
+string Transport::get_from(){
+	return from;
+}
+string Transport::get_destination(){
+	return destination;
+}
+string Transport::get_time(){
+	return time;
+}
+int Transport::get_cost(){
+	return cost;
+}
 
 int main(){
     Transport t;
