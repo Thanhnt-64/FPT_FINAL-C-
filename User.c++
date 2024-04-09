@@ -17,7 +17,7 @@ void User::changeInfo()
         string newName;
         cout << "Enter new full name: ";
         getline(cin, newName);
-        setFullName(newName);
+        setFullname(newName);
         cout << "Full name changed successfully." << endl;
         break;
     }

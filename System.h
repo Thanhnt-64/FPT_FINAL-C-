@@ -16,8 +16,8 @@ private:
     vector<Travel> travels;
 public:
     System(){}
-    User* logInAccount(User &u1);
-    User* registerAccount(User &u1);
+    User* logInAccount(vector<User> &users, User &u1);
+    User* registerAccount(vector<User> &users, User &u1);
     void signOut();
     void searchRoomByPlace(const string &s);
     void searchVehicleByPlace();
@@ -26,8 +26,8 @@ public:
     bool validatePassword(const string &s);
     bool validateName(const string &s);
     bool doubleCheckAccount(const string &s);
-    bool searchAccount(const string &s);
-    bool searchPassword(const string &s);
+    bool searchAccount(vector<User> &users, const string &s);
+    bool searchPassword(vector<User> &users, const string &s);
     void run();
 };
 

@@ -1,16 +1,16 @@
 #include "System.h"
 
-User* System::logInAccount(User &u1){
+User* System::logInAccount(vector<User> &users, User &u1){
     cout << "Enter user_name and password: " << endl;
     cout << "Account: ";  u1.inputAccount();
     cout << "Password: "; u1.inputPassword();
-    if(searchAccount(u1.getAccount()) && searchPassword(u1.getPassword())){
+    if(searchAccount(users, u1.getAccount()) && searchPassword(users, u1.getPassword())){
         auto it = std::find(users.begin(), users.end(), u1);
         return (it != users.end()) ? &u1 : nullptr;
     }
     return nullptr;
 }
-User* System::registerAccount(User &u1){
+User* System::registerAccount(vector<User> &users, User &u1){
     while(1){
         cout << setw(10) << "user_name: ";
         u1.inputAccount();
@@ -39,7 +39,7 @@ User* System::registerAccount(User &u1){
     users.push_back(u1);    
     return &users.back();
 }
-bool System::searchAccount(const string &s){
+bool System::searchAccount(vector<User> &users, const string &s){
     for(auto i:users){
         if(s == i.getAccount()){
             return true;
@@ -47,7 +47,7 @@ bool System::searchAccount(const string &s){
     }
     return false;
 }
-bool System::searchPassword(const string &s){
+bool System::searchPassword(vector<User> &users, const string &s){
     for(auto i:users){
         if(s == i.getPassword()){
             return true;

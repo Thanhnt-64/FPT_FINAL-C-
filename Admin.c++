@@ -11,7 +11,7 @@ Admin& Admin::getInstance()
 }
 
 /* Show list of user information */
-void Admin::showListInfoUser()
+void Admin::showListInfoUser(vector<User> &users)
 {
     cout<<setw(20)<<left<<"Account"
         <<setw(20)<<left<<"Full Name"
@@ -24,7 +24,7 @@ void Admin::showListInfoUser()
     }
 }
 /*  */
-void Admin::changeUser(User& user) {
+void Admin::changeUser(vector<User> &users) {
     cout << "Enter account of user you want to change:\n";
     string account; getline(cin, account);
     vector<User>::iterator i;
@@ -37,7 +37,7 @@ void Admin::changeUser(User& user) {
     i->changeInfo();
 }
 
-void Admin::deleteAccountUser(User& user) {
+void Admin::deleteAccountUser(vector<User> &users) {
     cout << "Enter account of user you want to delete:\n";
     string account; getline(cin, account);
     vector<User>::iterator i;
@@ -49,24 +49,13 @@ void Admin::deleteAccountUser(User& user) {
     users.erase(i);
 }
 
-void Admin::editTravelInfo(Travel& travel) {
-    cout << "Enter account of travel you want to edit:\n";
+void Admin::editTravelInfo() {
+    cout << "Enter account of travel you want to edit: ";
     string transport; getline(cin, transport);
-    vector<Travel>::iterator i;
-    vector<Transport>::iterator j;
-    for(i = travels.begin(); i != travels.end(); i++) {
-        j = i->getTransportPtr();
-        for(j = j->i->getTransportPtr().begin(); j != j->getTransportPtr().end(); j++) {
-            if(j->getTransportPtr() == transport){
-                break;
-            }
-        }
-    }
-    cout << "Edit Info you want:\n";
-    i->editInfo();
+    
 }
 
-void Admin::editHotelInfo(Hotel& hotel) {
+void Admin::editHotelInfo() {
     // Code to edit hotel information
 }
 
@@ -74,11 +63,11 @@ void Admin::viewServiceInfo() {
     // Code to view service information (transportation, hotel, room type, car brand, etc.)
 }
 
-void Admin::addService(Travel& travel, Hotel& hotel, Transport& transport) {
+void Admin::addService() {
     // Code to add new service
 }
 
-void Admin::deleteService(Travel& travel, Hotel& hotel, Transport& transport) {
+void Admin::deleteService() {
     // Code to delete a service
 }
 
