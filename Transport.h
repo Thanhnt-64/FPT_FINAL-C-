@@ -19,21 +19,21 @@ public:
 		, brand(brand), from(from), destination(destination), time(time), cost(cost){}
 	void input();//input name,brand,from,destination,time;
 	// validate input data
-	void validate_time();
+	void validate_time(string&);
     bool validate_string(string&);
     void validate_name(string &);
     void validate_brand(string &);
     void validate_from(string &);
     void validate_destination(string &);
-    void validate_cost();
+    void validate_cost(int&);
     void validate(string&);
 	// set data
-	void change_name(string &);
-	void change_brand(string&);
-	void change_from(string&);
-	void change_destination(string &);
-	void change_time(string &);
-	void change_cost(int &);
+	void change_name();
+	void change_brand();
+	void change_from();
+	void change_destination();
+	void change_time();
+	void change_cost();
 	//get data
 	string get_name();
 	string get_brand();
