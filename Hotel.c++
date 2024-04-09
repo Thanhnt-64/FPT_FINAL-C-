@@ -13,7 +13,33 @@ void Hotel::showRoomInfo()
     for (int i = 0; i < rooms.size(); i++)
     {
         cout << setw(20) << left << rooms[i].getName();
-        cout << setw(20) << left << "|" << rooms[i].getTypeRoom();
-        cout << setw(20) << left << "|" << rooms[i].getCost() << endl;
+        cout << setw(20) << left << rooms[i].getTypeRoom();
+        cout << setw(20) << left << rooms[i].getCost() << endl;
     }
+}
+
+void Hotel::showRoomInfoBooked()
+{
+    // Hotel Name: Phuong Nam
+    
+    // Hotel Name|Room Name |Type Room |Start Time  |End Time  |Cost
+    // 20digit   |20digit   |20digit   |20 digit    |20 digit  |20 digit
+
+    for (int i = 0; i < rooms.size(); i++)
+    {   
+        cout << setw(20) << left << name;
+        cout << setw(20) << left << rooms[i].getName();
+        cout << setw(20) << left << rooms[i].getTypeRoom();
+        cout << setw(20) << left << rooms[i].getStartTime();
+        cout << setw(20) << left << rooms[i].getEndTime();
+        cout << setw(20) << left << rooms[i].getCost();
+    }
+}
+
+Hotel Hotel::operator=(const Hotel& obj)
+{
+    name = obj.name;
+    address=obj.address;
+    total_cost=obj.total_cost;
+    for(int i=0;i<)
 }
