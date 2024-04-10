@@ -5,6 +5,7 @@
 #include "Travel.h"
 #include "User.h"
 #include <iomanip>
+#include "File.h"
 bool checkAccountAdmin(const string &s){
     return s == "admin";
 }

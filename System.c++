@@ -1,5 +1,5 @@
 #include "System.h"
-
+#include "File.h"
 User* System::logInAccount(vector<User> &users, User &u1){
     cout << setw(20) << "Enter user_name and password: " << endl;
     cout << setw(20) << "Account: ";  u1.inputAccount();
@@ -284,6 +284,8 @@ void System::runAdmin(vector<Travel> &travels, vector<User> &users){
                 sortWithCost(travels, 0, travels.size() - 1);
                 break;
             case 5:
+                admin.loadData();
+                admin.saveData();
                 break;
             default:
                 cout << "Choose wrong, Enter again!" << endl;

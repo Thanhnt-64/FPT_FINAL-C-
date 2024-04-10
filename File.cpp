@@ -447,47 +447,47 @@ Room Read_User::read_Room(int index_user, int index_travel, int index_hotel, int
     return buf;
 }
 
-int main()
-{
-    Read_Travel read("write_travel.json");
-    // Write_Travel write("write_travel.json");
-    vector<Room> rooms;
-    vector<Hotel> hotels;
-    vector<Transport> transports;
-    vector<Travel> travels;
-    vector<User> users;
-    int num = 2;
+// int main()
+// {
+//     Read_Travel read("write_travel.json");
+//     // Write_Travel write("write_travel.json");
+//     vector<Room> rooms;
+//     vector<Hotel> hotels;
+//     vector<Transport> transports;
+//     vector<Travel> travels;
+//     vector<User> users;
+//     int num = 2;
 
-    // Write
-    // for (int i = 0; i < num; i++)
-    // {
-    //     Room room("10" + to_string(i), "10/10/12/2024", "15/10/12/2024", "Vip" + to_string(i), 1000 + i);
-    //     rooms.push_back(room);
-    // }
+//     // Write
+//     // for (int i = 0; i < num; i++)
+//     // {
+//     //     Room room("10" + to_string(i), "10/10/12/2024", "15/10/12/2024", "Vip" + to_string(i), 1000 + i);
+//     //     rooms.push_back(room);
+//     // }
 
-    // for (int i = 0; i < num; i++)
-    // {
-    //     Hotel hotel("10"+to_string(i), "10/10/12/2024", 1000+i, rooms);
-    //     hotels.push_back(hotel);
-    // }
+//     // for (int i = 0; i < num; i++)
+//     // {
+//     //     Hotel hotel("10"+to_string(i), "10/10/12/2024", 1000+i, rooms);
+//     //     hotels.push_back(hotel);
+//     // }
 
-    // for(int i = 0; i < num; i++)
-    // {
-    //     Transport transport("Flight"+to_string(i),"Vietnam Airlines","Ha Noi","Hai Phong",1000+i, "10/15/12/2024");
-    //     transports.push_back(transport);
-    // }
+//     // for(int i = 0; i < num; i++)
+//     // {
+//     //     Transport transport("Flight"+to_string(i),"Vietnam Airlines","Ha Noi","Hai Phong",1000+i, "10/15/12/2024");
+//     //     transports.push_back(transport);
+//     // }
 
-    // for(int i = 0; i < num; i++)
-    // {
-    //     Travel travel(hotels, transports);
-    //     travels.push_back(travel);
-    // }
+//     // for(int i = 0; i < num; i++)
+//     // {
+//     //     Travel travel(hotels, transports);
+//     //     travels.push_back(travel);
+//     // }
 
-    // write.write_Travels(travels);
-    // write.pushfile();
+//     // write.write_Travels(travels);
+//     // write.pushfile();
 
-    //Read
-    read.load_file();
-    travels = read.read_Travels();
-   travels[1].showTravelInfo();
-}
+//     //Read
+//     read.load_file();
+//     travels = read.read_Travels();
+//    travels[1].showTravelInfo();
+// }
