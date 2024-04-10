@@ -1,48 +1,26 @@
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <vector>
-#include <iomanip>
-#include "json.hpp"
-
-#include "User.c++"
-
-#include "Travel.cpp"
-
-#include "Room.cpp"
-// #include "Room.h"
-
-// #include "Hotel.h"
-#include "Hotel.c++"
-// #include "Transport.h"
-#include "Transport.c++"
-
-using namespace std;
-using json = nlohmann::json;
-
-class Write_User
-{
-
-    fstream m_output;
-    json j;
-
-public:
-    Write_User(string file_name) { m_output.open(file_name, ios::out); }
-    void write_Room(Room room, int index_user, int index_travel, int index_hotel, int index_room);
-    void write_Hotel(Hotel hotel, int index_user, int index_travel, int index_hotel);
-    void write_Hotels(vector<Hotel> hotels, int index_user, int index_travel);
-    void write_Transport(Transport transport, int index_user, int index_travel, int index_transport);
-    void write_Transports(vector<Transport> transports, int index_user, int index_travel);
-    void write_Users(vector<User> users);
-    void write_User(User user, int index_user);
-    void write_Travel(Travel travel, int index_user, int index_travel);
-    void write_Travels(vector<Travel> travels, int index_user);
-    void pushfile();
-};
+#include "File.h"
 
 void Write_User::pushfile()
 {
     m_output << j.dump(4);
+}
+
+void Write_Travel::pushfile()
+{
+    m_output << j.dump(4);
+}
+
+void Write_Travel::write_Travel(Travel travel, int index_travel)
+{
+    for (int i = 0; i < travel.getHotel().size(); i++)
+    {
+        write_Hotels(travel.getHotel(), index_travel);
+    }
+
+    for (int i = 0; i < travel.getTransport().size(); i++)
+    {
+        write_Transports(travel.getTransport(), index_travel);
+    }
 }
 
 void Write_User::write_Travel(Travel travel, int index_user, int index_travel)
@@ -58,6 +36,14 @@ void Write_User::write_Travel(Travel travel, int index_user, int index_travel)
     }
 }
 
+void Write_Travel::write_Travels(vector<Travel> travels)
+{
+    for (int i = 0; i < travels.size(); i++)
+    {
+        write_Travel(travels[i], i);
+    }
+}
+
 void Write_User::write_Travels(vector<Travel> travels, int index_user)
 {
     for (int i = 0; i < travels.size(); i++)
@@ -66,34 +52,53 @@ void Write_User::write_Travels(vector<Travel> travels, int index_user)
     }
 }
 
+void Write_Travel::write_Hotel(Hotel hotel, int index_travel, int index_hotel)
+{
+    j["Travel" + to_string(index_travel)]["Hotel" + to_string(index_hotel)]["name"] = hotel.getName();
+    j["Travel" + to_string(index_travel)]["Hotel" + to_string(index_hotel)]["address"] = hotel.getAddress();
+    // j["Travel" + to_string(index_travel)]["Hotel" + to_string(index_hotel)]["total cost"] = hotel.getTotalCost();
+    for (int i = 0; i < hotel.getRooms().size(); i++)
+    {
+        write_Room(hotel.getRooms()[i], index_travel, index_hotel, i);
+    }
+}
 void Write_User::write_Hotel(Hotel hotel, int index_user, int index_travel, int index_hotel)
 {
 
-    // m_output << "\t\t" << hotel.getName() << endl;
-    // m_output << "\t\t" << hotel.getAddress() << endl;
-    // m_output << "\t\t" << hotel.getTotalCost() << endl;
     j["User" + to_string(index_user)]["Travel" + to_string(index_travel)]["Hotel" + to_string(index_hotel)]["name"] = hotel.getName();
     j["User" + to_string(index_user)]["Travel" + to_string(index_travel)]["Hotel" + to_string(index_hotel)]["address"] = hotel.getAddress();
-    j["User" + to_string(index_user)]["Travel" + to_string(index_travel)]["Hotel" + to_string(index_hotel)]["total cost"] = hotel.getTotalCost();
+    // j["User" + to_string(index_user)]["Travel" + to_string(index_travel)]["Hotel" + to_string(index_hotel)]["total cost"] = hotel.getTotalCost();
     for (int i = 0; i < hotel.getRooms().size(); i++)
     {
         write_Room(hotel.getRooms()[i], index_user, index_travel, index_hotel, i);
     }
 }
 
+void Write_Travel::write_Room(Room room, int index_travel, int index_hotel, int index_room)
+{
+    j["Travel" + to_string(index_travel)]["Hotel" + to_string(index_hotel)]["Room" + to_string(index_room)]["name"] = room.getName();
+    j["Travel" + to_string(index_travel)]["Hotel" + to_string(index_hotel)]["Room" + to_string(index_room)]["type room"] = room.getTypeRoom();
+    j["Travel" + to_string(index_travel)]["Hotel" + to_string(index_hotel)]["Room" + to_string(index_room)]["start time"] = room.getStartTime();
+    j["Travel" + to_string(index_travel)]["Hotel" + to_string(index_hotel)]["Room" + to_string(index_room)]["end time"] = room.getEndTime();
+    j["Travel" + to_string(index_travel)]["Hotel" + to_string(index_hotel)]["Room" + to_string(index_room)]["cost"] = room.getCost();
+}
+
 void Write_User::write_Room(Room room, int index_user, int index_travel, int index_hotel, int index_room)
 {
-    // m_output << "\t\t\t" << room.getName() << endl;
-    // m_output << "\t\t\t" << room.getTypeRoom() << endl;
-    // m_output << "\t\t\t" << room.getStartTime() << endl;
-    // m_output << "\t\t\t" << room.getEndTime() << endl;
-    // m_output << "\t\t\t" << room.getCost() << endl;
 
     j["User" + to_string(index_user)]["Travel" + to_string(index_travel)]["Hotel" + to_string(index_hotel)]["Room" + to_string(index_room)]["name"] = room.getName();
     j["User" + to_string(index_user)]["Travel" + to_string(index_travel)]["Hotel" + to_string(index_hotel)]["Room" + to_string(index_room)]["type room"] = room.getTypeRoom();
     j["User" + to_string(index_user)]["Travel" + to_string(index_travel)]["Hotel" + to_string(index_hotel)]["Room" + to_string(index_room)]["start time"] = room.getStartTime();
     j["User" + to_string(index_user)]["Travel" + to_string(index_travel)]["Hotel" + to_string(index_hotel)]["Room" + to_string(index_room)]["end time"] = room.getEndTime();
     j["User" + to_string(index_user)]["Travel" + to_string(index_travel)]["Hotel" + to_string(index_hotel)]["Room" + to_string(index_room)]["cost"] = room.getCost();
+}
+
+void Write_Travel::write_Hotels(vector<Hotel> hotels, int index_travel)
+{
+    for (int i = 0; i < hotels.size(); i++)
+    {
+        write_Hotel(hotels[i], index_travel, i);
+    }
 }
 
 void Write_User::write_Hotels(vector<Hotel> hotels, int index_user, int index_travel)
@@ -103,14 +108,19 @@ void Write_User::write_Hotels(vector<Hotel> hotels, int index_user, int index_tr
         write_Hotel(hotels[i], index_user, index_travel, i);
     }
 }
+
+void Write_Travel::write_Transport(Transport transport, int index_travel, int index_transport)
+{
+    j["Travel" + to_string(index_travel)]["Transport" + to_string(index_transport)]["name"] = transport.get_name();
+    j["Travel" + to_string(index_travel)]["Transport" + to_string(index_transport)]["brand"] = transport.get_brand();
+    j["Travel" + to_string(index_travel)]["Transport" + to_string(index_transport)]["from"] = transport.get_from();
+    j["Travel" + to_string(index_travel)]["Transport" + to_string(index_transport)]["destination"] = transport.get_destination();
+    j["Travel" + to_string(index_travel)]["Transport" + to_string(index_transport)]["cost"] = transport.get_cost();
+    j["Travel" + to_string(index_travel)]["Transport" + to_string(index_transport)]["time"] = transport.get_time();
+}
 void Write_User::write_Transport(Transport transport, int index_user, int index_travel, int index_transport)
 {
-    // m_output << "\t\t" << transport.get_name() << endl;
-    // m_output << "\t\t" << transport.get_brand() << endl;
-    // m_output << "\t\t" << transport.get_from() << endl;
-    // m_output << "\t\t" << transport.get_destination() << endl;
-    // m_output << "\t\t" << transport.get_cost() << endl;
-    // m_output << "\t\t" << transport.get_time() << endl;
+
     j["User" + to_string(index_user)]["Travel" + to_string(index_travel)]["Transport" + to_string(index_transport)]["name"] = transport.get_name();
     j["User" + to_string(index_user)]["Travel" + to_string(index_travel)]["Transport" + to_string(index_transport)]["brand"] = transport.get_brand();
     j["User" + to_string(index_user)]["Travel" + to_string(index_travel)]["Transport" + to_string(index_transport)]["from"] = transport.get_from();
@@ -119,6 +129,13 @@ void Write_User::write_Transport(Transport transport, int index_user, int index_
     j["User" + to_string(index_user)]["Travel" + to_string(index_travel)]["Transport" + to_string(index_transport)]["time"] = transport.get_time();
 }
 
+void Write_Travel::write_Transports(vector<Transport> transports, int index_travel)
+{
+    for (int i = 0; i < transports.size(); i++)
+    {
+        write_Transport(transports[i], index_travel, i);
+    }
+}
 void Write_User::write_Transports(vector<Transport> transports, int index_user, int index_travel)
 {
     for (int i = 0; i < transports.size(); i++)
@@ -126,9 +143,7 @@ void Write_User::write_Transports(vector<Transport> transports, int index_user, 
         write_Transport(transports[i], index_user, index_travel, i);
     }
 }
-// Account|Password|Full Name|Address|Age|Num Member
-//|Hotel Name|Room Name|Type Room|Total Cost
-//|Transport Name|Brand|From|Destination|Cost|Time Start
+
 void Write_User::write_User(User user, int index_user)
 {
 
@@ -152,29 +167,10 @@ void Write_User::write_Users(vector<User> users)
         write_User(users[i], i);
     }
 }
-class Read_User
-{
-    fstream m_input;
-    json j;
 
-public:
-    Read_User(string file_name) { m_input.open(file_name, ios::in); }
-    User read_User(int index_user);
-    vector <User> read_Users();
-    vector<Hotel> read_Hotels(int index_user, int index_travel);
-    vector<Transport> read_Transports(int index_user, int index_travel);
-    Travel read_Travel(int index_user, int index_travel);
-    vector<Travel> read_Travels(int index_user);
-    Hotel read_Hotel(int index_user, int index_travel, int index_hotel);
-    Transport read_Transport(int index_user, int index_travel, int index_transport);
-    Room read_Room(int index_user, int index_travel, int index_hotel, int index_room);
-    void load_file();
-    string test(int index);
-};
-
-vector <User> Read_User::read_Users()
+vector<User> Read_User::read_Users()
 {
-    vector <User> users;
+    vector<User> users;
     int count_user = 0;
     for (auto &item : j.items())
     {
@@ -198,13 +194,31 @@ User Read_User::read_User(int index_user)
     string address = j["User" + to_string(index_user)]["address"];
     int age = j["User" + to_string(index_user)]["age"];
     int num_member = j["User" + to_string(index_user)]["number member"];
-    vector <Travel> travels = read_Travels(index_user);
-    User buf(account, password, fullname, address, age, num_member,travels);
+    vector<Travel> travels = read_Travels(index_user);
+    User buf(account, password, fullname, address, age, num_member, travels);
     return buf;
 }
-vector <Travel> Read_User::read_Travels(int index_user)
+
+vector<Travel> Read_Travel::read_Travels()
 {
-    vector <Travel> travels;
+    vector<Travel> travels;
+    int count_travel = 0;
+    for (auto &item : j.items())
+    {
+        if (item.key().rfind("Travel", 0) == 0)
+        {
+            count_travel++;
+        }
+    }
+    for (int i = 0; i < count_travel; i++)
+    {
+        travels.push_back(read_Travel(i));
+    }
+    return travels;
+}
+vector<Travel> Read_User::read_Travels(int index_user)
+{
+    vector<Travel> travels;
     int count_travel = 0;
     for (auto &item : j["User" + to_string(index_user)].items())
     {
@@ -220,13 +234,36 @@ vector <Travel> Read_User::read_Travels(int index_user)
     }
     return travels;
 }
-
+Travel Read_Travel::read_Travel(int index_travel)
+{
+    vector<Hotel> hotels = read_Hotels(index_travel);
+    vector<Transport> transports = read_Transports(index_travel);
+    return Travel(hotels, transports);
+}
 Travel Read_User::read_Travel(int index_user, int index_travel)
 {
-    vector <Hotel> hotels = read_Hotels(index_user, index_travel);
-    vector <Transport> transports = read_Transports(index_user, index_travel);
+    vector<Hotel> hotels = read_Hotels(index_user, index_travel);
+    vector<Transport> transports = read_Transports(index_user, index_travel);
     return Travel(hotels, transports);
+}
 
+vector<Hotel> Read_Travel::read_Hotels(int index_travel)
+{
+    vector<Hotel> hotels;
+    int count_hotel = 0;
+    for (auto &item : j["Travel" + to_string(index_travel)].items())
+    {
+        if (item.key().rfind("Hotel", 0) == 0)
+        {
+            count_hotel++;
+        }
+    }
+    for (int i = 0; i < count_hotel; i++)
+    {
+        Hotel buf = read_Hotel(index_travel, i);
+        hotels.push_back(buf);
+    }
+    return hotels;
 }
 
 vector<Hotel> Read_User::read_Hotels(int index_user, int index_travel)
@@ -246,6 +283,27 @@ vector<Hotel> Read_User::read_Hotels(int index_user, int index_travel)
         hotels.push_back(buf);
     }
     return hotels;
+}
+
+vector<Transport> Read_Travel::read_Transports(int index_travel)
+{
+    vector<Transport> transports;
+    int count_transport = 0;
+    for (auto &item : j["Travel" + to_string(index_travel)].items())
+    {
+        if (item.key().rfind("Transport", 0) == 0)
+        {
+            count_transport++;
+        }
+    }
+
+    for (int i = 0; i < count_transport; i++)
+    {
+        Transport buf = read_Transport(index_travel, i);
+        transports.push_back(buf);
+    }
+
+    return transports;
 }
 
 vector<Transport> Read_User::read_Transports(int index_user, int index_travel)
@@ -268,6 +326,23 @@ vector<Transport> Read_User::read_Transports(int index_user, int index_travel)
 
     return transports;
 }
+
+Transport Read_Travel::read_Transport(int index_travel, int index_transport)
+{
+    string name, brand, from, destination;
+    int cost;
+    string time; // hh/mm/dd/yyyy;
+
+    name = j["Travel" + to_string(index_travel)]["Transport" + to_string(index_transport)]["name"];
+    brand = j["Travel" + to_string(index_travel)]["Transport" + to_string(index_transport)]["brand"];
+    from = j["Travel" + to_string(index_travel)]["Transport" + to_string(index_transport)]["from"];
+    destination = j["Travel" + to_string(index_travel)]["Transport" + to_string(index_transport)]["destination"];
+    cost = j["Travel" + to_string(index_travel)]["Transport" + to_string(index_transport)]["cost"];
+    time = j["Travel" + to_string(index_travel)]["Transport" + to_string(index_transport)]["time"];
+
+    Transport buf(name, brand, from, destination, cost, time);
+    return buf;
+}
 Transport Read_User::read_Transport(int index_user, int index_travel, int index_transport)
 {
     string name, brand, from, destination;
@@ -289,10 +364,36 @@ string Read_User::test(int index)
 {
     return j["User" + to_string(index)]["account"];
 }
+
+void Read_Travel::load_file()
+{
+    m_input >> j;
+}
+
 void Read_User::load_file()
 {
     m_input >> j;
 }
+
+Hotel Read_Travel::read_Hotel(int index_travel, int index_hotel)
+{
+    vector<Room> rooms;
+    Room room;
+    string name;
+    string address;
+    int total_cost = 0;
+
+    name = j["Travel" + to_string(index_travel)]["Hotel" + to_string(index_hotel)]["name"];
+    address = j["Travel" + to_string(index_travel)]["Hotel" + to_string(index_hotel)]["address"];
+    for (int i = 0; i < j["Travel" + to_string(index_travel)]["Hotel" + to_string(index_hotel)].size() - 3; i++)
+    {
+        room = read_Room(index_travel, index_hotel, i);
+        rooms.push_back(room);
+    }
+    Hotel buf(name, address, total_cost, rooms);
+    return buf;
+}
+
 Hotel Read_User::read_Hotel(int index_user, int index_travel, int index_hotel)
 {
     vector<Room> rooms;
@@ -312,6 +413,23 @@ Hotel Read_User::read_Hotel(int index_user, int index_travel, int index_hotel)
     Hotel buf(name, address, total_cost, rooms);
     return buf;
 }
+
+Room Read_Travel::read_Room(int index_travel, int index_hotel, int index_room)
+{
+    string name;
+    string startTime;
+    string endTime;
+    int cost;
+    string typeRoom;
+
+    name = j["Travel" + to_string(index_travel)]["Hotel" + to_string(index_hotel)]["Room" + to_string(index_room)]["name"];
+    startTime = j["Travel" + to_string(index_travel)]["Hotel" + to_string(index_hotel)]["Room" + to_string(index_room)]["start time"];
+    endTime = j["Travel" + to_string(index_travel)]["Hotel" + to_string(index_hotel)]["Room" + to_string(index_room)]["end time"];
+    cost = j["Travel" + to_string(index_travel)]["Hotel" + to_string(index_hotel)]["Room" + to_string(index_room)]["cost"];
+    typeRoom = j["Travel" + to_string(index_travel)]["Hotel" + to_string(index_hotel)]["Room" + to_string(index_room)]["type room"];
+    Room buf(name, startTime, endTime, typeRoom, cost);
+    return buf;
+}
 Room Read_User::read_Room(int index_user, int index_travel, int index_hotel, int index_room)
 {
     string name;
@@ -325,48 +443,51 @@ Room Read_User::read_Room(int index_user, int index_travel, int index_hotel, int
     endTime = j["User" + to_string(index_user)]["Travel" + to_string(index_travel)]["Hotel" + to_string(index_hotel)]["Room" + to_string(index_room)]["end time"];
     cost = j["User" + to_string(index_user)]["Travel" + to_string(index_travel)]["Hotel" + to_string(index_hotel)]["Room" + to_string(index_room)]["cost"];
     typeRoom = j["User" + to_string(index_user)]["Travel" + to_string(index_travel)]["Hotel" + to_string(index_hotel)]["Room" + to_string(index_room)]["type room"];
-    // buf.setStartTime(startTime);
-    // buf.setEndTime(endTime);
-    // buf.setCost(cost);
-    // buf.setTypeRoom(typeRoom);
-    // buf.setName(name);
     Room buf(name, startTime, endTime, typeRoom, cost);
     return buf;
 }
 
-int main()
-{
-    Read_User read("example.json");
-    Write_User write("write_ex.json");
-    vector<Room> rooms;
-    // Room buf[10];
-    vector<Hotel> hotels;
-    vector<Transport> transports;
-    vector<Travel> travels;
-    vector<User> users;
-    int num = 2;
-    // Room room;
+// int main()
+// {
+//     Read_Travel read("write_travel.json");
+//     // Write_Travel write("write_travel.json");
+//     vector<Room> rooms;
+//     vector<Hotel> hotels;
+//     vector<Transport> transports;
+//     vector<Travel> travels;
+//     vector<User> users;
+//     int num = 2;
 
-    // fstream read1("example.json", ios ::in);
-    // json j;
-    // read1 >> j;
-    // int count_hotel = 0;
-    // for (auto &item : j["User0"]["Travel0"].items())
-    // {
-    //     if (item.key().rfind("Hotel", 0) == 0)
-    //     { // Kiểm tra xem khóa có bắt đầu bằng "Hotel" không
-    //         count_hotel++;
-    //     }
-    // // }
-    // cout << count_hotel;
-    read.load_file();
-    
-    users=read.read_Users();
-    cout << users[1].getAccount();
+//     // Write
+//     // for (int i = 0; i < num; i++)
+//     // {
+//     //     Room room("10" + to_string(i), "10/10/12/2024", "15/10/12/2024", "Vip" + to_string(i), 1000 + i);
+//     //     rooms.push_back(room);
+//     // }
 
-    // Hotel hotel=read.read_Hotel(0,0,0);
-    // cout << hotel.getName();
-    // Room room = read.read_Room(0, 0, 0, 0);
-    // cout << room.getName() << endl;
-    // cout << read.test(0);
-}
+//     // for (int i = 0; i < num; i++)
+//     // {
+//     //     Hotel hotel("10"+to_string(i), "10/10/12/2024", 1000+i, rooms);
+//     //     hotels.push_back(hotel);
+//     // }
+
+//     // for(int i = 0; i < num; i++)
+//     // {
+//     //     Transport transport("Flight"+to_string(i),"Vietnam Airlines","Ha Noi","Hai Phong",1000+i, "10/15/12/2024");
+//     //     transports.push_back(transport);
+//     // }
+
+//     // for(int i = 0; i < num; i++)
+//     // {
+//     //     Travel travel(hotels, transports);
+//     //     travels.push_back(travel);
+//     // }
+
+//     // write.write_Travels(travels);
+//     // write.pushfile();
+
+//     //Read
+//     read.load_file();
+//     travels = read.read_Travels();
+//    travels[1].showTravelInfo();
+// }

@@ -5,6 +5,7 @@
 #include "Travel.h"
 #include "User.h"
 #include <iomanip>
+#include "File.h"
 bool checkAccountAdmin(const string &s){
     return s == "admin";
 }
@@ -14,6 +15,15 @@ int main()
     Admin &admin = Admin::getInstance();
     vector<User> users;
     vector<Travel> travels;
+
+    //Load data from files
+    Read_User read_user("user_database.json");
+    Read_Service read_service("service_database.json");
+    users=read_user.read_Users();
+    travels=read_service.read_Travels();
+    read_user.~Read_User();
+    read_service.~Read_Service();
+
     vector<Room> rooms;
     User *user = nullptr;
     User u1;

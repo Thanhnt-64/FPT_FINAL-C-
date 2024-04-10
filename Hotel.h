@@ -19,13 +19,14 @@ class Hotel{
     Hotel operator=(const Hotel& obj);
     void showRoomInfo();
     void showRoomInfoBooked();
+    //get data
     string getName();
     string getAddress();
     int getTotalCost();
     vector<Room>& getRooms();
-    void setName();
-    void setAddress();
-    void setTotalCost();
-    bool validateString(string &);
+    void setName();//input name
+    void setAddress();//input adress
+    void setTotalCost();//input adress
+    bool validateString(string &); //validate input data
 };
 #endif // HOTEL_H

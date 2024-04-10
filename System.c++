@@ -1,9 +1,9 @@
 #include "System.h"
-
+#include "File.h"
 User* System::logInAccount(vector<User> &users, User &u1){
-    cout << "Enter user_name and password: " << endl;
-    cout << "Account: ";  u1.inputAccount();
-    cout << "Password: "; u1.inputPassword();
+    cout << setw(20) << "Enter user_name and password: " << endl;
+    cout << setw(20) << "Account: ";  u1.inputAccount();
+    cout << setw(20) << "Password: "; u1.inputPassword();
     if(searchAccount(users, u1.getAccount()) && searchPassword(users, u1.getPassword())){
         for(int i = 0; i < users.size(); i++){
             if(users[i].getAccount() == u1.getAccount()){
@@ -16,13 +16,13 @@ User* System::logInAccount(vector<User> &users, User &u1){
 void System::logInAccount(){
     string passsword;
     while(1){
-        cout << "Enter admin password: ";
+        cout << setw(20) << "Enter admin password: ";
         getline(cin, passsword);
         if(passsword == "Amin1234@"){
             break;
         }
         else{
-            cout << "Wrong password!" << endl;
+            cout << setw(20) << "Wrong password!" << endl;
         }
     }
 }
@@ -31,12 +31,12 @@ User* System::registerAccount(vector<User> &users, User &u1){
         cout << setw(10) << "user_name: ";
         u1.inputAccount();
         if(doubleCheckAccount(users, u1.getAccount())){
-            cout << "This account is exited before!\n";
-            cout << "Please re-enter your account!\n";
+            cout << setw(20) << "This account is exited before!\n";
+            cout << setw(20) << "Please re-enter your account!\n";
         }
         if(validateAccount(u1.getAccount()) == false){ // them check double
-            cout << "The account name is not in the correct format\n";
-            cout << "Please re-enter your account!\n";
+            cout << setw(20) << "The account name is not in the correct format\n";
+            cout << setw(20) << "Please re-enter your account!\n";
         }
         else{
             break;
@@ -46,7 +46,7 @@ User* System::registerAccount(vector<User> &users, User &u1){
         cout << setw(11) << "password: ";
         u1.inputPassword();
         if(validatePassword(u1.getPassword()) == false){
-            cout << "Please re-enter your account!\n";
+            cout << setw(20) << "Please re-enter your account!\n";
         }
         else{
             break;
@@ -75,13 +75,13 @@ void System::signOut(){
     
 }
 void System::searchRoomByPlace(vector<Travel> &travels){
-    cout << "Enter your place, which you want to search: " << endl;
+    cout << setw(20) << "Enter your place, which you want to search: " << endl;
     string place; getline(cin, place);
     for(int i = 0; i < travels.size(); i++){
         if(travels[i].getPlace() != place){
             continue;
         }
-        cout << "In the " << place << " we have some rooms: " << endl;
+        cout << setw(20) << "In the " << place << " we have some rooms: " << endl;
         for(int j = 0; j < travels[i].getHotel().size(); j++){
             cout << setw(20) << j+1 << ". " << travels[i].getHotel()[j].getName() << endl;
             for(int k = 0; k < travels[i].getHotel()[j].getRooms().size(); k++){
@@ -91,28 +91,47 @@ void System::searchRoomByPlace(vector<Travel> &travels){
         }
         return;
     }
-    cout << "We are updating new infomation for this place!\n";
-    cout << "You can choose some similar places!\n";
+    cout << setw(20) << "We are updating new infomation for this place!\n";
+    cout << setw(20) << "You can choose some similar places!\n";
 }
     
 void System::searchVehicleByPlace(vector<Travel> &travels){
-    cout << "Enter your place, which you want to search: " << endl;
+    cout << setw(20) << "Enter your place, which you want to search: " << endl;
     string place; getline(cin, place);
     for(int i = 0; i < travels.size(); i++){
         if(travels[i].getPlace() != place){
             continue;
         }
-        cout << "In the " << place << " we have some vehicles: " << endl;
+        cout << setw(20) << "In the " << place << " we have some vehicles: " << endl;
         for(int j = 0; j < travels[i].getTransport().size(); j++){
             cout << setw(20) << j  << travels[i].getTransport()[j].get_name() << endl;
         }
         return;
     }
-    cout << "We are updating new infomation for this place!\n";
-    cout << "You can choose some similar places!\n";
+    cout << setw(20) << "We are updating new infomation for this place!\n";
+    cout << setw(20) << "You can choose some similar places!\n";
+}
+
+void System::searchByPlace(vector<Travel> &travels){
+    int choose;
+    cout << setw(20) << "1. Search room by place" << endl;
+    cout << setw(20) << "2. Search vehicle by place" << endl;
+    cout << setw(20) << "Enter your choose: 1-2:__";
+    cin >> choose; cin.ignore();
+    system("cls");
+    switch(choose){
+        case 1:
+            searchRoomByPlace(travels);
+            break;
+        case 2:
+            searchVehicleByPlace(travels);
+            break;
+        default:
+            break;
+    }
 }
 void System::listPlace(vector<Travel> &travels){
-    cout << setw(20) <<"Our system support the following places: " << endl;
+    cout << setw(20) << "Our system support the following places: " << endl;
     for(int i = 0; i < travels.size(); i++){
         cout << setw(20) << i+1 << travels[i].getPlace() << endl;
     }
@@ -132,7 +151,7 @@ bool System::validatePassword(const string &s){
     int numUpper = 0;
     int numSpecial = 0;
     if(s.length() < 8){
-        cout << "Password length is at least 8 characters\n";
+        cout<< setw(20) << "Password length is at least 8 characters\n";
         return false;
     }
     for(auto i:s){
@@ -152,7 +171,7 @@ bool System::validatePassword(const string &s){
     if(numNums && numUpper && numLower &&numSpecial){
         return true;
     }
-    cout << "Password includes an uppercase, lowercase, number, and special character (! # $ % & @)!!\n";
+    cout << setw(20) << "Password includes an uppercase, lowercase, number, and special character (! # $ % & @)!!\n";
     return false;    
 }
 bool System::validateName(const string &s){
@@ -161,7 +180,7 @@ bool System::validateName(const string &s){
             continue;
         }
         if((i < 65 || (i > 90 && i < 97) || i > 122)){
-            cout << "Invalid name!\n";
+            cout << setw(20) << "Invalid name!\n";
             return false;
         }
     }
@@ -188,11 +207,12 @@ bool System::doubleCheckAccount(vector<User> &users, const string &s){
 void showChangeUserSwitch(vector<User> &users){
     Admin &admin = Admin::getInstance();
     int choose;
-    cout << "1. Show Information" << endl;
-    cout << "2. Change Information" << endl;
-    cout << "3. Delete a specific user" << endl;
-    cout << "Enter your choose: 1-3:__";
+    cout << setw(20) << "1. Show Information" << endl;
+    cout << setw(20) << "2. Change Information" << endl;
+    cout << setw(20) << "3. Delete a specific user" << endl;
+    cout << setw(20) << "Enter your choose: 1-3:__";
     cin >> choose; cin.ignore();
+    system("cls");
     switch (choose)
     {
     case 1:
@@ -205,7 +225,7 @@ void showChangeUserSwitch(vector<User> &users){
         admin.deleteAccountUser(users);
         break;
     default:
-        cout << "Choose wrong, Enter again!" << endl;
+        cout << setw(20) << "Choose wrong, Enter again!" << endl;
         break;
     }
 }
@@ -213,11 +233,12 @@ void showChangeUserSwitch(vector<User> &users){
 void showChangeServiceSwitch(vector<Travel> &travels){
     Admin &admin = Admin::getInstance();
     int choose;
-    cout << "1. Show Information" << endl;
-    cout << "2. Change Transport Information" << endl;
-    cout << "3. Change Room Information" << endl;
-    cout << "Enter your choose: 1-3:__";
+    cout << setw(20) << "1. Show Information" << endl;
+    cout << setw(20) << "2. Change Transport Information" << endl;
+    cout << setw(20) << "3. Change Room Information" << endl;
+    cout << setw(20) << "Enter your choose: 1-3:__";
     cin >> choose; cin.ignore();
+    system("cls");
     switch (choose)
     {
     case 1:
@@ -256,11 +277,21 @@ void System::runAdmin(vector<Travel> &travels, vector<User> &users){
                 showChangeServiceSwitch(travels);
                 break;
             case 3:
-                
+                searchByPlace(travels);
                 break;
             case 4:
+                listPlace(travels);
+                sortWithCost(travels, 0, travels.size() - 1);
                 break;
             case 5:
+                cout << setw(20) << "Do you want to load and save data? 1-2__: \n1. Load data\n2. Save data\n";
+                cin >> choose; cin.ignore();
+                if(choose == 1){
+                    admin.loadData(users, travels);
+                }
+                if(choose == 2){
+                    admin.saveData(users, travels);
+                }
                 break;
             default:
                 cout << "Choose wrong, Enter again!" << endl;
@@ -269,51 +300,60 @@ void System::runAdmin(vector<Travel> &travels, vector<User> &users){
     }
 }
 
-static int partitionInt(vector<int> &m_list, int low, int high){
-    int pivot = m_list[high];
+static int partitionInt(vector<Travel> &travels, int low, int high){
+    int pivot = travels[high].getTravelCost();
     int left = low;
     int right = high - 1;
     while(true){
-        while(left <= right && m_list[left] < pivot) left++;
-        while(left <= right && m_list[right] > pivot) right--;
+        while(left <= right && travels[left].getTravelCost() < pivot) left++;
+        while(left <= right && travels[right].getTravelCost() > pivot) right--;
         if(left >= right) break;
-        swap(m_list[left], m_list[right]);
+        swap(travels[left], travels[right]);
         left++;
         right--;
     }
-    swap(m_list[left], m_list[high]);
+    swap(travels[left], travels[high]);
     return left;
 }
 
-void sortWithCost(vector<int> &m_list, int low, int high){
+void sortWithCost(vector<Travel> &travels, int low, int high){
     if(low < high){
-        int pi = partitionInt(m_list, low, high);
-        sortWithCost(m_list, low, pi - 1);
-        sortWithCost(m_list, pi + 1, high);
+        int pi = partitionInt(travels, low, high);
+        sortWithCost(travels, low, pi - 1);
+        sortWithCost(travels, pi + 1, high);
     }
 }
 
-
-static int parition(vector<float> &m_list, int low, int high){
-    float pivot = m_list[high];
+static vector<Transport>& getAllTransport(vector<Travel> &travels){
+    static vector<Transport> allTransport;
+    allTransport.clear();
+    for(int i = 0; i < travels.size(); i++){
+        for(int j = 0; j < travels[i].getTransport().size(); j++){
+            allTransport.push_back(travels[i].getTransport()[j]);
+        }
+    }
+    return allTransport;
+}
+static int paritionTime(vector<Travel> &travels, int low, int high){
+    Transport pivot = travels[high].getTransport()[0];
     int left = low;
     int right = high - 1;
     while(true){
-        while(left <= right && m_list[left] < pivot) left++;
-        while(left <= right && m_list[right] > pivot) right--;
+        while(left <= right && travels[left].getTransport()[0] < pivot) left++;
+        while(left <= right && travels[right].getTransport()[0] > pivot) right--;
         if(left >= right) break;
-        swap(m_list[left], m_list[right]);
+        swap(travels[left], travels[right]);
         left++;
         right--;
     }
-    swap(m_list[left], m_list[high]);
+    swap(travels[left], travels[high]);
     return left;
 }
-void sortWithTime(vector<float> &m_list, int low, int high){
+void sortWithTime(vector<Travel> &travels, int low, int high){
     if(low < high){
-        int pi = parition(m_list, low, high);
-        sortWithTime(m_list, low, pi - 1);
-        sortWithTime(m_list, pi + 1, high);
+        int pi = paritionTime(travels, low, high);
+        sortWithTime(travels, low, pi - 1);
+        sortWithTime(travels, pi + 1, high);
     }
 }
 
