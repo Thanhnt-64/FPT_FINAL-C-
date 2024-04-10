@@ -280,7 +280,8 @@ void System::runAdmin(vector<Travel> &travels, vector<User> &users){
                 searchByPlace(travels);
                 break;
             case 4:
-
+                listPlace(travels);
+                sortWithCost(travels, 0, travels.size() - 1);
                 break;
             case 5:
                 break;
@@ -315,27 +316,36 @@ void sortWithCost(vector<Travel> &travels, int low, int high){
     }
 }
 
-
-static int parition(vector<float> &m_list, int low, int high){
-    float pivot = m_list[high];
+static vector<Transport>& getAllTransport(vector<Travel> &travels){
+    static vector<Transport> allTransport;
+    allTransport.clear();
+    for(int i = 0; i < travels.size(); i++){
+        for(int j = 0; j < travels[i].getTransport().size(); j++){
+            allTransport.push_back(travels[i].getTransport()[j]);
+        }
+    }
+    return allTransport;
+}
+static int paritionTime(vector<Travel> &travels, int low, int high){
+    Transport pivot = travels[high].getTransport()[0];
     int left = low;
     int right = high - 1;
     while(true){
-        while(left <= right && m_list[left] < pivot) left++;
-        while(left <= right && m_list[right] > pivot) right--;
+        while(left <= right && travels[left].getTransport()[0] < pivot) left++;
+        while(left <= right && travels[right].getTransport()[0] > pivot) right--;
         if(left >= right) break;
-        swap(m_list[left], m_list[right]);
+        swap(travels[left], travels[right]);
         left++;
         right--;
     }
-    swap(m_list[left], m_list[high]);
+    swap(travels[left], travels[high]);
     return left;
 }
-void sortWithTime(vector<float> &m_list, int low, int high){
+void sortWithTime(vector<Travel> &travels, int low, int high){
     if(low < high){
-        int pi = parition(m_list, low, high);
-        sortWithTime(m_list, low, pi - 1);
-        sortWithTime(m_list, pi + 1, high);
+        int pi = paritionTime(travels, low, high);
+        sortWithTime(travels, low, pi - 1);
+        sortWithTime(travels, pi + 1, high);
     }
 }
 
