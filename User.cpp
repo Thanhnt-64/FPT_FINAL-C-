@@ -9,7 +9,7 @@ void User::changeInfo()
     cout << "4. Change address" << endl;
     cout << "5. Back" << endl;
     cout << "Enter your choice: ";
-    cin >> choice;
+    cin >> choice; cin.ignore();
     switch (choice)
     {
     case 1:

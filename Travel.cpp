@@ -2,12 +2,12 @@
 
 void Travel::showTravelInfo()
 {
-    for (int i=0;i<hotels.size();i++)
+    for (int i = 0; i < hotels.size(); i++)
     {
         cout << i + 1 << ". ";
         hotels[i].showRoomInfoBooked();
     }
-    for (int i=0;i<transports.size();i++)
+    for (int i = 0; i < transports.size(); i++)
     {
         cout << i + 1 << ". ";
         transports[i].output();
@@ -15,20 +15,15 @@ void Travel::showTravelInfo()
     }
 }
 
-vector<Hotel>& Travel::getHotel()
+vector<Hotel> &Travel::getHotel()
 {
     return hotels;
 }
 
-vector<Transport>& Travel::getTransport()
+vector<Transport> &Travel::getTransport()
 {
     return transports;
 }
 
-
-Travel ::Travel(vector <Hotel> hotels,vector <Transport> trans)
-:transports(trans),hotels(hotels)
-{}
-
-
-
+Travel::Travel(vector<Hotel> hotels, vector<Transport> trans, string namePlace, int travelCost)
+    : hotels(hotels), transports(trans), namePlace(namePlace), travelCost(travelCost) {}

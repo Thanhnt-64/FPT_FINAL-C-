@@ -22,8 +22,9 @@ int main()
     read_service.load_file(); 
     
     users=read_user.read_Users();
+    // cout << "error" << endl;
     travels=read_service.read_Travels();
-    cout << "error" << endl;
+    
     read_user.~Read_User();
     read_service.~Read_Service();
 
