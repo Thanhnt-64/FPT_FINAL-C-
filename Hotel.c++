@@ -1,4 +1,4 @@
-#include <Hotel.h>
+#include "Hotel.h"
 
 void Hotel::showRoomInfo()
 {
@@ -70,3 +70,72 @@ vector <Room>& Hotel::getRooms()
 {
     return rooms;
 }
+<<<<<<< HEAD
+bool Hotel::validateString(string &s){
+    while(1){
+        getline(cin, s);
+	    for (int i = 0; i < s.length(); i++) {
+            if(s[i] == ' '){
+                if(i==s.length()-1){
+                     return true;
+                }
+                continue;
+            }
+		    if ((s[i] >= 'A' && s[i] <= 'Z') || (s[i] >= 'a' && s[i] <= 'z') || (s[i] >= '0' && s[i] <= '9')) {
+			    if (i == s.length() - 1) {
+		    		return true;
+			    }
+	    	}
+            else{
+                return false;
+            }   
+        } 
+        return false;	
+        }
+}
+void Hotel::setName(){
+    cout<<"Input again Name: ";
+    while(1){
+        if(validateString(name)){
+            break;
+        }
+        else{
+            cout<<"Input again Name: ";
+        }
+    }
+}
+
+void Hotel::setAddress(){
+    cout<<"Input again Adress: ";
+    while(1){
+        if(validateString(address)){
+            break;
+        }
+        else{
+            cout<<"Input again Adress: ";
+        }
+    }
+}
+
+void Hotel::setTotalCost(){
+    cout<<"Input Cost: ";
+    while(1){
+        if(cin>>total_cost){
+			cin.ignore();
+            break;
+
+        }
+        else{
+            cout<<"Input again Cost: ";
+            cin.clear(); // Xóa cờ lỗi
+            cin.ignore(numeric_limits<std::streamsize>::max(), '\n'); // Xóa bộ nhớ đệm
+        }
+    }
+}
+=======
+
+Hotel ::Hotel(string name,string address,int cost,vector<Room> rooms)
+    : name{name},address{address},total_cost{cost},rooms{rooms}
+    {
+    }
+>>>>>>> ThanhTK

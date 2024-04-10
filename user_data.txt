@@ -1,10 +1,10 @@
 #User1
-    account
-    password
-    fullName
-    address
-    age
-    numMember
+account
+password
+fullName
+address
+age
+numMember
     #Travel1
         #Hotel1
         name

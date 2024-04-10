@@ -4,6 +4,8 @@
 #include <vector>
 #include <iomanip>
 #include "Room.h"
+#include <string>
+#include <limits>
 using namespace std;
 
 class Hotel{
@@ -12,6 +14,8 @@ class Hotel{
     string address;
     int total_cost;
     public:
+    Hotel(){}
+    Hotel(string, string, int=0, vector<Room> = {});
     Hotel operator=(const Hotel& obj);
     void showRoomInfo();
     void showRoomInfoBooked();
@@ -22,5 +26,6 @@ class Hotel{
     void setName();
     void setAddress();
     void setTotalCost();
+    bool validateString(string &);
 };
 #endif // HOTEL_H

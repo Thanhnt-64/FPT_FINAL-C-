@@ -4,10 +4,12 @@ void Travel::showTravelInfo()
 {
     for (int i=0;i<hotels.size();i++)
     {
+        cout << i + 1 << ". ";
         hotels[i].showRoomInfoBooked();
     }
     for (int i=0;i<transports.size();i++)
     {
+        cout << i + 1 << ". ";
         transports[i].output();
         cout << endl;
     }
@@ -24,7 +26,9 @@ vector<Transport>& Travel::getTransport()
 }
 
 
-
+Travel ::Travel(vector <Hotel> hotels,vector <Transport> trans)
+:transports(trans),hotels(hotels)
+{}
 
 
 
