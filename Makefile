@@ -3,24 +3,24 @@ build: main.exe
 main.exe: main.o sys.o user.o admin.o hotel.o room.o travel.o trans.o file.o
 	g++ -o main.exe main.o sys.o user.o admin.o hotel.o room.o travel.o trans.o file.o
 
-main.o: main.c++
-	g++ -c main.c++ -o main.o
-sys.o: System.c++
-	g++ -c System.c++ -o sys.o
-user.o:	User.c++
-	g++ -c User.c++ -o user.o
-admin.o: Admin.c++
-	g++ -c Admin.c++ -o admin.o
-hotel.o: Hotel.c++
-	g++ -c Hotel.c++ -o hotel.o
-room.o: Room.c++
-	g++ -c Room.c++ -o room.o
-travel.o: Travel.c++
-	g++ -c Travel.c++ -o travel.o
-trans.o: Transport.c++
-	g++ -c Travel.c++ -o trans.o
-file.o: File.c++
-	g++ -c File.c++ -o file.o
+main.o: main.cpp
+	g++ -c main.cpp -o main.o
+sys.o: System.cpp
+	g++ -c System.cpp -o sys.o
+user.o:	User.cpp
+	g++ -c User.cpp -o user.o
+admin.o: Admin.cpp
+	g++ -c Admin.cpp -o admin.o
+hotel.o: Hotel.cpp
+	g++ -c Hotel.cpp -o hotel.o
+room.o: Room.cpp
+	g++ -c Room.cpp -o room.o
+travel.o: Travel.cpp
+	g++ -c Travel.cpp -o travel.o
+trans.o: Transport.cpp
+	g++ -c Transport.cpp -o trans.o
+file.o: File.cpp
+	g++ -c File.cpp -o file.o
 
 clean:
 	rm -f *.o

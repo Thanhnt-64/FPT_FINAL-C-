@@ -461,76 +461,76 @@ Room Read_User::read_Room(int index_user, int index_travel, int index_hotel, int
     return buf;
 }
 
-int main()
-{
-    Read_Travel read("database_service.json");
-    // Write_Travel write("database_service.json");
-    vector<Room> rooms;
-    vector<Hotel> hotels;
-    vector<Transport> transports;
-    vector<Travel> travels;
-    vector<User> users;
-    int num = 2;
-    int num_user = 10;
-    int num_travel = 1;
-    int num_hotel = 1;
-    int num_room = 1;
-    int num_transport = 1;
-    //Read
-    read.load_file();
-    travels=read.read_Travels();
-    //  users[0].getAccount();
-    //  hotel = read.read_Hotel(0,0,0);
-    cout << travels[1].getPlace();
+// int main()
+// {
+//     Read_Travel read("database_service.json");
+//     // Write_Travel write("database_service.json");
+//     vector<Room> rooms;
+//     vector<Hotel> hotels;
+//     vector<Transport> transports;
+//     vector<Travel> travels;
+//     vector<User> users;
+//     int num = 2;
+//     int num_user = 10;
+//     int num_travel = 1;
+//     int num_hotel = 1;
+//     int num_room = 1;
+//     int num_transport = 1;
+//     //Read
+//     read.load_file();
+//     travels=read.read_Travels();
+//     //  users[0].getAccount();
+//     //  hotel = read.read_Hotel(0,0,0);
+//     cout << travels[1].getPlace();
 
-    // Write
-    // for (int i = 0; i < num_room; i++)
-    // {
-    //     Room room("10" + to_string(i), "10/10/12/2024", "15/10/12/2024", "Vip" + to_string(i), 1000 + i);
-    //     rooms.push_back(room);
-    // }
+//     // Write
+//     // for (int i = 0; i < num_room; i++)
+//     // {
+//     //     Room room("10" + to_string(i), "10/10/12/2024", "15/10/12/2024", "Vip" + to_string(i), 1000 + i);
+//     //     rooms.push_back(room);
+//     // }
 
-    // for (int i = 0; i < num_hotel; i++)
-    // {
-    //     Hotel hotel("10" + to_string(i), "10/10/12/2024", 1000 + i, rooms);
-    //     hotels.push_back(hotel);
-    // }
+//     // for (int i = 0; i < num_hotel; i++)
+//     // {
+//     //     Hotel hotel("10" + to_string(i), "10/10/12/2024", 1000 + i, rooms);
+//     //     hotels.push_back(hotel);
+//     // }
 
-    // for (int i = 0; i < num_transport; i++)
-    // {
-    //     Transport transport("Flight" + to_string(i), "Vietnam Airlines", "Ha Noi", "Hai Phong", 1000 + i, "10/15/12/2024");
-    //     transports.push_back(transport);
-    // }
+//     // for (int i = 0; i < num_transport; i++)
+//     // {
+//     //     Transport transport("Flight" + to_string(i), "Vietnam Airlines", "Ha Noi", "Hai Phong", 1000 + i, "10/15/12/2024");
+//     //     transports.push_back(transport);
+//     // }
 
-    // for (int i = 0; i < num_travel; i++)
-    // {
-    //     Travel travel(hotels, transports);
-    //     travels.push_back(travel);
-    // }
+//     // for (int i = 0; i < num_travel; i++)
+//     // {
+//     //     Travel travel(hotels, transports);
+//     //     travels.push_back(travel);
+//     // }
 
-    // for (int i = 0; i < num_user; i++)
-    // {
-    //     for (int j = 0; j < num_travel; j++)
-    //     {
-    //         for (int k = 0; k < num_hotel; k++)
-    //         {
-    //             for (int l = 0; l < num_room; l++)
-    //             {
-    //                 Room room("10" + to_string(i) + to_string(j) + to_string(k) + to_string(l), "10/10/12/2024", "15/10/12/2024", "Vip" + to_string(i) + to_string(j) + to_string(k) + to_string(l), 1000);
-    //                 rooms.push_back(room);
-    //             }
-    //             Hotel hotel("Rose" + to_string(i) + to_string(j) + to_string(k), "HaiPhong", 1000, rooms);
-    //             hotels.push_back(hotel);
-    //             Transport transport("Flight" + to_string(i)+ to_string(j) + to_string(k), "Vietnam Airlines"+ to_string(i)+ to_string(j) + to_string(k), "Ha Noi"+ to_string(i)+ to_string(j) + to_string(k), "Hai Phong"
-    //             , 1000 , "10/15/12/2024");
-    //             transports.push_back(transport);
-    //         }
-    //         Travel travel(hotels, transports,"Hai Phong", 1000);
-    //         travels.push_back(travel);
-    //     }
-    //     User user("ThanhTK" + to_string(i), "123456", "Thanh Truong " + to_string(i),"9"+to_string(i)+ " Ngo Tu Do", 20+i,i+1,travels);
-    //     users.push_back(user);
-    // }
-    // write.write_Travels(travels);
-    // write.pushfile();
-}
+//     // for (int i = 0; i < num_user; i++)
+//     // {
+//     //     for (int j = 0; j < num_travel; j++)
+//     //     {
+//     //         for (int k = 0; k < num_hotel; k++)
+//     //         {
+//     //             for (int l = 0; l < num_room; l++)
+//     //             {
+//     //                 Room room("10" + to_string(i) + to_string(j) + to_string(k) + to_string(l), "10/10/12/2024", "15/10/12/2024", "Vip" + to_string(i) + to_string(j) + to_string(k) + to_string(l), 1000);
+//     //                 rooms.push_back(room);
+//     //             }
+//     //             Hotel hotel("Rose" + to_string(i) + to_string(j) + to_string(k), "HaiPhong", 1000, rooms);
+//     //             hotels.push_back(hotel);
+//     //             Transport transport("Flight" + to_string(i)+ to_string(j) + to_string(k), "Vietnam Airlines"+ to_string(i)+ to_string(j) + to_string(k), "Ha Noi"+ to_string(i)+ to_string(j) + to_string(k), "Hai Phong"
+//     //             , 1000 , "10/15/12/2024");
+//     //             transports.push_back(transport);
+//     //         }
+//     //         Travel travel(hotels, transports,"Hai Phong", 1000);
+//     //         travels.push_back(travel);
+//     //     }
+//     //     User user("ThanhTK" + to_string(i), "123456", "Thanh Truong " + to_string(i),"9"+to_string(i)+ " Ngo Tu Do", 20+i,i+1,travels);
+//     //     users.push_back(user);
+//     // }
+//     // write.write_Travels(travels);
+//     // write.pushfile();
+// }

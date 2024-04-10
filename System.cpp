@@ -139,7 +139,7 @@ void System::listPlace(vector<Travel> &travels){
     cout << setw(20) << "Our system support the following places: " << endl;
     for(int i = 0; i < travels.size(); i++){
         cout << setw(20) << i+1 << travels[i].getPlace() << endl;
-        travels[i].showTravelInfo();
+        
     }
     cout << "__________________________________________________\n";
 }
@@ -310,20 +310,20 @@ void System::runAdmin(vector<Travel> &travels, vector<User> &users){
 }
 
 void sortTravel(vector<Travel> &travels){
-    if (travels.empty()) {
-        cout << "No travels to sort." << endl;
-        return;
-    }
-    for(int i = 0; i < travels.size(); i++){
-        vector<Hotel> &hotel = travels[i].getHotel();
-        vector<Transport> &transports = travels[i].getTransport();
-        if(!hotel.empty()){
-            sortWithCost(hotel, 0, (hotel.size() - 1));
-        }
-        if(transports.empty()){
-            sortWithTime(transports, 0, (transports.size() - 1));
-        }
-    }
+    // if (travels.empty()) {
+    //     cout << "No travels to sort." << endl;
+    //     return;
+    // }
+    // for(int i = 0; i < travels.size(); i++){
+    //     vector<Hotel> &hotel = travels[i].getHotel();
+    //     vector<Transport> &transports = travels[i].getTransport();
+    //     if(!hotel.empty()){
+    //         sortWithCost(hotel, 0, (hotel.size() - 1));
+    //     }
+    //     if(transports.empty()){
+    //         sortWithTime(transports, 0, (transports.size() - 1));
+    //     }
+    // }
 }
 void System::run(vector<Travel> &travels, User *user){
     while(1){
@@ -339,7 +339,9 @@ void System::run(vector<Travel> &travels, User *user){
         cin >> choose; cin.ignore();
         system("cls");
         switch(choose){
-            case 0: return;
+            case 0: 
+                system("cls");
+                return;
             case 1:
                 user->changeInfo();
                 break;
