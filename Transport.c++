@@ -11,34 +11,6 @@ void Transport::input()
 	cout << "Input Destination: ";
 	validate_destination(destination); // chứa kí tự từ A->z và chứa cả dấu cách ,không chứa các kí tự đặc biệt
 	cout << "Input Time(hh/dd/mm/yyyy): ";
-<<<<<<< HEAD
-	validate_time(time);
-    cout<<"Input Cost: ";
-    validate_cost(cost);
-}
-void Transport::validate_cost(int &a){
-    while(1){
-        if(cin>>a){
-			cin.ignore();
-            break;
-
-        }
-        else{
-            cout<<"Input Cost: ";
-            cin.clear(); // Xóa cờ lỗi
-            cin.ignore(numeric_limits<std::streamsize>::max(), '\n'); // Xóa bộ nhớ đệm
-        }
-    }
-}
-void Transport::validate_time(string &t) {
-	while (1) {
-		getline(cin, t);
-		if (t.length() != 13) {
-			cout << "Input Time" << endl;
-			continue;
-		}
-		if (t[2] != '/' || t[5] != '/' || t[8] != '/') {
-=======
 	validate_time();
 	cout << "Input Cost: ";
 	validate_cost();
@@ -71,37 +43,25 @@ void Transport::validate_time()
 		}
 		if (time[2] != '/' || time[5] != '/' || time[8] != '/')
 		{
->>>>>>> ThanhTK
 			cout << "Input Time: ";
 			continue;
 		}
 
-<<<<<<< HEAD
-		for (int i = 0; i < t.length(); i++) {
-			if (i != 2 || i != 5 || i != 8) {
-				if (t[i] < '0' || t[i]>'9') {
-=======
 		for (int i = 0; i < time.length(); i++)
 		{
 			if (i != 2 || i != 5 || i != 8)
 			{
 				if (time[i] < '0' || time[i] > '9')
 				{
->>>>>>> ThanhTK
 					break;
 				}
 			}
 		}
 		int sum = 0, temp1 = 1, count = 0;
-<<<<<<< HEAD
-		for (int i = t.length() - 1; i >= 0; i--) {
-			if (t[i] == '/') {
-=======
 		for (int i = time.length() - 1; i >= 0; i--)
 		{
 			if (time[i] == '/')
 			{
->>>>>>> ThanhTK
 				count++;
 				if (count == 1)
 				{

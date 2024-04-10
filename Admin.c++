@@ -146,7 +146,8 @@ void Admin::viewServiceInfo(vector<Travel> &travels)
     }
 }
 
-void Admin::addService(vector<Travel>& travels) {
+void Admin::addService(vector<Travel>& travels)
+{
     string place;
     cout << "Enter place for the new service: ";
     getline(cin, place);
@@ -165,7 +166,80 @@ void Admin::addService(vector<Travel>& travels) {
     {
         Travel newLocation;
         newLocation.setPlace(place);
-        
+        /* Add Hotels service */
+        vector<Hotel> hotelList;
+        int numHotels;
+        cout << "Enter number of hotels: ";
+        cin >> numHotels;
+        cin.ignore();
+        for (int i = 0; i < numHotels; ++i)
+        {
+            string name, address;
+            int totalCost;
+            cout << "Enter hotel name: ";
+            getline(cin, name);
+            cout << "Enter hotel address: ";
+            getline(cin, address);
+            cout << "Enter total cost: ";
+            cin >> totalCost;
+            cin.ignore();
+            Hotel newHotel(name, address, totalCost);
+            vector<Room> rooms;
+            int numRooms;
+            cout << "Enter number of rooms for " << name << ": ";
+            cin >> numRooms;
+            cin.ignore();
+            for (int j = 0; j < numRooms; ++j)
+            {
+                string roomName, startTime, endTime, typeRoom;
+                int cost;
+                cout << "Enter room name: ";
+                getline(cin, roomName);
+                cout << "Enter start time: ";
+                getline(cin, startTime);
+                cout << "Enter end time: ";
+                getline(cin, endTime);
+                cout << "Enter type of room: ";
+                getline(cin, typeRoom);
+                cout << "Enter cost: ";
+                cin >> cost;
+                cin.ignore();
+                Room newRoom(roomName, startTime, endTime, typeRoom, cost);
+                rooms.push_back(newRoom);
+            }
+            newHotel.setRooms(rooms);
+            hotelList.push_back(newHotel);
+        }
+        newLocation.setHotels(hotelList);
+        /* Add Transport service */
+        vector<Transport> newTransports;
+        int numTransports;
+        cout << "Enter number of transports: ";
+        cin >> numTransports;
+        cin.ignore();
+        for (int i = 0; i < numTransports; ++i)
+        {
+            string name, brand, from, destination, time;
+            int cost;
+            cout << "Enter transport name: ";
+            getline(cin, name);
+            cout << "Enter brand: ";
+            getline(cin, brand);
+            cout << "Enter starting point: ";
+            getline(cin, from);
+            cout << "Enter destination: ";
+            getline(cin, destination);
+            cout << "Enter time (hh/mm/dd/yyyy): ";
+            getline(cin, time);
+            cout << "Enter cost: ";
+            cin >> cost;
+            cin.ignore();
+            Transport newTransport(name, brand, from, destination, time, cost);
+            newTransports.push_back(newTransport);
+        }
+        newLocation.setTransports(newTransports);
+        travels.push_back(newLocation);
+
     }
 }
 
