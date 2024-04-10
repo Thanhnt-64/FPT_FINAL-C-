@@ -11,6 +11,10 @@ User* System::logInAccount(vector<User> &users, User &u1){
             }
         }
     }
+    else{
+        cout << setw(20) << "Wrong account or password!\n";
+        logInAccount(users, u1);
+    }
     return nullptr;
 }
 void System::logInAccount(){
@@ -261,6 +265,7 @@ void System::runAdmin(vector<Travel> &travels, vector<User> &users){
     while(1){
         listPlace(travels);
         int choose;
+        cout << setw(20) << "0. Exit" << endl;
         cout << setw(20) << "1. Show/Change Users's infomation" << endl;
         cout << setw(20) << "2. Show/Change Service's infomation" << endl;
         cout << setw(20) << "3. Search room/vehicle by place" << endl;
@@ -270,6 +275,8 @@ void System::runAdmin(vector<Travel> &travels, vector<User> &users){
         cin >> choose; cin.ignore();
         system("cls");
         switch(choose){
+            case 0:
+                return;
             case 1:
                 showChangeUserSwitch(users);
                 break;
@@ -304,6 +311,7 @@ void System::run(vector<Travel> &travels, User *user){
     while(1){
         listPlace(travels);
         int choose;
+        cout << setw(20) << "0. Exit" << endl;
         cout << setw(20) << "1. Change your information" << endl;
         cout << setw(20) << "2. Show/Change current booking travel" << endl;
         cout << setw(20) << "3. Delete the travel" << endl;
@@ -313,6 +321,7 @@ void System::run(vector<Travel> &travels, User *user){
         cin >> choose; cin.ignore();
         system("cls");
         switch(choose){
+            case 0: return;
             case 1:
                 user->changeInfo();
                 break;
@@ -320,7 +329,7 @@ void System::run(vector<Travel> &travels, User *user){
                 user->showUserInfo();
                 break;
             case 3:
-                user->cancelTravel(travels[0]);
+                user->showUserInfo();
                 break;
             case 4:
                 searchByPlace(travels);

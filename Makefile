@@ -1,7 +1,7 @@
 build: main.exe
 
 main.exe: main.o sys.o user.o admin.o hotel.o room.o travel.o trans.o file.o
-	gcc -o main.exe main.o sys.o user.o admin.o hotel.o room.o travel.o trans.o file.o
+	g++ -o main.exe main.o sys.o user.o admin.o hotel.o room.o travel.o trans.o file.o
 
 main.o: main.c++
 	g++ -c main.c++ -o main.o

@@ -1,10 +1,10 @@
-#include "Admin.c++"
-#include "Hotel.c++"
-#include "Room.cpp"
-#include "System.c++"
-#include "Travel.cpp"
-#include "User.c++"
-#include "File.cpp"
+#include "Admin.h"
+#include "Hotel.h"
+#include "Room.h"
+#include "System.h"
+#include "Travel.h"
+#include "User.h"
+#include "File.h"
 bool checkAccountAdmin(const string &s){
     return s == "admin";
 }
@@ -16,10 +16,14 @@ int main()
     vector<Travel> travels;
 
     //Load data from files
-    Read_User read_user("user_database.json");
-    Read_Service read_service("service_database.json");
+    Read_User read_user("database_user.json");
+    Read_Service read_service("database_service.json");
+    read_user.load_file();
+    read_service.load_file(); 
+    
     users=read_user.read_Users();
     travels=read_service.read_Travels();
+    cout << "error" << endl;
     read_user.~Read_User();
     read_service.~Read_Service();
 
@@ -45,6 +49,7 @@ int main()
                 break;
             }
             user = sys.logInAccount(users, u1);
+            sys.run(travels, user);
             break;
         case 2:
             user = sys.registerAccount(users, u1);
