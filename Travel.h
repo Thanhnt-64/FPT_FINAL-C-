@@ -22,6 +22,7 @@ class Travel{
         string getPlace(){
             return namePlace;
         }
+        void setPlace(const string& newPlace) { namePlace = newPlace; }
 };
 
 #endif // TRAVEL_H

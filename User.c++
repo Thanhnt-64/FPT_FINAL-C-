@@ -59,7 +59,7 @@ void User::changeInfo()
     }
 }
 
-void User::showUser()
+void User::showUserInfo()
 {
     cout << setw(20) << left << account
          << setw(20) << left << fullName

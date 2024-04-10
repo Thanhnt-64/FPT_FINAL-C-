@@ -20,7 +20,7 @@ void Admin::showListInfoUser(vector<User> &users)
         <<setw(20)<<left<<"Num Member"<<endl;
     for(User i : users)
     {
-        i.showUser();
+        i.showUserInfo();
     }
 }
 /*  */
@@ -107,23 +107,89 @@ void Admin::editHotelInfo(vector<Travel> &travels) {
     }
 }
 
-void Admin::viewServiceInfo() {
-    // Code to view service information (transportation, hotel, room type, car brand, etc.)
+void Admin::viewServiceInfo(vector<Travel> &travels)
+{
+    cout << "Service Information:" << endl;
+    cout << "-------------------------" << endl;
+    /* Show information about hotel services */
+    cout << "Hotel Services Information:" << endl;
+    cout << "--------------------------------------" << endl;
+    for (const Travel& travel : travels)
+    {
+        cout << "Place: " << travel.getPlace() << endl;
+        vector<Hotel>& hotels = travel.getHotel();
+        for (const Hotel& hotel : hotels)
+        {
+            cout << "Hotel Name: " << hotel.getName() << endl;
+            cout << "Address: " << hotel.getAddress() << endl;
+            hotel.showRoomInfo();
+            cout << "--------------------------------------" << endl;
+        }
+    }
+    /* Show information about transportation services */
+    cout << "Transportation Services Information:" << endl;
+    cout << "--------------------------------------" << endl;
+    for (const Travel& travel : travels)
+    {
+        cout << "Place: " << travel.getPlace() << endl;
+        vector<Transport>& transports = travel.getTransport();
+        for (const Transport& transport : transports)
+        {
+            cout << "Transport Name: " << transport.get_name() << endl;
+            cout << "Brand: " << transport.get_brand() << endl;
+            cout << "From: " << transport.get_from() << endl;
+            cout << "Destination: " << transport.get_destination() << endl;
+            cout << "Time: " << transport.get_time() << endl;
+            cout << "Cost: " << transport.get_cost() << endl;
+            cout << "--------------------------------------" << endl;
+        }
+    }
 }
 
-void Admin::addService() {
-    // Code to add new service
+void Admin::addService(vector<Travel>& travels) {
+    string place;
+    cout << "Enter place for the new service: ";
+    getline(cin, place);
+    bool found = false;
+    for (auto it = travels.begin(); it != travels.end(); it++)
+    {
+        if (it->getPlace() == place)
+        {
+            cout << "Travel: " << place << " ." << endl;
+            found = true;
+            break;
+        }
+    }
+    /* If that location doesn't exist yet */
+    if (!found)
+    {
+        Travel newLocation;
+        newLocation.setPlace(place);
+        
+    }
 }
 
-void Admin::deleteService() {
-    // Code to delete a service
+void Admin::deleteService(vector<Travel>& travels)
+{
+    string placeToDelete;;
+    cout << "Enter place for the service to be deleted: ";
+    getline(cin, placeToDelete;);
+    bool found = false;
+    for (auto it = travels.begin(); it != travels.end(); it++)
+    {
+        if (it->getPlace() == placeToDelete)
+        {
+            travels.erase(it);
+            cout << "Travel: " << placeToDelete << " deleted successfully." << endl;
+            found = true;
+            break;
+        }
+    }
+    /* If that location doesn't exist yet */
+    if (!found)
+    {
+        cout << "Travel: " << placeToDelete << " not found." << endl;
+    }
 }
 
-void Admin::loadData() {
-    // Code to load data from files
-}
-
-void Admin::saveData() {
-    // Code to save data to files
-}
 

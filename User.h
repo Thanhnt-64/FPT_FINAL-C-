@@ -41,7 +41,7 @@ public:
     void inputAge() {cin >> age; cin.ignore();}
     void inputNumMember() {cin >> numMember; cin.ignore();}
     /* Show user information */
-    void showUser();
+    void showUserInfo();
     /* Getter and setter */
     const string& getAccount() const { return account; }
     const string& getPassword() const { return password; }
