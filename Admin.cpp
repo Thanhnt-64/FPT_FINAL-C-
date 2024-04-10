@@ -251,6 +251,8 @@ void Admin::loadData(vector <User>& users, vector <Service>& services) {
     // Code to load data from files
     Read_User read_user("user_database.json");
     Read_Service read_service("service_database.json");
+    read_user.load_file();
+    read_service.load_file(); 
     users=read_user.read_Users();
     services=read_service.read_Travels();
 }
@@ -261,5 +263,7 @@ void Admin::saveData(vector <User>& users, vector <Service>& services) {
     Write_Service write_service("service_database.json");
     write_user.write_Users(users);
     write_service.write_Travels(services);
+    write_user.pushfile();
+    write_service.pushfile(); 
 }
 
