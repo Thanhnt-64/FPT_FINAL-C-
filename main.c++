@@ -1,11 +1,10 @@
-#include "Admin.h"
-#include "Hotel.h"
-#include "Room.h"
-#include "System.h"
-#include "Travel.h"
-#include "User.h"
-#include <iomanip>
-#include "File.h"
+#include "Admin.c++"
+#include "Hotel.c++"
+#include "Room.cpp"
+#include "System.c++"
+#include "Travel.cpp"
+#include "User.c++"
+#include "File.cpp"
 bool checkAccountAdmin(const string &s){
     return s == "admin";
 }
