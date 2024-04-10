@@ -50,6 +50,7 @@ void Transport::validate_time(string &t) {
 			}
 		}
 		int sum = 0, temp1 = 1, count = 0;
+		// get hour,day,month,year
 		for (int i = t.length() - 1; i >= 0; i--) {
 			if (t[i] == '/') {
 				count++;
