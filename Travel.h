@@ -11,6 +11,7 @@ class Travel{
         string namePlace;
         int travelCost;
     public:
+        Travel(){}
         Travel(vector <Hotel> hotel,vector <Transport> trans );
         //Show travel info
         // Hotel Name|Room Name |Type Room |Start Time  |End Time  |Cost |Transport |Brand |From |To |Time |Cost     
@@ -21,14 +22,13 @@ class Travel{
             cout << "Enter new place: ";
             getline(cin, namePlace);
         }
+        void setPlace(string place){
+            namePlace = place;
+        }
         string getPlace(){
             return namePlace;
         }
-<<<<<<< HEAD
-        void setPlace(const string& newPlace) { namePlace = newPlace; }
-=======
         int getTravelCost(){return (travelCost = hotels[0].getTotalCost() + transports[0].get_cost());}
->>>>>>> f3326b47c053372425382a9ae35ef4598b7d4236
 };
 typedef Travel Service;
 #endif // TRAVEL_H
