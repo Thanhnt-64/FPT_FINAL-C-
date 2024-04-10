@@ -44,11 +44,17 @@ public:
     /* Run system*/
     void run(vector<Travel> &travels, User *user);
     void runAdmin(vector<Travel> &travels, vector<User> &users);
+    /* Search (Hotel and room) or transport by place*/
     void searchByPlace(vector<Travel> &travels);
 };
+/* Choose type of sort the travel: cost or time*/
 void sortTravel(vector<Travel> &travels);
+/* Sort travel with cost (for Hotel ofject)*/
 void sortWithCost(vector<Travel> &travels, int low, int high);
 static int partitionInt(vector<Travel> &travels, int low, int high);
 static int paritionTime(vector<Travel> &travels, int low, int high);
+/* Sort travel with time (for Transport ofject)*/
 void sortWithTime(vector<Travel> &travels, int low, int high);
+/* Choose: Show or change User infor*/
+void showChangeInfo(User *user);
 #endif // SYSTEM_H

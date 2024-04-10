@@ -2,9 +2,7 @@
 #include "File.h"
 
 User* System::logInAccount(vector<User> &users, User &u1){
-    cout << setw(20) << "Enter user_name and password: " << endl;
-    cout << setw(20) << "Account: ";  u1.inputAccount();
-    cout << setw(20) << "Password: "; u1.inputPassword();
+    cout << "Password: "; u1.inputPassword();
     if(searchAccount(users, u1.getAccount()) && searchPassword(users, u1.getPassword())){
         for(int i = 0; i < users.size(); i++){
             if(users[i].getAccount() == u1.getAccount()){
@@ -13,7 +11,8 @@ User* System::logInAccount(vector<User> &users, User &u1){
         }
     }
     else{
-        cout << setw(20) << "Wrong account or password!\n";
+        cout << "Wrong account or password!\n";
+        cout << "Account: ";  u1.inputAccount();
         logInAccount(users, u1);
     }
     return nullptr;
@@ -21,37 +20,37 @@ User* System::logInAccount(vector<User> &users, User &u1){
 void System::logInAccount(){
     string passsword;
     while(1){
-        cout << setw(20) << "Enter admin password: ";
+        cout << "Enter admin password: ";
         getline(cin, passsword);
         if(passsword == "Amin1234@"){
             break;
         }
         else{
-            cout << setw(20) << "Wrong password!" << endl;
+            cout << "Wrong password!" << endl;
         }
     }
 }
 User* System::registerAccount(vector<User> &users, User &u1){
     while(1){
-        cout << setw(10) << "user_name: ";
+        cout << setw(10) << (string)("user_name: ");
         u1.inputAccount();
         if(doubleCheckAccount(users, u1.getAccount())){
-            cout << setw(20) << "This account is exited before!\n";
-            cout << setw(20) << "Please re-enter your account!\n";
+            cout << "This account is exited before!\n";
+            cout << "Please re-enter your account!\n";
         }
         if(validateAccount(u1.getAccount()) == false){ // them check double
-            cout << setw(20) << "The account name is not in the correct format\n";
-            cout << setw(20) << "Please re-enter your account!\n";
+            cout << "The account name is not in the correct format\n";
+            cout << "Please re-enter your account!\n";
         }
         else{
             break;
         }
     }
     while(1){
-        cout << setw(11) << "password: ";
+        cout << setw(10) << (string)("password: ");
         u1.inputPassword();
         if(validatePassword(u1.getPassword()) == false){
-            cout << setw(20) << "Please re-enter your account!\n";
+            cout << "Please re-enter your account!\n";
         }
         else{
             break;
@@ -80,7 +79,8 @@ void System::signOut(){
     
 }
 void System::searchRoomByPlace(vector<Travel> &travels){
-    cout << setw(20) << "Enter your place, which you want to search: " << endl;
+    char chark;
+    cout << "Enter your place, which you want to search: " << endl;
     string place; getline(cin, place);
     for(int i = 0; i < travels.size(); i++){
         if(travels[i].getPlace() != place){
@@ -93,14 +93,21 @@ void System::searchRoomByPlace(vector<Travel> &travels){
                 cout << setw(24) << k+1 << ". " << travels[i].getHotel()[j].getRooms()[k].getName() << endl;
             }
             cout << endl;
+            cout << "Enter 0 to exit: ";
+            cin >> chark; cin.ignore();
+            if(chark == '0'){
+                return;
+            }
+            else{
+                searchRoomByPlace(travels);
+            }
         }
         return;
-    }
-    cout << setw(20) << "We are updating new infomation for this place!\n";
-    cout << setw(20) << "You can choose some similar places!\n";
+    }    
 }
     
 void System::searchVehicleByPlace(vector<Travel> &travels){
+    char chark;
     cout << setw(20) << "Enter your place, which you want to search: " << endl;
     string place; getline(cin, place);
     for(int i = 0; i < travels.size(); i++){
@@ -111,28 +118,40 @@ void System::searchVehicleByPlace(vector<Travel> &travels){
         for(int j = 0; j < travels[i].getTransport().size(); j++){
             cout << setw(20) << j  << travels[i].getTransport()[j].get_name() << endl;
         }
+        cout << endl;
+        cout << "Enter 0 to exit: ";
+        cin >> chark; cin.ignore();
+        if(chark == '0'){
+            return;
+        }
+        else{
+            searchVehicleByPlace(travels);
+        }
         return;
     }
-    cout << setw(20) << "We are updating new infomation for this place!\n";
-    cout << setw(20) << "You can choose some similar places!\n";
 }
 
 void System::searchByPlace(vector<Travel> &travels){
-    int choose;
-    cout << setw(20) << "1. Search room by place" << endl;
-    cout << setw(20) << "2. Search vehicle by place" << endl;
-    cout << setw(20) << "Enter your choose: 1-2:__";
-    cin >> choose; cin.ignore();
-    system("cls");
-    switch(choose){
-        case 1:
+    char choose;
+    while(1){
+        system("cls");
+        cout << setw(20) << "1. Search room by place" << endl;
+        cout << setw(20) << "2. Search vehicle by place" << endl;
+        cout << "3. Back" << endl;
+        cout << setw(20) << "Enter your choose: 1-3:__";
+        cin >> choose; cin.ignore();
+        switch(choose){
+        case '1':
             searchRoomByPlace(travels);
             break;
-        case 2:
+        case '2':
             searchVehicleByPlace(travels);
             break;
+        case '3':
+            return;
         default:
             break;
+        }
     }
 }
 void System::listPlace(vector<Travel> &travels){
@@ -211,12 +230,14 @@ bool System::doubleCheckAccount(vector<User> &users, const string &s){
 }
 
 void showChangeUserSwitch(vector<User> &users){
+    system("cls");
     Admin &admin = Admin::getInstance();
     int choose;
-    cout << setw(20) << "1. Show Information" << endl;
-    cout << setw(20) << "2. Change Information" << endl;
-    cout << setw(20) << "3. Delete a specific user" << endl;
-    cout << setw(20) << "Enter your choose: 1-3:__";
+    char chak;
+    cout << setw(20) << (string)("1. Show Information") << endl;
+    cout << setw(20) << (string)("2. Change Information") << endl;
+    cout << setw(20) << (string)("3. Delete a specific user") << endl;
+    cout << setw(20) << (string)("Enter your choose: 1-3:__");
     cin >> choose; cin.ignore();
     system("cls");
     switch (choose)
@@ -231,14 +252,17 @@ void showChangeUserSwitch(vector<User> &users){
         admin.deleteAccountUser(users);
         break;
     default:
-        cout << setw(20) << "Choose wrong, Enter again!" << endl;
-        break;
+        cout << setw(20) << (string)("Choose wrong, Enter again!") << endl;
+        showChangeUserSwitch(users);
     }
+    cout << (string)("Enter any key to continue:\n");
+    cin >> chak; cin.ignore();
 }
 
 void showChangeServiceSwitch(vector<Travel> &travels){
+    system("cls");
     Admin &admin = Admin::getInstance();
-    int choose;
+    int choose; char chak;
     cout << setw(20) << "1. Show Information" << endl;
     cout << setw(20) << "2. Change Transport Information" << endl;
     cout << setw(20) << "3. Change Room Information" << endl;
@@ -258,13 +282,16 @@ void showChangeServiceSwitch(vector<Travel> &travels){
         break;
     default:
         cout << "Choose wrong, Enter again!" << endl;
-        break;
+        showChangeServiceSwitch(travels);
     }
+    cout << (string)("Enter any key to continue:\n");
+    cin >> chak; cin.ignore();
 }
 
 void System::runAdmin(vector<Travel> &travels, vector<User> &users){
     Admin &admin = Admin::getInstance();
     while(1){
+        system("cls");
         listPlace(travels);
         int choose;
         cout << setw(20) << "0. Exit" << endl;
@@ -308,28 +335,27 @@ void System::runAdmin(vector<Travel> &travels, vector<User> &users){
         }
     }
 }
-
-void sortTravel(vector<Travel> &travels){
-    // if (travels.empty()) {
-    //     cout << "No travels to sort." << endl;
-    //     return;
-    // }
-    // for(int i = 0; i < travels.size(); i++){
-    //     vector<Hotel> &hotel = travels[i].getHotel();
-    //     vector<Transport> &transports = travels[i].getTransport();
-    //     if(!hotel.empty()){
-    //         sortWithCost(hotel, 0, (hotel.size() - 1));
-    //     }
-    //     if(transports.empty()){
-    //         sortWithTime(transports, 0, (transports.size() - 1));
-    //     }
-    // }
+void showChangeInfo(User *user){
+    char a;
+    while(1){
+        cout << "Enter any charactor (0 to exit)?__";
+        cin >> a; cin.ignore();
+        if(a == '0'){
+            return;
+        }
+        else{
+            user->changeInfo();
+            user->showUserInfo();
+        }
+    }
 }
+
 void System::run(vector<Travel> &travels, User *user){
     while(1){
+        system("cls");
         listPlace(travels);
         int choose;
-        cout << setw(20) << "0. Exit" << endl;
+        cout << "0. Exit" << endl;
         cout << setw(20) << "1. Change your information" << endl;
         cout << setw(20) << "2. Show/Change current booking travel" << endl;
         cout << setw(20) << "3. Delete the travel" << endl;
@@ -337,19 +363,17 @@ void System::run(vector<Travel> &travels, User *user){
         cout << setw(20) << "5. Sort data follow time and cost" << endl;
         cout << "Enter your choose: 1-5:__";
         cin >> choose; cin.ignore();
-        system("cls");
         switch(choose){
             case 0: 
-                system("cls");
                 return;
             case 1:
-                user->changeInfo();
+                showChangeInfo(user);
                 break;
             case 2:
                 user->showUserInfo();
                 break;
             case 3:
-                user->showUserInfo();
+                user->cancelTravel(travels[0]);
                 break;
             case 4:
                 searchByPlace(travels);
@@ -418,5 +442,52 @@ void sortWithTime(vector<Transport> &trans, int low, int high){
         int pi = paritionTime(trans, low, high);
         sortWithTime(trans, low, pi - 1);
         sortWithTime(trans, pi + 1, high);
+    }
+}
+
+void sortTravel(vector<Travel> &travels){
+    char chak;
+    if (travels.empty()) {
+        cout << "No travels to sort." << endl;
+        return;
+    }
+    cout << "1. Sort hotel with cost" << endl;
+    cout << "2. Sort transport with time" << endl;
+    cin >> chak; cin.ignore();
+    switch (chak)
+    {
+    case '1':
+        for(int i = 0; i < travels.size(); i++){
+            auto hotel = travels[i].getHotel();
+            if(!hotel.empty()){
+                cout << "Sort hotel in " << travels[i].getPlace() << endl;
+                sortWithCost(hotel, 0, (hotel.size() - 1));
+                for(auto i:hotel){
+                    i.showRoomInfo();
+                }
+                cout << "___________________________________\n";
+            }
+        }
+        break;
+    case '2':
+        for(int i = 0; i < travels.size(); i++){
+            auto transports = travels[i].getTransport();
+            cout << "Sort transport in " << travels[i].getPlace() << endl;
+            if(transports.empty()){
+                sortWithTime(transports, 0, (transports.size() - 1));
+                for(auto i:transports){
+                    i.output();
+                }
+                cout << "___________________________________\n";
+            }
+        }
+        break;
+    default:
+        break;
+    }
+    cout << "Enter any key to Exit: ";
+    cin >> chak; cin.ignore();
+    if(chak == '0'){
+        return;
     }
 }
