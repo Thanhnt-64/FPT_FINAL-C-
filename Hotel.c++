@@ -70,7 +70,6 @@ vector <Room>& Hotel::getRooms()
 {
     return rooms;
 }
-<<<<<<< HEAD
 bool Hotel::validateString(string &s){
     while(1){
         getline(cin, s);
@@ -132,10 +131,3 @@ void Hotel::setTotalCost(){
         }
     }
 }
-=======
-
-Hotel ::Hotel(string name,string address,int cost,vector<Room> rooms)
-    : name{name},address{address},total_cost{cost},rooms{rooms}
-    {
-    }
->>>>>>> ThanhTK

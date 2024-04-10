@@ -9,6 +9,7 @@ class Travel{
         vector<Hotel> hotels;
         vector<Transport> transports;
         string namePlace;
+        int travelCost;
     public:
         Travel(vector <Hotel> hotel,vector <Transport> trans );
         //Show travel info
@@ -23,6 +24,7 @@ class Travel{
         string getPlace(){
             return namePlace;
         }
+        int getTravelCost(){return (travelCost = hotels[0].getTotalCost() + transports[0].get_cost());}
 };
 
 #endif // TRAVEL_H

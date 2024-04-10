@@ -44,6 +44,7 @@ public:
     /* Run system*/
     void run(vector<Travel> &travels);
     void runAdmin(vector<Travel> &travels, vector<User> &users);
+    void searchByPlace(vector<Travel> &travels);
 };
 
 #endif // SYSTEM_H

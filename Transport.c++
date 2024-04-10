@@ -11,7 +11,6 @@ void Transport::input()
 	cout << "Input Destination: ";
 	validate_destination(destination); // chứa kí tự từ A->z và chứa cả dấu cách ,không chứa các kí tự đặc biệt
 	cout << "Input Time(hh/dd/mm/yyyy): ";
-<<<<<<< HEAD
 	validate_time(time);
     cout<<"Input Cost: ";
     validate_cost(cost);
@@ -38,70 +37,20 @@ void Transport::validate_time(string &t) {
 			continue;
 		}
 		if (t[2] != '/' || t[5] != '/' || t[8] != '/') {
-=======
-	validate_time();
-	cout << "Input Cost: ";
-	validate_cost();
-}
-void Transport::validate_cost()
-{
-	while (1)
-	{
-		if (cin >> cost)
-		{
-			break;
-		}
-		else
-		{
-			cout << "Input Cost: ";
-			cin.clear();											  // Xóa cờ lỗi
-			cin.ignore(numeric_limits<std::streamsize>::max(), '\n'); // Xóa bộ nhớ đệm
-		}
-	}
-}
-void Transport::validate_time()
-{
-	while (1)
-	{
-		getline(cin, time);
-		if (time.length() != 13)
-		{
-			cout << "Input Time" << endl;
-			continue;
-		}
-		if (time[2] != '/' || time[5] != '/' || time[8] != '/')
-		{
->>>>>>> ThanhTK
 			cout << "Input Time: ";
 			continue;
 		}
 
-<<<<<<< HEAD
 		for (int i = 0; i < t.length(); i++) {
 			if (i != 2 || i != 5 || i != 8) {
 				if (t[i] < '0' || t[i]>'9') {
-=======
-		for (int i = 0; i < time.length(); i++)
-		{
-			if (i != 2 || i != 5 || i != 8)
-			{
-				if (time[i] < '0' || time[i] > '9')
-				{
->>>>>>> ThanhTK
 					break;
 				}
 			}
 		}
 		int sum = 0, temp1 = 1, count = 0;
-<<<<<<< HEAD
 		for (int i = t.length() - 1; i >= 0; i--) {
 			if (t[i] == '/') {
-=======
-		for (int i = time.length() - 1; i >= 0; i--)
-		{
-			if (time[i] == '/')
-			{
->>>>>>> ThanhTK
 				count++;
 				if (count == 1)
 				{
@@ -279,7 +228,7 @@ bool Transport::operator>(Transport &t)
 	}
 	return false;
 }
-<<<<<<< HEAD
+
 void Transport::change_name(){
 	string name1;
 	cout<<"Input Transport Name: ";
@@ -317,60 +266,6 @@ void Transport::change_cost(){
 	cout<<"Input Transport destination: ";
 	validate_cost(cost1);
 	cost=cost1;
-=======
-bool Transport::operator<(Transport &t)
-{
-	if (year < t.year)
-	{
-		return true;
-	}
-	else if (year == t.year)
-	{
-		if (month < t.month)
-		{
-			return true;
-		}
-		else if (month == t.month)
-		{
-			if (day < t.day)
-			{
-				return true;
-			}
-			else if (day == t.day)
-			{
-				if (hour < t.hour)
-				{
-					return true;
-				}
-			}
-		}
-	}
-	return false;
-}
-void Transport::change_name(string &name)
-{
-	this->name = name;
-}
-void Transport::change_brand(string &brand)
-{
-	this->brand = brand;
-}
-void Transport::change_from(string &from)
-{
-	this->from = from;
-}
-void Transport::change_destination(string &destination)
-{
-	this->destination = destination;
-}
-void Transport::change_time(string &time)
-{
-	this->time = time;
-}
-void Transport::change_cost(int &cost)
-{
-	this->cost;
->>>>>>> ThanhTK
 }
 string Transport::get_name()
 {
@@ -397,17 +292,7 @@ int Transport::get_cost()
 	return cost;
 }
 
-<<<<<<< HEAD
-int main(){
-    Transport t;
-    t.input();
-    t.output();
-	t.change_time();
-
-}
-=======
 Transport::Transport(string name, string brand, string from, string destination, int cost , string time)
 	: name{name}, brand{brand}, from{from}, destination{destination}, cost{cost}, time{time}
 {
 }
->>>>>>> ThanhTK
