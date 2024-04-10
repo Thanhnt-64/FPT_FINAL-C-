@@ -229,7 +229,27 @@ bool Transport::operator>(Transport &t)
 	}
 	return false;
 }
-
+bool Transport::operator < (Transport& t) {
+	if (year < t.year) {
+		return true;
+	}
+	else if (year == t.year) {
+		if (month < t.month) {
+			return true;
+		}
+		else if (month == t.month) {
+			if (day < t.day) {
+				return true;
+			}
+			else if (day == t.day) {
+				if (hour < t.hour) {
+					return true;
+				}
+			}
+		}
+	}
+	return false;
+}
 void Transport::change_name(){
 	string name1;
 	cout<<"Input Transport Name: ";
