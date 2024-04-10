@@ -5,6 +5,9 @@
 #include "Travel.h"
 #include "User.h"
 #include <iomanip>
+bool checkAccountAdmin(const string &s){
+    return s == "admin";
+}
 int main()
 {
     System sys;
@@ -14,6 +17,7 @@ int main()
     vector<Room> rooms;
     User *user = nullptr;
     User u1;
+    string account;
     int choose;
     while(1){
         cout << setw(5) << "Menu:\n";
@@ -24,19 +28,26 @@ int main()
         switch (choose)
         {
         case 1:
-            user = sys.logInAccount(users, u1);
-            system("cls");
-            if(user != nullptr){
-                cout << setw(5) << "Menu:\n";
-                sys.listPlace(travels);
-                cout << setw(10) << "Choose one travel to see details\n";
-                cin >> choose; cin.ignore();
-                travels[choose-1].showTravelInfo();
+            cout << "Enter your account: "; getline(cin, account);
+            if(checkAccountAdmin(account)){
+                cout << "You are login as admin!\n";
+                sys.logInAccount();
+                sys.runAdmin(travels, users);
+                break;
             }
+            user = sys.logInAccount(users, u1);
+            break;
+        case 2:
+            user = sys.registerAccount(users, u1);
+            cout << "Register successfully!\n";
+            cout << "Please log in with your account!\n";
+            user = sys.logInAccount(users, u1);
+            
             break;
         default:
             break;
         }
+        system("cls");
     }
     return 0;
 }

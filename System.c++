@@ -13,6 +13,19 @@ User* System::logInAccount(vector<User> &users, User &u1){
     }
     return nullptr;
 }
+void System::logInAccount(){
+    string passsword;
+    while(1){
+        cout << "Enter admin password: ";
+        getline(cin, passsword);
+        if(passsword == "Amin1234@"){
+            break;
+        }
+        else{
+            cout << "Wrong password!" << endl;
+        }
+    }
+}
 User* System::registerAccount(vector<User> &users, User &u1){
     while(1){
         cout << setw(10) << "user_name: ";
@@ -59,7 +72,7 @@ bool System::searchPassword(vector<User> &users, const string &s){
     return false;    
 }
 void System::signOut(){
-    System::run();
+    
 }
 void System::searchRoomByPlace(vector<Travel> &travels){
     cout << "Enter your place, which you want to search: " << endl;
@@ -171,8 +184,89 @@ bool System::doubleCheckAccount(vector<User> &users, const string &s){
     }
     return false;
 }
-void System::run(){
-    
+
+void showChangeUserSwitch(vector<User> &users){
+    Admin &admin = Admin::getInstance();
+    int choose;
+    cout << "1. Show Information" << endl;
+    cout << "2. Change Information" << endl;
+    cout << "3. Delete a specific user" << endl;
+    cout << "Enter your choose: 1-3:__";
+    cin >> choose; cin.ignore();
+    switch (choose)
+    {
+    case 1:
+        admin.showListInfoUser(users);
+        break;
+    case 2:
+        admin.changeUser(users);
+        break;
+    case 3:
+        admin.deleteAccountUser(users);
+        break;
+    default:
+        cout << "Choose wrong, Enter again!" << endl;
+        break;
+    }
+}
+
+void showChangeServiceSwitch(vector<Travel> &travels){
+    Admin &admin = Admin::getInstance();
+    int choose;
+    cout << "1. Show Information" << endl;
+    cout << "2. Change Transport Information" << endl;
+    cout << "3. Change Room Information" << endl;
+    cout << "Enter your choose: 1-3:__";
+    cin >> choose; cin.ignore();
+    switch (choose)
+    {
+    case 1:
+        admin.viewServiceInfo();
+        break;
+    case 2:
+        admin.editTransportInfo(travels);
+        break;
+    case 3:
+        admin.editHotelInfo(travels);
+        break;
+    default:
+        cout << "Choose wrong, Enter again!" << endl;
+        break;
+    }
+}
+
+void System::runAdmin(vector<Travel> &travels, vector<User> &users){
+    Admin &admin = Admin::getInstance();
+    while(1){
+        listPlace(travels);
+        int choose;
+        cout << setw(20) << "1. Show/Change Users's infomation" << endl;
+        cout << setw(20) << "2. Show/Change Service's infomation" << endl;
+        cout << setw(20) << "3. Search room/vehicle by place" << endl;
+        cout << setw(20) << "4. Sort data follow time and cost" << endl;
+        cout << setw(20) << "5. Load and save data" << endl;
+        cout << "Enter your choose: 1-5:__";
+        cin >> choose; cin.ignore();
+        system("cls");
+        switch(choose){
+            case 1:
+                showChangeUserSwitch(users);
+                break;
+            case 2:
+                showChangeServiceSwitch(travels);
+                break;
+            case 3:
+                
+                break;
+            case 4:
+                break;
+            case 5:
+                break;
+            default:
+                cout << "Choose wrong, Enter again!" << endl;
+                break;
+        }
+    }
 }
 
 static int partitionInt(vector<int> &m_list, int low, int high){

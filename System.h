@@ -18,6 +18,7 @@ public:
     System(){}
     /* Login in the system*/
     User* logInAccount(vector<User> &users, User &u1);
+    void logInAccount();
     /* Register new account*/
     User* registerAccount(vector<User> &users, User &u1);
     /* Exit main system, comeback to main menu*/
@@ -41,7 +42,8 @@ public:
     /* Search password to check valid when login*/
     bool searchPassword(vector<User> &users, const string &s);
     /* Run system*/
-    void run();
+    void run(vector<Travel> &travels);
+    void runAdmin(vector<Travel> &travels, vector<User> &users);
 };
 
 #endif // SYSTEM_H
