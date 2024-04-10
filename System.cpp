@@ -242,7 +242,7 @@ void showChangeServiceSwitch(vector<Travel> &travels){
     switch (choose)
     {
     case 1:
-        admin.viewServiceInfo();
+        admin.viewServiceInfo(travels);
         break;
     case 2:
         admin.editTransportInfo(travels);
@@ -317,7 +317,7 @@ void System::run(vector<Travel> &travels, User *user){
                 user->changeInfo();
                 break;
             case 2:
-                user->showUser();
+                user->showUserInfo();
                 break;
             case 3:
                 user->cancelTravel(travels[0]);
