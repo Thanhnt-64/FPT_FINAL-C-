@@ -24,11 +24,14 @@ public:
     /* Edit hotel infomation follow your choice*/
     void editHotelInfo(vector<Travel> &travels);
     /* View service infomation*/
-    void viewServiceInfo();
-    void addService();
-    void deleteService();
-    void loadData(vector <User>& users,vector <Travel>& travels);
-    void saveData(vector <User>& users,vector <Travel>& travels);
+    void viewServiceInfo(vector<Travel>& travels);
+    /* Add service more */
+    void addService(vector<Travel>& travels);
+    /* Delete service */
+    void deleteService(vector<Travel>& travels);
+    /* Load and save data from file */
+    void loadData(vector<User> &users, vector<Travel> &travels);
+    void saveData(vector<User> &users, vector<Travel> &travels);
 };
 
 #endif // ADMIN_H

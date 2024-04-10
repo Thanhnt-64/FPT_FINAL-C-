@@ -51,7 +51,7 @@ int main()
             cout << "Register successfully!\n";
             cout << "Please log in with your account!\n";
             user = sys.logInAccount(users, u1);
-            
+            sys.run(travels, user);
             break;
         default:
             break;

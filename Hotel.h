@@ -15,9 +15,9 @@ class Hotel{
     int total_cost;
     public:
     Hotel(){}
-    Hotel(string name, string address, int cost, vector<Room> rooms)
-    :   name{name}, address{address}, total_cost{cost}, rooms{rooms}{}
-    ;
+    Hotel(string name, string address, int total_cost, vector<Room> rooms)
+        : name(name), address(address), total_cost(total_cost), rooms(rooms) {} 
+    
     Hotel operator=(const Hotel& obj);
     void showRoomInfo();
     void showRoomInfoBooked();
