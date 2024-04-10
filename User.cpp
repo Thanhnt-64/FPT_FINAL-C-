@@ -85,10 +85,41 @@ void User::showTravelInfo()
     }
 }
 
-void User::changeTravelInfo(const Travel& travel)
+void User::changeTravelInfo()
 {
+    string location;
+    cout << "Enter the location you want to change: ";
+    getline(cin, location);
+    for (int i = 0; i < travels.size(); i++)
+    {
+        if (myTravel[i].getPlace() == location)
+        {
+            cout << "Enter name of Hotel you want to edit: ";
+            string hotel; getline(cin, hotel);
+            myTravel[i].getHotel()
+        }
+        else
+        {
+            cout << "Can not find the above location"
+        }
+    }
 }
-
-void User::cancelTravel(const Travel& travel){
-    
+void User::cancelTravel()
+{
+    string location;
+    cout << "Enter the location you want to cancel: ";
+    getline(cin, location);
+    for (int i = 0; i < travels.size(); i++)
+    {
+        if (myTravel[i].getPlace() == location)
+        {
+            myTravel.erase(myTravel.begin() + i);
+            cout << "Travel to " << location << " has been canceled." << endl;
+            return;
+        }
+        else
+        {
+            cout << "The travel you are trying to cancel does not exist in your travel list." << endl;
+        }
+    }
 }

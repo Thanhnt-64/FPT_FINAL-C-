@@ -1,12 +1,12 @@
 #include "Admin.h"
 #include <algorithm>
 #include "File.h"
-Admin* Admin::instance = nullptr;
+unique_ptr<Admin> Admin::instance;
 Admin& Admin::getInstance()
 {
-    if (instance == nullptr)
+    if ( instance == null )
     {
-        instance = new Admin();
+        instance.reset(new Admin());
     }
     return *instance;
 }
