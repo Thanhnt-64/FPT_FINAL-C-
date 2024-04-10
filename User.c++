@@ -79,4 +79,9 @@ void User::showTravelInfo()
 
 void User::changeTravelInfo(const Travel& travel)
 {
+
+}
+void cancelTravel(const Travel& travel)
+{
+    
 }
