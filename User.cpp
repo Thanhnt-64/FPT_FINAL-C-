@@ -77,11 +77,23 @@ void User::showTravelInfo()
     }
 }
 
-void User::changeTravelInfo(const Travel& travel)
+void User::changeTravelInfo()
 {
-
+    string place;
+    cout << "Enter place for the new service: ";
+    getline(cin, place);
+    bool found = false;
+    for (auto it = travels.begin(); it != travels.end(); it++)
+    {
+        if (it->getPlace() == place)
+        {
+            cout << "Travel: " << place << " ." << endl;
+            found = true;
+            break;
+        }
+    }
 }
-void cancelTravel(const Travel& travel)
+void User::cancelTravel(const Travel& travel)
 {
     
 }

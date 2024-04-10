@@ -24,11 +24,8 @@ class Travel{
         string getPlace(){
             return namePlace;
         }
-<<<<<<< HEAD
         void setPlace(const string& newPlace) { namePlace = newPlace; }
-=======
         int getTravelCost(){return (travelCost = hotels[0].getTotalCost() + transports[0].get_cost());}
->>>>>>> f3326b47c053372425382a9ae35ef4598b7d4236
 };
 typedef Travel Service;
 #endif // TRAVEL_H
