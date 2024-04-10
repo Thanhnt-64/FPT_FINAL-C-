@@ -242,7 +242,7 @@ void showChangeServiceSwitch(vector<Travel> &travels){
     switch (choose)
     {
     case 1:
-        admin.viewServiceInfo();
+        admin.viewServiceInfo(travels);
         break;
     case 2:
         admin.editTransportInfo(travels);
@@ -300,6 +300,41 @@ void System::runAdmin(vector<Travel> &travels, vector<User> &users){
     }
 }
 
+void System::run(vector<Travel> &travels, User *user){
+    while(1){
+        listPlace(travels);
+        int choose;
+        cout << setw(20) << "1. Change your information" << endl;
+        cout << setw(20) << "2. Show/Change current booking travel" << endl;
+        cout << setw(20) << "3. Delete the travel" << endl;
+        cout << setw(20) << "4. Search room/vehicle by place" << endl;
+        cout << setw(20) << "5. Sort data follow time and cost" << endl;
+        cout << "Enter your choose: 1-5:__";
+        cin >> choose; cin.ignore();
+        system("cls");
+        switch(choose){
+            case 1:
+                user->changeInfo();
+                break;
+            case 2:
+                user->showUserInfo();
+                break;
+            case 3:
+                user->cancelTravel(travels[0]);
+                break;
+            case 4:
+                searchByPlace(travels);
+                break;
+            case 5:
+                listPlace(travels);
+                sortWithCost(travels, 0, travels.size() - 1);
+                break;
+            default:
+                cout << "Choose wrong, Enter again!" << endl;
+                break;
+        }
+    }    
+}
 static int partitionInt(vector<Travel> &travels, int low, int high){
     int pivot = travels[high].getTravelCost();
     int left = low;
