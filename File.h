@@ -1,3 +1,5 @@
+#ifndef FILE_H
+#define FILE_H
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -101,3 +103,5 @@ public:
 };
 typedef Read_Travel Read_Service;
 typedef Write_Travel Write_Service;
+
+#endif // FILE_H
