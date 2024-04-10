@@ -8,17 +8,19 @@
                 "start time": "10/10/12/2024",
                 "type room": "Vip0000"
             },
-            "address": "10/10/12/2024",
+            "address": "HaiPhong",
             "name": "Rose000"
         },
         "Transport0": {
             "brand": "Vietnam Airlines000",
             "cost": 1000,
-            "destination": "Hai Phong000",
+            "destination": "Hai Phong",
             "from": "Ha Noi000",
             "name": "Flight000",
             "time": "10/15/12/2024"
-        }
+        },
+        "name place": "Hai Phong",
+        "travel cost": 2000
     },
     "Travel1": {
         "Hotel0": {
@@ -29,7 +31,7 @@
                 "start time": "10/10/12/2024",
                 "type room": "Vip0000"
             },
-            "address": "10/10/12/2024",
+            "address": "HaiPhong",
             "name": "Rose000"
         },
         "Hotel1": {
@@ -47,13 +49,13 @@
                 "start time": "10/10/12/2024",
                 "type room": "Vip1000"
             },
-            "address": "10/10/12/2024",
+            "address": "HaiPhong",
             "name": "Rose100"
         },
         "Transport0": {
             "brand": "Vietnam Airlines000",
             "cost": 1000,
-            "destination": "Hai Phong000",
+            "destination": "Hai Phong",
             "from": "Ha Noi000",
             "name": "Flight000",
             "time": "10/15/12/2024"
@@ -61,11 +63,13 @@
         "Transport1": {
             "brand": "Vietnam Airlines100",
             "cost": 1000,
-            "destination": "Hai Phong100",
+            "destination": "Hai Phong",
             "from": "Ha Noi100",
             "name": "Flight100",
             "time": "10/15/12/2024"
-        }
+        },
+        "name place": "Hai Phong",
+        "travel cost": 2000
     },
     "Travel2": {
         "Hotel0": {
@@ -76,7 +80,7 @@
                 "start time": "10/10/12/2024",
                 "type room": "Vip0000"
             },
-            "address": "10/10/12/2024",
+            "address": "HaiPhong",
             "name": "Rose000"
         },
         "Hotel1": {
@@ -94,7 +98,7 @@
                 "start time": "10/10/12/2024",
                 "type room": "Vip1000"
             },
-            "address": "10/10/12/2024",
+            "address": "HaiPhong",
             "name": "Rose100"
         },
         "Hotel2": {
@@ -119,13 +123,13 @@
                 "start time": "10/10/12/2024",
                 "type room": "Vip2000"
             },
-            "address": "10/10/12/2024",
+            "address": "HaiPhong",
             "name": "Rose200"
         },
         "Transport0": {
             "brand": "Vietnam Airlines000",
             "cost": 1000,
-            "destination": "Hai Phong000",
+            "destination": "Hai Phong",
             "from": "Ha Noi000",
             "name": "Flight000",
             "time": "10/15/12/2024"
@@ -133,7 +137,7 @@
         "Transport1": {
             "brand": "Vietnam Airlines100",
             "cost": 1000,
-            "destination": "Hai Phong100",
+            "destination": "Hai Phong",
             "from": "Ha Noi100",
             "name": "Flight100",
             "time": "10/15/12/2024"
@@ -141,11 +145,13 @@
         "Transport2": {
             "brand": "Vietnam Airlines200",
             "cost": 1000,
-            "destination": "Hai Phong200",
+            "destination": "Hai Phong",
             "from": "Ha Noi200",
             "name": "Flight200",
             "time": "10/15/12/2024"
-        }
+        },
+        "name place": "Hai Phong",
+        "travel cost": 2000
     },
     "Travel3": {
         "Hotel0": {
@@ -156,7 +162,7 @@
                 "start time": "10/10/12/2024",
                 "type room": "Vip0000"
             },
-            "address": "10/10/12/2024",
+            "address": "HaiPhong",
             "name": "Rose000"
         },
         "Hotel1": {
@@ -174,7 +180,7 @@
                 "start time": "10/10/12/2024",
                 "type room": "Vip1000"
             },
-            "address": "10/10/12/2024",
+            "address": "HaiPhong",
             "name": "Rose100"
         },
         "Hotel2": {
@@ -199,7 +205,7 @@
                 "start time": "10/10/12/2024",
                 "type room": "Vip2000"
             },
-            "address": "10/10/12/2024",
+            "address": "HaiPhong",
             "name": "Rose200"
         },
         "Hotel3": {
@@ -231,13 +237,13 @@
                 "start time": "10/10/12/2024",
                 "type room": "Vip3000"
             },
-            "address": "10/10/12/2024",
+            "address": "HaiPhong",
             "name": "Rose300"
         },
         "Transport0": {
             "brand": "Vietnam Airlines000",
             "cost": 1000,
-            "destination": "Hai Phong000",
+            "destination": "Hai Phong",
             "from": "Ha Noi000",
             "name": "Flight000",
             "time": "10/15/12/2024"
@@ -245,7 +251,7 @@
         "Transport1": {
             "brand": "Vietnam Airlines100",
             "cost": 1000,
-            "destination": "Hai Phong100",
+            "destination": "Hai Phong",
             "from": "Ha Noi100",
             "name": "Flight100",
             "time": "10/15/12/2024"
@@ -253,7 +259,7 @@
         "Transport2": {
             "brand": "Vietnam Airlines200",
             "cost": 1000,
-            "destination": "Hai Phong200",
+            "destination": "Hai Phong",
             "from": "Ha Noi200",
             "name": "Flight200",
             "time": "10/15/12/2024"
@@ -261,11 +267,13 @@
         "Transport3": {
             "brand": "Vietnam Airlines300",
             "cost": 1000,
-            "destination": "Hai Phong300",
+            "destination": "Hai Phong",
             "from": "Ha Noi300",
             "name": "Flight300",
             "time": "10/15/12/2024"
-        }
+        },
+        "name place": "Hai Phong",
+        "travel cost": 2000
     },
     "Travel4": {
         "Hotel0": {
@@ -276,7 +284,7 @@
                 "start time": "10/10/12/2024",
                 "type room": "Vip0000"
             },
-            "address": "10/10/12/2024",
+            "address": "HaiPhong",
             "name": "Rose000"
         },
         "Hotel1": {
@@ -294,7 +302,7 @@
                 "start time": "10/10/12/2024",
                 "type room": "Vip1000"
             },
-            "address": "10/10/12/2024",
+            "address": "HaiPhong",
             "name": "Rose100"
         },
         "Hotel2": {
@@ -319,7 +327,7 @@
                 "start time": "10/10/12/2024",
                 "type room": "Vip2000"
             },
-            "address": "10/10/12/2024",
+            "address": "HaiPhong",
             "name": "Rose200"
         },
         "Hotel3": {
@@ -351,7 +359,7 @@
                 "start time": "10/10/12/2024",
                 "type room": "Vip3000"
             },
-            "address": "10/10/12/2024",
+            "address": "HaiPhong",
             "name": "Rose300"
         },
         "Hotel4": {
@@ -390,13 +398,13 @@
                 "start time": "10/10/12/2024",
                 "type room": "Vip4000"
             },
-            "address": "10/10/12/2024",
+            "address": "HaiPhong",
             "name": "Rose400"
         },
         "Transport0": {
             "brand": "Vietnam Airlines000",
             "cost": 1000,
-            "destination": "Hai Phong000",
+            "destination": "Hai Phong",
             "from": "Ha Noi000",
             "name": "Flight000",
             "time": "10/15/12/2024"
@@ -404,7 +412,7 @@
         "Transport1": {
             "brand": "Vietnam Airlines100",
             "cost": 1000,
-            "destination": "Hai Phong100",
+            "destination": "Hai Phong",
             "from": "Ha Noi100",
             "name": "Flight100",
             "time": "10/15/12/2024"
@@ -412,7 +420,7 @@
         "Transport2": {
             "brand": "Vietnam Airlines200",
             "cost": 1000,
-            "destination": "Hai Phong200",
+            "destination": "Hai Phong",
             "from": "Ha Noi200",
             "name": "Flight200",
             "time": "10/15/12/2024"
@@ -420,7 +428,7 @@
         "Transport3": {
             "brand": "Vietnam Airlines300",
             "cost": 1000,
-            "destination": "Hai Phong300",
+            "destination": "Hai Phong",
             "from": "Ha Noi300",
             "name": "Flight300",
             "time": "10/15/12/2024"
@@ -428,11 +436,13 @@
         "Transport4": {
             "brand": "Vietnam Airlines400",
             "cost": 1000,
-            "destination": "Hai Phong400",
+            "destination": "Hai Phong",
             "from": "Ha Noi400",
             "name": "Flight400",
             "time": "10/15/12/2024"
-        }
+        },
+        "name place": "Hai Phong",
+        "travel cost": 2000
     },
     "Travel5": {
         "Hotel0": {
@@ -443,7 +453,7 @@
                 "start time": "10/10/12/2024",
                 "type room": "Vip0000"
             },
-            "address": "10/10/12/2024",
+            "address": "HaiPhong",
             "name": "Rose000"
         },
         "Hotel1": {
@@ -461,7 +471,7 @@
                 "start time": "10/10/12/2024",
                 "type room": "Vip1000"
             },
-            "address": "10/10/12/2024",
+            "address": "HaiPhong",
             "name": "Rose100"
         },
         "Hotel2": {
@@ -486,7 +496,7 @@
                 "start time": "10/10/12/2024",
                 "type room": "Vip2000"
             },
-            "address": "10/10/12/2024",
+            "address": "HaiPhong",
             "name": "Rose200"
         },
         "Hotel3": {
@@ -518,7 +528,7 @@
                 "start time": "10/10/12/2024",
                 "type room": "Vip3000"
             },
-            "address": "10/10/12/2024",
+            "address": "HaiPhong",
             "name": "Rose300"
         },
         "Hotel4": {
@@ -557,7 +567,7 @@
                 "start time": "10/10/12/2024",
                 "type room": "Vip4000"
             },
-            "address": "10/10/12/2024",
+            "address": "HaiPhong",
             "name": "Rose400"
         },
         "Hotel5": {
@@ -603,13 +613,13 @@
                 "start time": "10/10/12/2024",
                 "type room": "Vip5000"
             },
-            "address": "10/10/12/2024",
+            "address": "HaiPhong",
             "name": "Rose500"
         },
         "Transport0": {
             "brand": "Vietnam Airlines000",
             "cost": 1000,
-            "destination": "Hai Phong000",
+            "destination": "Hai Phong",
             "from": "Ha Noi000",
             "name": "Flight000",
             "time": "10/15/12/2024"
@@ -617,7 +627,7 @@
         "Transport1": {
             "brand": "Vietnam Airlines100",
             "cost": 1000,
-            "destination": "Hai Phong100",
+            "destination": "Hai Phong",
             "from": "Ha Noi100",
             "name": "Flight100",
             "time": "10/15/12/2024"
@@ -625,7 +635,7 @@
         "Transport2": {
             "brand": "Vietnam Airlines200",
             "cost": 1000,
-            "destination": "Hai Phong200",
+            "destination": "Hai Phong",
             "from": "Ha Noi200",
             "name": "Flight200",
             "time": "10/15/12/2024"
@@ -633,7 +643,7 @@
         "Transport3": {
             "brand": "Vietnam Airlines300",
             "cost": 1000,
-            "destination": "Hai Phong300",
+            "destination": "Hai Phong",
             "from": "Ha Noi300",
             "name": "Flight300",
             "time": "10/15/12/2024"
@@ -641,7 +651,7 @@
         "Transport4": {
             "brand": "Vietnam Airlines400",
             "cost": 1000,
-            "destination": "Hai Phong400",
+            "destination": "Hai Phong",
             "from": "Ha Noi400",
             "name": "Flight400",
             "time": "10/15/12/2024"
@@ -649,11 +659,13 @@
         "Transport5": {
             "brand": "Vietnam Airlines500",
             "cost": 1000,
-            "destination": "Hai Phong500",
+            "destination": "Hai Phong",
             "from": "Ha Noi500",
             "name": "Flight500",
             "time": "10/15/12/2024"
-        }
+        },
+        "name place": "Hai Phong",
+        "travel cost": 2000
     },
     "Travel6": {
         "Hotel0": {
@@ -664,7 +676,7 @@
                 "start time": "10/10/12/2024",
                 "type room": "Vip0000"
             },
-            "address": "10/10/12/2024",
+            "address": "HaiPhong",
             "name": "Rose000"
         },
         "Hotel1": {
@@ -682,7 +694,7 @@
                 "start time": "10/10/12/2024",
                 "type room": "Vip1000"
             },
-            "address": "10/10/12/2024",
+            "address": "HaiPhong",
             "name": "Rose100"
         },
         "Hotel2": {
@@ -707,7 +719,7 @@
                 "start time": "10/10/12/2024",
                 "type room": "Vip2000"
             },
-            "address": "10/10/12/2024",
+            "address": "HaiPhong",
             "name": "Rose200"
         },
         "Hotel3": {
@@ -739,7 +751,7 @@
                 "start time": "10/10/12/2024",
                 "type room": "Vip3000"
             },
-            "address": "10/10/12/2024",
+            "address": "HaiPhong",
             "name": "Rose300"
         },
         "Hotel4": {
@@ -778,7 +790,7 @@
                 "start time": "10/10/12/2024",
                 "type room": "Vip4000"
             },
-            "address": "10/10/12/2024",
+            "address": "HaiPhong",
             "name": "Rose400"
         },
         "Hotel5": {
@@ -824,7 +836,7 @@
                 "start time": "10/10/12/2024",
                 "type room": "Vip5000"
             },
-            "address": "10/10/12/2024",
+            "address": "HaiPhong",
             "name": "Rose500"
         },
         "Hotel6": {
@@ -877,13 +889,13 @@
                 "start time": "10/10/12/2024",
                 "type room": "Vip6000"
             },
-            "address": "10/10/12/2024",
+            "address": "HaiPhong",
             "name": "Rose600"
         },
         "Transport0": {
             "brand": "Vietnam Airlines000",
             "cost": 1000,
-            "destination": "Hai Phong000",
+            "destination": "Hai Phong",
             "from": "Ha Noi000",
             "name": "Flight000",
             "time": "10/15/12/2024"
@@ -891,7 +903,7 @@
         "Transport1": {
             "brand": "Vietnam Airlines100",
             "cost": 1000,
-            "destination": "Hai Phong100",
+            "destination": "Hai Phong",
             "from": "Ha Noi100",
             "name": "Flight100",
             "time": "10/15/12/2024"
@@ -899,7 +911,7 @@
         "Transport2": {
             "brand": "Vietnam Airlines200",
             "cost": 1000,
-            "destination": "Hai Phong200",
+            "destination": "Hai Phong",
             "from": "Ha Noi200",
             "name": "Flight200",
             "time": "10/15/12/2024"
@@ -907,7 +919,7 @@
         "Transport3": {
             "brand": "Vietnam Airlines300",
             "cost": 1000,
-            "destination": "Hai Phong300",
+            "destination": "Hai Phong",
             "from": "Ha Noi300",
             "name": "Flight300",
             "time": "10/15/12/2024"
@@ -915,7 +927,7 @@
         "Transport4": {
             "brand": "Vietnam Airlines400",
             "cost": 1000,
-            "destination": "Hai Phong400",
+            "destination": "Hai Phong",
             "from": "Ha Noi400",
             "name": "Flight400",
             "time": "10/15/12/2024"
@@ -923,7 +935,7 @@
         "Transport5": {
             "brand": "Vietnam Airlines500",
             "cost": 1000,
-            "destination": "Hai Phong500",
+            "destination": "Hai Phong",
             "from": "Ha Noi500",
             "name": "Flight500",
             "time": "10/15/12/2024"
@@ -931,11 +943,13 @@
         "Transport6": {
             "brand": "Vietnam Airlines600",
             "cost": 1000,
-            "destination": "Hai Phong600",
+            "destination": "Hai Phong",
             "from": "Ha Noi600",
             "name": "Flight600",
             "time": "10/15/12/2024"
-        }
+        },
+        "name place": "Hai Phong",
+        "travel cost": 2000
     },
     "Travel7": {
         "Hotel0": {
@@ -946,7 +960,7 @@
                 "start time": "10/10/12/2024",
                 "type room": "Vip0000"
             },
-            "address": "10/10/12/2024",
+            "address": "HaiPhong",
             "name": "Rose000"
         },
         "Hotel1": {
@@ -964,7 +978,7 @@
                 "start time": "10/10/12/2024",
                 "type room": "Vip1000"
             },
-            "address": "10/10/12/2024",
+            "address": "HaiPhong",
             "name": "Rose100"
         },
         "Hotel2": {
@@ -989,7 +1003,7 @@
                 "start time": "10/10/12/2024",
                 "type room": "Vip2000"
             },
-            "address": "10/10/12/2024",
+            "address": "HaiPhong",
             "name": "Rose200"
         },
         "Hotel3": {
@@ -1021,7 +1035,7 @@
                 "start time": "10/10/12/2024",
                 "type room": "Vip3000"
             },
-            "address": "10/10/12/2024",
+            "address": "HaiPhong",
             "name": "Rose300"
         },
         "Hotel4": {
@@ -1060,7 +1074,7 @@
                 "start time": "10/10/12/2024",
                 "type room": "Vip4000"
             },
-            "address": "10/10/12/2024",
+            "address": "HaiPhong",
             "name": "Rose400"
         },
         "Hotel5": {
@@ -1106,7 +1120,7 @@
                 "start time": "10/10/12/2024",
                 "type room": "Vip5000"
             },
-            "address": "10/10/12/2024",
+            "address": "HaiPhong",
             "name": "Rose500"
         },
         "Hotel6": {
@@ -1159,7 +1173,7 @@
                 "start time": "10/10/12/2024",
                 "type room": "Vip6000"
             },
-            "address": "10/10/12/2024",
+            "address": "HaiPhong",
             "name": "Rose600"
         },
         "Hotel7": {
@@ -1219,13 +1233,13 @@
                 "start time": "10/10/12/2024",
                 "type room": "Vip7000"
             },
-            "address": "10/10/12/2024",
+            "address": "HaiPhong",
             "name": "Rose700"
         },
         "Transport0": {
             "brand": "Vietnam Airlines000",
             "cost": 1000,
-            "destination": "Hai Phong000",
+            "destination": "Hai Phong",
             "from": "Ha Noi000",
             "name": "Flight000",
             "time": "10/15/12/2024"
@@ -1233,7 +1247,7 @@
         "Transport1": {
             "brand": "Vietnam Airlines100",
             "cost": 1000,
-            "destination": "Hai Phong100",
+            "destination": "Hai Phong",
             "from": "Ha Noi100",
             "name": "Flight100",
             "time": "10/15/12/2024"
@@ -1241,7 +1255,7 @@
         "Transport2": {
             "brand": "Vietnam Airlines200",
             "cost": 1000,
-            "destination": "Hai Phong200",
+            "destination": "Hai Phong",
             "from": "Ha Noi200",
             "name": "Flight200",
             "time": "10/15/12/2024"
@@ -1249,7 +1263,7 @@
         "Transport3": {
             "brand": "Vietnam Airlines300",
             "cost": 1000,
-            "destination": "Hai Phong300",
+            "destination": "Hai Phong",
             "from": "Ha Noi300",
             "name": "Flight300",
             "time": "10/15/12/2024"
@@ -1257,7 +1271,7 @@
         "Transport4": {
             "brand": "Vietnam Airlines400",
             "cost": 1000,
-            "destination": "Hai Phong400",
+            "destination": "Hai Phong",
             "from": "Ha Noi400",
             "name": "Flight400",
             "time": "10/15/12/2024"
@@ -1265,7 +1279,7 @@
         "Transport5": {
             "brand": "Vietnam Airlines500",
             "cost": 1000,
-            "destination": "Hai Phong500",
+            "destination": "Hai Phong",
             "from": "Ha Noi500",
             "name": "Flight500",
             "time": "10/15/12/2024"
@@ -1273,7 +1287,7 @@
         "Transport6": {
             "brand": "Vietnam Airlines600",
             "cost": 1000,
-            "destination": "Hai Phong600",
+            "destination": "Hai Phong",
             "from": "Ha Noi600",
             "name": "Flight600",
             "time": "10/15/12/2024"
@@ -1281,11 +1295,13 @@
         "Transport7": {
             "brand": "Vietnam Airlines700",
             "cost": 1000,
-            "destination": "Hai Phong700",
+            "destination": "Hai Phong",
             "from": "Ha Noi700",
             "name": "Flight700",
             "time": "10/15/12/2024"
-        }
+        },
+        "name place": "Hai Phong",
+        "travel cost": 2000
     },
     "Travel8": {
         "Hotel0": {
@@ -1296,7 +1312,7 @@
                 "start time": "10/10/12/2024",
                 "type room": "Vip0000"
             },
-            "address": "10/10/12/2024",
+            "address": "HaiPhong",
             "name": "Rose000"
         },
         "Hotel1": {
@@ -1314,7 +1330,7 @@
                 "start time": "10/10/12/2024",
                 "type room": "Vip1000"
             },
-            "address": "10/10/12/2024",
+            "address": "HaiPhong",
             "name": "Rose100"
         },
         "Hotel2": {
@@ -1339,7 +1355,7 @@
                 "start time": "10/10/12/2024",
                 "type room": "Vip2000"
             },
-            "address": "10/10/12/2024",
+            "address": "HaiPhong",
             "name": "Rose200"
         },
         "Hotel3": {
@@ -1371,7 +1387,7 @@
                 "start time": "10/10/12/2024",
                 "type room": "Vip3000"
             },
-            "address": "10/10/12/2024",
+            "address": "HaiPhong",
             "name": "Rose300"
         },
         "Hotel4": {
@@ -1410,7 +1426,7 @@
                 "start time": "10/10/12/2024",
                 "type room": "Vip4000"
             },
-            "address": "10/10/12/2024",
+            "address": "HaiPhong",
             "name": "Rose400"
         },
         "Hotel5": {
@@ -1456,7 +1472,7 @@
                 "start time": "10/10/12/2024",
                 "type room": "Vip5000"
             },
-            "address": "10/10/12/2024",
+            "address": "HaiPhong",
             "name": "Rose500"
         },
         "Hotel6": {
@@ -1509,7 +1525,7 @@
                 "start time": "10/10/12/2024",
                 "type room": "Vip6000"
             },
-            "address": "10/10/12/2024",
+            "address": "HaiPhong",
             "name": "Rose600"
         },
         "Hotel7": {
@@ -1569,7 +1585,7 @@
                 "start time": "10/10/12/2024",
                 "type room": "Vip7000"
             },
-            "address": "10/10/12/2024",
+            "address": "HaiPhong",
             "name": "Rose700"
         },
         "Hotel8": {
@@ -1636,13 +1652,13 @@
                 "start time": "10/10/12/2024",
                 "type room": "Vip8000"
             },
-            "address": "10/10/12/2024",
+            "address": "HaiPhong",
             "name": "Rose800"
         },
         "Transport0": {
             "brand": "Vietnam Airlines000",
             "cost": 1000,
-            "destination": "Hai Phong000",
+            "destination": "Hai Phong",
             "from": "Ha Noi000",
             "name": "Flight000",
             "time": "10/15/12/2024"
@@ -1650,7 +1666,7 @@
         "Transport1": {
             "brand": "Vietnam Airlines100",
             "cost": 1000,
-            "destination": "Hai Phong100",
+            "destination": "Hai Phong",
             "from": "Ha Noi100",
             "name": "Flight100",
             "time": "10/15/12/2024"
@@ -1658,7 +1674,7 @@
         "Transport2": {
             "brand": "Vietnam Airlines200",
             "cost": 1000,
-            "destination": "Hai Phong200",
+            "destination": "Hai Phong",
             "from": "Ha Noi200",
             "name": "Flight200",
             "time": "10/15/12/2024"
@@ -1666,7 +1682,7 @@
         "Transport3": {
             "brand": "Vietnam Airlines300",
             "cost": 1000,
-            "destination": "Hai Phong300",
+            "destination": "Hai Phong",
             "from": "Ha Noi300",
             "name": "Flight300",
             "time": "10/15/12/2024"
@@ -1674,7 +1690,7 @@
         "Transport4": {
             "brand": "Vietnam Airlines400",
             "cost": 1000,
-            "destination": "Hai Phong400",
+            "destination": "Hai Phong",
             "from": "Ha Noi400",
             "name": "Flight400",
             "time": "10/15/12/2024"
@@ -1682,7 +1698,7 @@
         "Transport5": {
             "brand": "Vietnam Airlines500",
             "cost": 1000,
-            "destination": "Hai Phong500",
+            "destination": "Hai Phong",
             "from": "Ha Noi500",
             "name": "Flight500",
             "time": "10/15/12/2024"
@@ -1690,7 +1706,7 @@
         "Transport6": {
             "brand": "Vietnam Airlines600",
             "cost": 1000,
-            "destination": "Hai Phong600",
+            "destination": "Hai Phong",
             "from": "Ha Noi600",
             "name": "Flight600",
             "time": "10/15/12/2024"
@@ -1698,7 +1714,7 @@
         "Transport7": {
             "brand": "Vietnam Airlines700",
             "cost": 1000,
-            "destination": "Hai Phong700",
+            "destination": "Hai Phong",
             "from": "Ha Noi700",
             "name": "Flight700",
             "time": "10/15/12/2024"
@@ -1706,11 +1722,13 @@
         "Transport8": {
             "brand": "Vietnam Airlines800",
             "cost": 1000,
-            "destination": "Hai Phong800",
+            "destination": "Hai Phong",
             "from": "Ha Noi800",
             "name": "Flight800",
             "time": "10/15/12/2024"
-        }
+        },
+        "name place": "Hai Phong",
+        "travel cost": 2000
     },
     "Travel9": {
         "Hotel0": {
@@ -1721,7 +1739,7 @@
                 "start time": "10/10/12/2024",
                 "type room": "Vip0000"
             },
-            "address": "10/10/12/2024",
+            "address": "HaiPhong",
             "name": "Rose000"
         },
         "Hotel1": {
@@ -1739,7 +1757,7 @@
                 "start time": "10/10/12/2024",
                 "type room": "Vip1000"
             },
-            "address": "10/10/12/2024",
+            "address": "HaiPhong",
             "name": "Rose100"
         },
         "Hotel2": {
@@ -1764,7 +1782,7 @@
                 "start time": "10/10/12/2024",
                 "type room": "Vip2000"
             },
-            "address": "10/10/12/2024",
+            "address": "HaiPhong",
             "name": "Rose200"
         },
         "Hotel3": {
@@ -1796,7 +1814,7 @@
                 "start time": "10/10/12/2024",
                 "type room": "Vip3000"
             },
-            "address": "10/10/12/2024",
+            "address": "HaiPhong",
             "name": "Rose300"
         },
         "Hotel4": {
@@ -1835,7 +1853,7 @@
                 "start time": "10/10/12/2024",
                 "type room": "Vip4000"
             },
-            "address": "10/10/12/2024",
+            "address": "HaiPhong",
             "name": "Rose400"
         },
         "Hotel5": {
@@ -1881,7 +1899,7 @@
                 "start time": "10/10/12/2024",
                 "type room": "Vip5000"
             },
-            "address": "10/10/12/2024",
+            "address": "HaiPhong",
             "name": "Rose500"
         },
         "Hotel6": {
@@ -1934,7 +1952,7 @@
                 "start time": "10/10/12/2024",
                 "type room": "Vip6000"
             },
-            "address": "10/10/12/2024",
+            "address": "HaiPhong",
             "name": "Rose600"
         },
         "Hotel7": {
@@ -1994,7 +2012,7 @@
                 "start time": "10/10/12/2024",
                 "type room": "Vip7000"
             },
-            "address": "10/10/12/2024",
+            "address": "HaiPhong",
             "name": "Rose700"
         },
         "Hotel8": {
@@ -2061,7 +2079,7 @@
                 "start time": "10/10/12/2024",
                 "type room": "Vip8000"
             },
-            "address": "10/10/12/2024",
+            "address": "HaiPhong",
             "name": "Rose800"
         },
         "Hotel9": {
@@ -2135,13 +2153,13 @@
                 "start time": "10/10/12/2024",
                 "type room": "Vip9000"
             },
-            "address": "10/10/12/2024",
+            "address": "HaiPhong",
             "name": "Rose900"
         },
         "Transport0": {
             "brand": "Vietnam Airlines000",
             "cost": 1000,
-            "destination": "Hai Phong000",
+            "destination": "Hai Phong",
             "from": "Ha Noi000",
             "name": "Flight000",
             "time": "10/15/12/2024"
@@ -2149,7 +2167,7 @@
         "Transport1": {
             "brand": "Vietnam Airlines100",
             "cost": 1000,
-            "destination": "Hai Phong100",
+            "destination": "Hai Phong",
             "from": "Ha Noi100",
             "name": "Flight100",
             "time": "10/15/12/2024"
@@ -2157,7 +2175,7 @@
         "Transport2": {
             "brand": "Vietnam Airlines200",
             "cost": 1000,
-            "destination": "Hai Phong200",
+            "destination": "Hai Phong",
             "from": "Ha Noi200",
             "name": "Flight200",
             "time": "10/15/12/2024"
@@ -2165,7 +2183,7 @@
         "Transport3": {
             "brand": "Vietnam Airlines300",
             "cost": 1000,
-            "destination": "Hai Phong300",
+            "destination": "Hai Phong",
             "from": "Ha Noi300",
             "name": "Flight300",
             "time": "10/15/12/2024"
@@ -2173,7 +2191,7 @@
         "Transport4": {
             "brand": "Vietnam Airlines400",
             "cost": 1000,
-            "destination": "Hai Phong400",
+            "destination": "Hai Phong",
             "from": "Ha Noi400",
             "name": "Flight400",
             "time": "10/15/12/2024"
@@ -2181,7 +2199,7 @@
         "Transport5": {
             "brand": "Vietnam Airlines500",
             "cost": 1000,
-            "destination": "Hai Phong500",
+            "destination": "Hai Phong",
             "from": "Ha Noi500",
             "name": "Flight500",
             "time": "10/15/12/2024"
@@ -2189,7 +2207,7 @@
         "Transport6": {
             "brand": "Vietnam Airlines600",
             "cost": 1000,
-            "destination": "Hai Phong600",
+            "destination": "Hai Phong",
             "from": "Ha Noi600",
             "name": "Flight600",
             "time": "10/15/12/2024"
@@ -2197,7 +2215,7 @@
         "Transport7": {
             "brand": "Vietnam Airlines700",
             "cost": 1000,
-            "destination": "Hai Phong700",
+            "destination": "Hai Phong",
             "from": "Ha Noi700",
             "name": "Flight700",
             "time": "10/15/12/2024"
@@ -2205,7 +2223,7 @@
         "Transport8": {
             "brand": "Vietnam Airlines800",
             "cost": 1000,
-            "destination": "Hai Phong800",
+            "destination": "Hai Phong",
             "from": "Ha Noi800",
             "name": "Flight800",
             "time": "10/15/12/2024"
@@ -2213,10 +2231,12 @@
         "Transport9": {
             "brand": "Vietnam Airlines900",
             "cost": 1000,
-            "destination": "Hai Phong900",
+            "destination": "Hai Phong",
             "from": "Ha Noi900",
             "name": "Flight900",
             "time": "10/15/12/2024"
-        }
+        },
+        "name place": "Hai Phong",
+        "travel cost": 2000
     }
 }
