@@ -26,5 +26,5 @@ class Travel{
         }
         int getTravelCost(){return (travelCost = hotels[0].getTotalCost() + transports[0].get_cost());}
 };
-
+typedef Travel Service;
 #endif // TRAVEL_H

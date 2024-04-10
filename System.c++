@@ -284,8 +284,14 @@ void System::runAdmin(vector<Travel> &travels, vector<User> &users){
                 sortWithCost(travels, 0, travels.size() - 1);
                 break;
             case 5:
-                admin.loadData();
-                admin.saveData();
+                cout << setw(20) << "Do you want to load and save data? 1-2__: \n1. Load data\n2. Save data\n";
+                cin >> choose; cin.ignore();
+                if(choose == 1){
+                    admin.loadData(users, travels);
+                }
+                if(choose == 2){
+                    admin.saveData(users, travels);
+                }
                 break;
             default:
                 cout << "Choose wrong, Enter again!" << endl;

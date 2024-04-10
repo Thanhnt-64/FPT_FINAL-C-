@@ -5,17 +5,17 @@
 #include <iomanip>
 #include "json.hpp"
 
-#include "User.c++"
+#include "User.h"
 
-#include "Travel.cpp"
+#include "Travel.h"
 
-#include "Room.cpp"
+#include "Room.h"
 // #include "Room.h"
 
 // #include "Hotel.h"
-#include "Hotel.c++"
+#include "Hotel.h"
 // #include "Transport.h"
-#include "Transport.c++"
+#include "Transport.h"
 
 using namespace std;
 using json = nlohmann::json;
@@ -27,6 +27,8 @@ class Write_User
     json j;
 
 public:
+    ~Write_User(){m_output.close();}
+
     Write_User(string file_name) { m_output.open(file_name, ios::out); }
      void write_Room(Room room, int index_user, int index_travel, int index_hotel, int index_room);
      void write_Hotel(Hotel hotel, int index_user, int index_travel, int index_hotel);
@@ -46,6 +48,7 @@ class Write_Travel
     json j;
 
 public:
+    ~Write_Travel(){m_output.close();}
     Write_Travel(string file_name) { m_output.open(file_name, ios::out); }
     void write_Room(Room room, int index_travel, int index_hotel, int index_room);
     void write_Hotel(Hotel hotel, int index_travel, int index_hotel);
@@ -63,6 +66,7 @@ class Read_User
     json j;
 
 public:
+    ~Read_User(){m_input.close();}
     Read_User(string file_name) { m_input.open(file_name, ios::in); }
     User read_User(int index_user);
     vector<User> read_Users();
@@ -83,6 +87,7 @@ class Read_Travel
     json j;
 
 public:
+    ~Read_Travel(){m_input.close();}
     Read_Travel(string file_name) { m_input.open(file_name, ios::in); }
     vector<Hotel> read_Hotels( int index_travel);
     vector<Transport> read_Transports( int index_travel);
@@ -94,4 +99,5 @@ public:
     void load_file();
     // string test(int index);
 };
-
+typedef Read_Travel Read_Service;
+typedef Write_Travel Write_Service;

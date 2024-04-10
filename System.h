@@ -47,4 +47,8 @@ public:
     void searchByPlace(vector<Travel> &travels);
 };
 
+void sortWithCost(vector<Travel> &travels, int low, int high);
+static int partitionInt(vector<Travel> &travels, int low, int high);
+static int paritionTime(vector<Travel> &travels, int low, int high);
+void sortWithTime(vector<Travel> &travels, int low, int high);
 #endif // SYSTEM_H
