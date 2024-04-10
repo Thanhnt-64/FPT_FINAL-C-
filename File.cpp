@@ -1,5 +1,7 @@
 #include "File.h"
 
+typedef Read_Travel Read_Service;
+typedef Write_Travel Write_Service;
 void Write_User::pushfile()
 {
     m_output << j.dump(4);

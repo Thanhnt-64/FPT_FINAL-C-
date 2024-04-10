@@ -1,5 +1,6 @@
 #include "Admin.h"
 #include <algorithm>
+#include "File.cpp"
 Admin* Admin::instance = nullptr;
 Admin& Admin::getInstance()
 {
@@ -119,11 +120,19 @@ void Admin::deleteService() {
     // Code to delete a service
 }
 
-void Admin::loadData() {
+void Admin::loadData(vector <User>& users, vector <Service>& services) {
     // Code to load data from files
+    Read_User read_user("user_database.json");
+    Read_Service read_service("service_database.json");
+    users=read_user.read_Users();
+    services=read_service.read_Travels();
 }
 
-void Admin::saveData() {
+void Admin::saveData(vector <User>& users, vector <Service>& services) {
     // Code to save data to files
+    Write_User write_user("user_database.json");
+    Write_Service write_service("service_database.json");
+    write_user.write_Users(users);
+    write_service.write_Travels(services);
 }
 

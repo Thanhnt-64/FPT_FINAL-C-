@@ -27,8 +27,8 @@ public:
     void viewServiceInfo();
     void addService();
     void deleteService();
-    void loadData();
-    void saveData();
+    void loadData(vector <User>& users,vector <Travel>& travels);
+    void saveData(vector <User>& users,vector <Travel>& travels);
 };
 
 #endif // ADMIN_H
