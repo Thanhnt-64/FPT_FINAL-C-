@@ -46,7 +46,7 @@ public:
     void runAdmin(vector<Travel> &travels, vector<User> &users);
     void searchByPlace(vector<Travel> &travels);
 };
-
+void sortTravel(vector<Travel> &travels);
 void sortWithCost(vector<Travel> &travels, int low, int high);
 static int partitionInt(vector<Travel> &travels, int low, int high);
 static int paritionTime(vector<Travel> &travels, int low, int high);

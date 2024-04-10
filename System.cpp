@@ -1,5 +1,6 @@
 #include "System.h"
 #include "File.h"
+
 User* System::logInAccount(vector<User> &users, User &u1){
     cout << setw(20) << "Enter user_name and password: " << endl;
     cout << setw(20) << "Account: ";  u1.inputAccount();
@@ -138,6 +139,7 @@ void System::listPlace(vector<Travel> &travels){
     cout << setw(20) << "Our system support the following places: " << endl;
     for(int i = 0; i < travels.size(); i++){
         cout << setw(20) << i+1 << travels[i].getPlace() << endl;
+        travels[i].showTravelInfo();
     }
     cout << "__________________________________________________\n";
 }
@@ -288,7 +290,7 @@ void System::runAdmin(vector<Travel> &travels, vector<User> &users){
                 break;
             case 4:
                 listPlace(travels);
-                sortWithCost(travels, 0, travels.size() - 1);
+                sortTravel(travels);
                 break;
             case 5:
                 cout << setw(20) << "Do you want to load and save data? 1-2__: \n1. Load data\n2. Save data\n";
@@ -307,6 +309,22 @@ void System::runAdmin(vector<Travel> &travels, vector<User> &users){
     }
 }
 
+void sortTravel(vector<Travel> &travels){
+    if (travels.empty()) {
+        cout << "No travels to sort." << endl;
+        return;
+    }
+    for(int i = 0; i < travels.size(); i++){
+        vector<Hotel> &hotel = travels[i].getHotel();
+        vector<Transport> &transports = travels[i].getTransport();
+        if(!hotel.empty()){
+            sortWithCost(hotel, 0, (hotel.size() - 1));
+        }
+        if(transports.empty()){
+            sortWithTime(transports, 0, (transports.size() - 1));
+        }
+    }
+}
 void System::run(vector<Travel> &travels, User *user){
     while(1){
         listPlace(travels);
@@ -336,7 +354,7 @@ void System::run(vector<Travel> &travels, User *user){
                 break;
             case 5:
                 listPlace(travels);
-                sortWithCost(travels, 0, travels.size() - 1);
+                sortTravel(travels);
                 break;
             default:
                 cout << "Choose wrong, Enter again!" << endl;
@@ -344,60 +362,59 @@ void System::run(vector<Travel> &travels, User *user){
         }
     }    
 }
-static int partitionInt(vector<Travel> &travels, int low, int high){
-    int pivot = travels[high].getTravelCost();
+static int partitionInt(vector<Hotel> &hotel, int low, int high){
+    int pivot = hotel[high].getTotalCost();
     int left = low;
     int right = high - 1;
     while(true){
-        while(left <= right && travels[left].getTravelCost() < pivot) left++;
-        while(left <= right && travels[right].getTravelCost() > pivot) right--;
+        while(left <= right && hotel[left].getTotalCost() < pivot) left++;
+        while(left <= right && hotel[right].getTotalCost() > pivot) right--;
         if(left >= right) break;
-        swap(travels[left], travels[right]);
+        swap(hotel[left], hotel[right]);
         left++;
         right--;
     }
-    swap(travels[left], travels[high]);
+    swap(hotel[left], hotel[high]);
     return left;
 }
 
-void sortWithCost(vector<Travel> &travels, int low, int high){
+void sortWithCost(vector<Hotel> &hotel, int low, int high){
     if(low < high){
-        int pi = partitionInt(travels, low, high);
-        sortWithCost(travels, low, pi - 1);
-        sortWithCost(travels, pi + 1, high);
+        int pi = partitionInt(hotel, low, high);
+        sortWithCost(hotel, low, pi - 1);
+        sortWithCost(hotel, pi + 1, high);
     }
 }
 
-static vector<Transport>& getAllTransport(vector<Travel> &travels){
-    static vector<Transport> allTransport;
-    allTransport.clear();
-    for(int i = 0; i < travels.size(); i++){
-        for(int j = 0; j < travels[i].getTransport().size(); j++){
-            allTransport.push_back(travels[i].getTransport()[j]);
-        }
-    }
-    return allTransport;
-}
-static int paritionTime(vector<Travel> &travels, int low, int high){
-    Transport pivot = travels[high].getTransport()[0];
+// static vector<Transport>& getAllTransport(vector<Travel> &travels){
+//     static vector<Transport> allTransport;
+//     allTransport.clear();
+//     for(int i = 0; i < travels.size(); i++){
+//         for(int j = 0; j < travels[i].getTransport().size(); j++){
+//             allTransport.push_back(travels[i].getTransport()[j]);
+//         }
+//     }
+//     return allTransport;
+// }
+static int paritionTime(vector<Transport> &trans, int low, int high){
+    Transport pivot = trans[high];
     int left = low;
     int right = high - 1;
     while(true){
-        while(left <= right && travels[left].getTransport()[0] < pivot) left++;
-        while(left <= right && travels[right].getTransport()[0] > pivot) right--;
+        while(left <= right && trans[left] < pivot) left++;
+        while(left <= right && trans[right] > pivot) right--;
         if(left >= right) break;
-        swap(travels[left], travels[right]);
+        swap(trans[left], trans[right]);
         left++;
         right--;
     }
-    swap(travels[left], travels[high]);
+    swap(trans[left], trans[high]);
     return left;
 }
-void sortWithTime(vector<Travel> &travels, int low, int high){
+void sortWithTime(vector<Transport> &trans, int low, int high){
     if(low < high){
-        int pi = paritionTime(travels, low, high);
-        sortWithTime(travels, low, pi - 1);
-        sortWithTime(travels, pi + 1, high);
+        int pi = paritionTime(trans, low, high);
+        sortWithTime(trans, low, pi - 1);
+        sortWithTime(trans, pi + 1, high);
     }
 }
-
