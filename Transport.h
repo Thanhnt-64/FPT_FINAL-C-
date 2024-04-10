@@ -11,15 +11,15 @@ class Transport{
 private:
 	string name, brand, from, destination;
 	int cost;
-	string time;//hh/mm/dd/yyyy;
+	string time;
 	int hour, day, month, year;
 public:
 	Transport(){}
 	Transport(string name,string brand,string from,string destination,int cost,string time);
 	Transport(string name, string brand, string from, string destination, string time, int cost) :name(name)
 		, brand(brand), from(from), destination(destination), time(time), cost(cost){}
-	void input();//input name,brand,from,destination,time;
-	// validate input data
+	/*input name,brand,from,destination,time,cost and validate input*/ 
+	void input();
 	void validate_time(string&);
     bool validate_string(string&);
     void validate_name(string &);
@@ -28,7 +28,7 @@ public:
     void validate_destination(string &);
     void validate_cost(int&);
     void validate(string&);
-	// set data
+	//change transport
 	void change_name();
 	void change_brand();
 	void change_from();
@@ -42,6 +42,7 @@ public:
 	string get_from();
 	string get_time();
 	int get_cost();
+	// show infomation attribute
     void output();
 	bool operator > (Transport& c);
 	bool operator < (Transport& c);

@@ -24,9 +24,13 @@ class Hotel{
     string getAddress();
     int getTotalCost();
     vector<Room>& getRooms();
-    void setName();//input name
-    void setAddress();//input adress
-    void setTotalCost();//input adress
-    bool validateString(string &); //validate input data
+    //input name
+    void setName();
+    //input adress
+    void setAddress();
+    //input cost
+    void setTotalCost();
+    //validate input data
+    bool validateString(string &); 
 };
 #endif // HOTEL_H
