@@ -1,15 +1,15 @@
 #include "Transport.h"
 
-
-void Transport::input(){
+void Transport::input()
+{
 	cout << "Input transport Name: ";
-	validate_name(name);//chỉ nhận chuỗi là Flight và Car
+	validate_name(name); // chỉ nhận chuỗi là Flight và Car
 	cout << "Input Brand: ";
-	validate_brand(brand);//chứa kí tự từ A->z và chứa cả dấu cách ,không chứa các kí tự đặc biệt
+	validate_brand(brand); // chứa kí tự từ A->z và chứa cả dấu cách ,không chứa các kí tự đặc biệt
 	cout << "Input From: ";
-	validate_from(from);//chứa kí tự từ A->z và chứa cả dấu cách ,không chứa các kí tự đặc biệt
+	validate_from(from); // chứa kí tự từ A->z và chứa cả dấu cách ,không chứa các kí tự đặc biệt
 	cout << "Input Destination: ";
-	validate_destination(destination);//chứa kí tự từ A->z và chứa cả dấu cách ,không chứa các kí tự đặc biệt
+	validate_destination(destination); // chứa kí tự từ A->z và chứa cả dấu cách ,không chứa các kí tự đặc biệt
 	cout << "Input Time(hh/dd/mm/yyyy): ";
 	validate_time(time);
     cout<<"Input Cost: ";
@@ -46,7 +46,6 @@ void Transport::validate_time(string &t) {
 				if (t[i] < '0' || t[i]>'9') {
 					break;
 				}
-
 			}
 		}
 		int sum = 0, temp1 = 1, count = 0;
@@ -54,155 +53,175 @@ void Transport::validate_time(string &t) {
 		for (int i = t.length() - 1; i >= 0; i--) {
 			if (t[i] == '/') {
 				count++;
-				if (count == 1) {
+				if (count == 1)
+				{
 					year = sum;
 				}
-				if (count == 2) {
+				if (count == 2)
+				{
 					month = sum;
-					if (sum > 12 || sum <= 0) {
+					if (sum > 12 || sum <= 0)
+					{
 
 						break;
 					}
 				}
 
-				if (count == 3) {
+				if (count == 3)
+				{
 					day = sum;
-					if ((sum > 30 || sum <= 0) && (month == 4 || month == 6 || month == 9 || month == 11)) {
+					if ((sum > 30 || sum <= 0) && (month == 4 || month == 6 || month == 9 || month == 11))
+					{
 
 						break;
 					}
-					if ((sum > 31 || sum <= 0) && (month == 1 || month == 3 || month == 5 || month == 7 || month == 8||month==10||month==12)) {
+					if ((sum > 31 || sum <= 0) && (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12))
+					{
 
 						break;
 					}
-					if (year % 4 == 0 && (sum > 29||sum<=0) && month == 2) {
+					if (year % 4 == 0 && (sum > 29 || sum <= 0) && month == 2)
+					{
 						break;
 					}
-					if (year % 4 == 1 && (sum > 28||sum<=0) && month == 2) {
+					if (year % 4 == 1 && (sum > 28 || sum <= 0) && month == 2)
+					{
 						break;
 					}
 				}
-				
+
 				sum = 0;
 				temp1 = 1;
-
 			}
 			else
 			{
-				if (i == 0) {
+				if (i == 0)
+				{
 					count++;
 				}
 				sum += ((int)t[i] - 48) * temp1;
 				temp1 *= 10;
 			}
 		}
-		if (count == 4 && sum <= 24) {
+		if (count == 4 && sum <= 24)
+		{
 			hour = sum;
 			break;
 		}
 		cout << "Input Time: ";
 	}
 }
-bool Transport::validate_string(string &s) {
+bool Transport::validate_string(string &s)
+{
 	getline(cin, s);
-	for (int i = 0; i < s.length(); i++) {
-        if(s[i] == ' '){
-            if(i==s.length()-1){
-                 return true;
-               }
-            continue;
-        }
-		if ((s[i] >= 'A' && s[i] <= 'Z') || (s[i] >= 'a' && s[i] <= 'z') || (s[i] >= '0' && s[i] <= '9')) {
-			if (i == s.length() - 1) {
+	for (int i = 0; i < s.length(); i++)
+	{
+		if (s[i] == ' ')
+		{
+			if (i == s.length() - 1)
+			{
+				return true;
+			}
+			continue;
+		}
+		if ((s[i] >= 'A' && s[i] <= 'Z') || (s[i] >= 'a' && s[i] <= 'z') || (s[i] >= '0' && s[i] <= '9'))
+		{
+			if (i == s.length() - 1)
+			{
 				return true;
 			}
 		}
-        else{
-            return false;
-        }   
-    } 
-    return false;	
-}
-void Transport::validate_name(string &s){
-    while(1){
-        getline(cin,s);
-        if(s=="Flight" || s=="Car"){
-            break;
-        }
-        else{
-            cout<<"Input again Transport Name: ";
-        }
-    }
-}
-void Transport::validate_brand(string &s){
-    while(1){
-        if(validate_string(s)){
-            break;
-        }
-        else{
-            cout<<"Input again Brand:";
-        }
-    }
-}
-void Transport::validate_from(string &s){
-    while(1){
-        if(validate_string(s)){
-            break;
-        }
-        else{
-            cout<<"Input again From: ";
-        }
-    }
-}
-void Transport::validate_destination(string &s){
-    while(1){
-        if(validate_string(s)){
-            break;
-        }
-        else{
-            cout<<"Input agian Destination: ";
-        }
-    }
-}
-void Transport::output(){
-    cout<<left<<setw(20)<<name<<setw(20)<<brand<<setw(20)
-        <<from<<setw(20)<<destination<<setw(20)<<time<<setw(20)<<cost;
-}
-bool Transport::operator > (Transport& t) {
-	if (year > t.year) {
-		return true;
-	}
-	else if (year == t.year) {
-		if (month > t.month) {
-			return true;
+		else
+		{
+			return false;
 		}
-		else if (month == t.month) {
-			if (day > t.day) {
-				return true;
-			}
-			else if (day == t.day) {
-				if (hour > t.hour) {
-					return true;
-				}	
-			}
-		}	
 	}
 	return false;
 }
-bool Transport::operator < (Transport& t) {
-	if (year < t.year) {
+void Transport::validate_name(string &s)
+{
+	while (1)
+	{
+		getline(cin, s);
+		if (s == "Flight" || s == "Car")
+		{
+			break;
+		}
+		else
+		{
+			cout << "Input again Transport Name: ";
+		}
+	}
+}
+void Transport::validate_brand(string &s)
+{
+	while (1)
+	{
+		if (validate_string(s))
+		{
+			break;
+		}
+		else
+		{
+			cout << "Input again Brand:";
+		}
+	}
+}
+void Transport::validate_from(string &s)
+{
+	while (1)
+	{
+		if (validate_string(s))
+		{
+			break;
+		}
+		else
+		{
+			cout << "Input again From: ";
+		}
+	}
+}
+void Transport::validate_destination(string &s)
+{
+	while (1)
+	{
+		if (validate_string(s))
+		{
+			break;
+		}
+		else
+		{
+			cout << "Input agian Destination: ";
+		}
+	}
+}
+void Transport::output()
+{
+	cout << left << setw(20) << name << setw(20) << brand << setw(20)
+		 << from << setw(20) << destination << setw(20) << time << setw(20) << cost;
+}
+bool Transport::operator>(Transport &t)
+{
+	if (year > t.year)
+	{
 		return true;
 	}
-	else if (year == t.year) {
-		if (month < t.month) {
+	else if (year == t.year)
+	{
+		if (month > t.month)
+		{
 			return true;
 		}
-		else if (month == t.month) {
-			if (day < t.day) {
+		else if (month == t.month)
+		{
+			if (day > t.day)
+			{
 				return true;
 			}
-			else if (day == t.day) {
-				if (hour < t.hour) {
+			else if (day == t.day)
+			{
+				if (hour > t.hour)
+				{
 					return true;
 				}
 			}
@@ -210,6 +229,7 @@ bool Transport::operator < (Transport& t) {
 	}
 	return false;
 }
+
 void Transport::change_name(){
 	string name1;
 	cout<<"Input Transport Name: ";
@@ -248,29 +268,32 @@ void Transport::change_cost(){
 	validate_cost(cost1);
 	cost=cost1;
 }
-string Transport::get_name(){
+string Transport::get_name()
+{
 	return name;
 }
-string Transport::get_brand(){
+string Transport::get_brand()
+{
 	return brand;
 }
-string Transport::get_from(){
+string Transport::get_from()
+{
 	return from;
 }
-string Transport::get_destination(){
+string Transport::get_destination()
+{
 	return destination;
 }
-string Transport::get_time(){
+string Transport::get_time()
+{
 	return time;
 }
-int Transport::get_cost(){
+int Transport::get_cost()
+{
 	return cost;
 }
 
-int main(){
-    Transport t;
-    t.input();
-    t.output();
-	t.change_time();
-
+Transport::Transport(string name, string brand, string from, string destination, int cost , string time)
+	: name{name}, brand{brand}, from{from}, destination{destination}, cost{cost}, time{time}
+{
 }
