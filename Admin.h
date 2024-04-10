@@ -10,7 +10,7 @@ private:
     Admin() {
         
     }
-    static Admin* instance;
+    static unique_ptr<Admin> instance;
 public:
     static Admin& getInstance();
     /* Show List Infomation of all Users in database*/
