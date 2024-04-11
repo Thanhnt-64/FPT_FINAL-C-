@@ -4,7 +4,6 @@
 #include "System.h"
 #include "Travel.h"
 #include "User.h"
-#include <iomanip>
 #include "File.h"
 bool checkAccountAdmin(const string &s){
     return s == "admin";
@@ -17,10 +16,14 @@ int main()
     vector<Travel> travels;
 
     //Load data from files
-    Read_User read_user("user_database.json");
-    Read_Service read_service("service_database.json");
+    Read_User read_user("database_user.json");
+    Read_Service read_service("database_service.json");
+    read_user.load_file();
+    read_service.load_file(); 
+    
     users=read_user.read_Users();
     travels=read_service.read_Travels();
+    cout << "error" << endl;
     read_user.~Read_User();
     read_service.~Read_Service();
 
@@ -46,13 +49,14 @@ int main()
                 break;
             }
             user = sys.logInAccount(users, u1);
+            sys.run(travels, user);
             break;
         case 2:
             user = sys.registerAccount(users, u1);
             cout << "Register successfully!\n";
             cout << "Please log in with your account!\n";
             user = sys.logInAccount(users, u1);
-            
+            sys.run(travels, user);
             break;
         default:
             break;

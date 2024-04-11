@@ -65,3 +65,10 @@ int Room::getCost()
 {
     return m_cost;
 }
+void Room::showinfoRoom(){
+    cout<<left<<setw(20)<<m_name
+        <<setw(20)<<m_startTime
+        <<setw(20)<<m_endTime
+        <<setw(20)<<m_cost
+        <<setw(20)<<m_typeRoom;
+}

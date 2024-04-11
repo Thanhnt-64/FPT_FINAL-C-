@@ -42,7 +42,7 @@ public:
     /* Search password to check valid when login*/
     bool searchPassword(vector<User> &users, const string &s);
     /* Run system*/
-    void run(vector<Travel> &travels);
+    void run(vector<Travel> &travels, User *user);
     void runAdmin(vector<Travel> &travels, vector<User> &users);
     void searchByPlace(vector<Travel> &travels);
 };

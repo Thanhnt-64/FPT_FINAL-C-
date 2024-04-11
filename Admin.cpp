@@ -115,14 +115,12 @@ void Admin::viewServiceInfo(vector<Travel> &travels)
     /* Show information about hotel services */
     cout << "Hotel Services Information:" << endl;
     cout << "--------------------------------------" << endl;
-    for (const Travel& travel : travels)
+    for (auto travel : travels)
     {
         cout << "Place: " << travel.getPlace() << endl;
         vector<Hotel>& hotels = travel.getHotel();
-        for (const Hotel& hotel : hotels)
+        for (auto hotel : hotels)
         {
-            cout << "Hotel Name: " << hotel.getName() << endl;
-            cout << "Address: " << hotel.getAddress() << endl;
             hotel.showRoomInfo();
             cout << "--------------------------------------" << endl;
         }
@@ -130,11 +128,11 @@ void Admin::viewServiceInfo(vector<Travel> &travels)
     /* Show information about transportation services */
     cout << "Transportation Services Information:" << endl;
     cout << "--------------------------------------" << endl;
-    for (const Travel& travel : travels)
+    for (auto travel : travels)
     {
         cout << "Place: " << travel.getPlace() << endl;
         vector<Transport>& transports = travel.getTransport();
-        for (const Transport& transport : transports)
+        for (auto transport : transports)
         {
             cout << "Transport Name: " << transport.get_name() << endl;
             cout << "Brand: " << transport.get_brand() << endl;
@@ -146,109 +144,91 @@ void Admin::viewServiceInfo(vector<Travel> &travels)
         }
     }
 }
+void addRoom(Hotel &hol){
+    vector<Room> &rooms = hol.getRooms();
+    char choose;
+    string name, typeRoom, startTime, endTime;
+    int cost;
+    while(1){
+        cout << "Do you want to add a Room to this Hotel?(Y/N)\n";
+        cin >> choose; cin.ignore();
+        if(choose == 'Y' || choose == 'y'){
+            Room room;
+            cout << "Enter name of room: "; getline(cin, name);
+            room.setName(name);
+            cout << "Enter type of room: "; getline(cin, typeRoom);
+            room.setTypeRoom(typeRoom);
+            cout << "Enter start time: "; getline(cin, startTime);
+            room.setStartTime(startTime);
+            cout << "Enter end time: "; getline(cin, endTime);
+            room.setEndTime(endTime);
+            cout << "Enter cost: "; cin >> cost; cin.ignore();
+            room.setCost(cost);
+        }
+        else{
+            break;
+        }
+    }   
+}
+void addInfoHotel(Travel &tral){
+    vector<Hotel> &hol = tral.getHotel();
+    char choose;
+    while(1){
+        cout << "Do you want to add a Hotel to this place?(Y/N)\n";
+        cin >> choose; cin.ignore();
+        if(choose == 'Y' || choose == 'y'){
+            Hotel hotel;
+            hotel.setTotalCost();
+            hotel.setName();
+            hotel.setAddress();
+            addRoom(hotel);
+            hol.push_back(hotel);
+        }
+        else{
+            break;
+        }
+    }   
+}
+
+void addInfoTransport(Travel &tral){
+    vector<Transport> &trans = tral.getTransport();
+    char choose;
+    while(1){
+        cout << "Do you want to add a Transport to this place?(Y/N)\n";
+        cin >> choose; cin.ignore();
+        if(choose == 'Y' || choose == 'y'){
+            Transport transport;
+            transport.input();
+            trans.push_back(transport);
+        }
+        else{
+            break;
+        }
+    }       
+}
 
 void Admin::addService(vector<Travel>& travels)
 {
     string place;
     cout << "Enter place for the new service: ";
     getline(cin, place);
-    bool found = false;
-    for (auto it = travels.begin(); it != travels.end(); it++)
+    for (int i = 0; i < travels.size(); i++)
     {
-        if (it->getPlace() == place)
+        if (travels[i].getPlace() != place)
         {
-            cout << "Travel: " << place << " ." << endl;
-            found = true;
-            break;
+            continue;
         }
+        addInfoHotel(travels[i]);
+        addInfoTransport(travels[i]);
     }
-    /* If that location doesn't exist yet */
-    if (!found)
-    {
-        Travel newLocation;
-        newLocation.setPlace(place);
-        /* Add Hotels service */
-        vector<Hotel> hotelList;
-        int numHotels;
-        cout << "Enter number of hotels: ";
-        cin >> numHotels;
-        cin.ignore();
-        for (int i = 0; i < numHotels; ++i)
-        {
-            string name, address;
-            int totalCost;
-            cout << "Enter hotel name: ";
-            getline(cin, name);
-            cout << "Enter hotel address: ";
-            getline(cin, address);
-            cout << "Enter total cost: ";
-            cin >> totalCost;
-            cin.ignore();
-            Hotel newHotel(name, address, totalCost);
-            vector<Room> rooms;
-            int numRooms;
-            cout << "Enter number of rooms for " << name << ": ";
-            cin >> numRooms;
-            cin.ignore();
-            for (int j = 0; j < numRooms; ++j)
-            {
-                string roomName, startTime, endTime, typeRoom;
-                int cost;
-                cout << "Enter room name: ";
-                getline(cin, roomName);
-                cout << "Enter start time: ";
-                getline(cin, startTime);
-                cout << "Enter end time: ";
-                getline(cin, endTime);
-                cout << "Enter type of room: ";
-                getline(cin, typeRoom);
-                cout << "Enter cost: ";
-                cin >> cost;
-                cin.ignore();
-                Room newRoom(roomName, startTime, endTime, typeRoom, cost);
-                rooms.push_back(newRoom);
-            }
-            newHotel.setRooms(rooms);
-            hotelList.push_back(newHotel);
-        }
-        newLocation.setHotels(hotelList);
-        /* Add Transport service */
-        vector<Transport> newTransports;
-        int numTransports;
-        cout << "Enter number of transports: ";
-        cin >> numTransports;
-        cin.ignore();
-        for (int i = 0; i < numTransports; ++i)
-        {
-            string name, brand, from, destination, time;
-            int cost;
-            cout << "Enter transport name: ";
-            getline(cin, name);
-            cout << "Enter brand: ";
-            getline(cin, brand);
-            cout << "Enter starting point: ";
-            getline(cin, from);
-            cout << "Enter destination: ";
-            getline(cin, destination);
-            cout << "Enter time (hh/mm/dd/yyyy): ";
-            getline(cin, time);
-            cout << "Enter cost: ";
-            cin >> cost;
-            cin.ignore();
-            Transport newTransport(name, brand, from, destination, time, cost);
-            newTransports.push_back(newTransport);
-        }
-        newLocation.setTransports(newTransports);
-        travels.push_back(newLocation);
-
-    }
+    /* If that location doesn't exist yet */ 
 }
 
 void Admin::deleteService(vector<Travel>& travels)
 {
     string placeToDelete;;
     cout << "Enter place for the service to be deleted: ";
-    getline(cin, placeToDelete;);
+    getline(cin, placeToDelete);
     bool found = false;
     for (auto it = travels.begin(); it != travels.end(); it++)
     {
@@ -271,6 +251,8 @@ void Admin::loadData(vector <User>& users, vector <Service>& services) {
     // Code to load data from files
     Read_User read_user("user_database.json");
     Read_Service read_service("service_database.json");
+    read_user.load_file();
+    read_service.load_file(); 
     users=read_user.read_Users();
     services=read_service.read_Travels();
 }
@@ -281,5 +263,7 @@ void Admin::saveData(vector <User>& users, vector <Service>& services) {
     Write_Service write_service("service_database.json");
     write_user.write_Users(users);
     write_service.write_Travels(services);
+    write_user.pushfile();
+    write_service.pushfile(); 
 }
 

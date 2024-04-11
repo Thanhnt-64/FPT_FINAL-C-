@@ -11,6 +11,10 @@ User* System::logInAccount(vector<User> &users, User &u1){
             }
         }
     }
+    else{
+        cout << setw(20) << "Wrong account or password!\n";
+        logInAccount(users, u1);
+    }
     return nullptr;
 }
 void System::logInAccount(){
@@ -242,7 +246,7 @@ void showChangeServiceSwitch(vector<Travel> &travels){
     switch (choose)
     {
     case 1:
-        admin.viewServiceInfo();
+        admin.viewServiceInfo(travels);
         break;
     case 2:
         admin.editTransportInfo(travels);
@@ -261,6 +265,7 @@ void System::runAdmin(vector<Travel> &travels, vector<User> &users){
     while(1){
         listPlace(travels);
         int choose;
+        cout << setw(20) << "0. Exit" << endl;
         cout << setw(20) << "1. Show/Change Users's infomation" << endl;
         cout << setw(20) << "2. Show/Change Service's infomation" << endl;
         cout << setw(20) << "3. Search room/vehicle by place" << endl;
@@ -270,6 +275,8 @@ void System::runAdmin(vector<Travel> &travels, vector<User> &users){
         cin >> choose; cin.ignore();
         system("cls");
         switch(choose){
+            case 0:
+                return;
             case 1:
                 showChangeUserSwitch(users);
                 break;
@@ -300,6 +307,43 @@ void System::runAdmin(vector<Travel> &travels, vector<User> &users){
     }
 }
 
+void System::run(vector<Travel> &travels, User *user){
+    while(1){
+        listPlace(travels);
+        int choose;
+        cout << setw(20) << "0. Exit" << endl;
+        cout << setw(20) << "1. Change your information" << endl;
+        cout << setw(20) << "2. Show/Change current booking travel" << endl;
+        cout << setw(20) << "3. Delete the travel" << endl;
+        cout << setw(20) << "4. Search room/vehicle by place" << endl;
+        cout << setw(20) << "5. Sort data follow time and cost" << endl;
+        cout << "Enter your choose: 1-5:__";
+        cin >> choose; cin.ignore();
+        system("cls");
+        switch(choose){
+            case 0: return;
+            case 1:
+                user->changeInfo();
+                break;
+            case 2:
+                user->showUserInfo();
+                break;
+            case 3:
+                user->showUserInfo();
+                break;
+            case 4:
+                searchByPlace(travels);
+                break;
+            case 5:
+                listPlace(travels);
+                sortWithCost(travels, 0, travels.size() - 1);
+                break;
+            default:
+                cout << "Choose wrong, Enter again!" << endl;
+                break;
+        }
+    }    
+}
 static int partitionInt(vector<Travel> &travels, int low, int high){
     int pivot = travels[high].getTravelCost();
     int left = low;
