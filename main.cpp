@@ -47,7 +47,9 @@ int main()
             u1 = {account, account};
             if(checkAccountAdmin(account)){
                 cout << "You are login as admin!\n";
-                sys.logInAccount();
+                if(!sys.logInAccount()){
+                    main();
+                }
                 sys.runAdmin(travels, users);
                 break;
             }

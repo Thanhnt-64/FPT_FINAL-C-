@@ -2,6 +2,7 @@
 #include "Lib/File.h"
 
 User* System::logInAccount(vector<User> &users, User &u1){
+    cout << "Account: "; u1.inputAccount();
     cout << "Password: "; u1.inputPassword();
     if(searchAccount(users, u1.getAccount()) && searchPassword(users, u1.getPassword())){
         for(int i = 0; i < users.size(); i++){
@@ -12,21 +13,29 @@ User* System::logInAccount(vector<User> &users, User &u1){
     }
     else{
         cout << "Wrong account or password!\n";
-        cout << "Account: ";  u1.inputAccount();
         logInAccount(users, u1);
     }
     return nullptr;
 }
-void System::logInAccount(){
+bool System::logInAccount(){
     string passsword;
+    char chek;
     while(1){
         cout << "Enter admin password: ";
         getline(cin, passsword);
         if(passsword == "Amin1234@"){
-            break;
+            return true;
         }
         else{
             cout << "Wrong password!" << endl;
+            cout << "Do you want to continue?(Y/N): ";
+            cin >> chek; cin.ignore();
+            if(chek == 'Y' || chek == 'y'){
+                continue;
+            }
+            else{
+                return false;
+            }
         }
     }
 }

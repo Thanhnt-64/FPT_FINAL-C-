@@ -18,7 +18,7 @@ public:
     System(){}
     /* Login in the system*/
     User* logInAccount(vector<User> &users, User &u1);
-    void logInAccount();
+    bool logInAccount();
     /* Register new account*/
     User* registerAccount(vector<User> &users, User &u1);
     /* Exit main system, comeback to main menu*/
