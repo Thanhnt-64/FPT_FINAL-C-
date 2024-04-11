@@ -1,0 +1,74 @@
+{
+    "Travel0": {
+        "Hotel0": {
+            "Room0": {
+                "cost": 1000,
+                "end time": "15/10/12/2024",
+                "name": "100000",
+                "start time": "10/10/12/2024",
+                "type room": "Vip0000"
+            },
+            "address": "HaiPhong",
+            "name": "Rose000"
+        },
+        "Transport0": {
+            "brand": "Vietnam Airlines000",
+            "cost": 1000,
+            "destination": "Hai Phong",
+            "from": "Ha Noi000",
+            "name": "Flight000",
+            "time": "10/15/12/2024"
+        },
+        "name place": "Hai Phong",
+        "travel cost": 2000
+    },
+    "Travel1": {
+        "Hotel0": {
+            "Room0": {
+                "cost": 1000,
+                "end time": "15/10/12/2024",
+                "name": "100000",
+                "start time": "10/10/12/2024",
+                "type room": "Vip0000"
+            },
+            "address": "HaiPhong",
+            "name": "Rose000"
+        },
+        "Hotel1": {
+            "Room0": {
+                "cost": 1000,
+                "end time": "15/10/12/2024",
+                "name": "100000",
+                "start time": "10/10/12/2024",
+                "type room": "Vip0000"
+            },
+            "Room1": {
+                "cost": 1000,
+                "end time": "15/10/12/2024",
+                "name": "101000",
+                "start time": "10/10/12/2024",
+                "type room": "Vip1000"
+            },
+            "address": "HaiPhong",
+            "name": "Rose100"
+        },
+        "Transport0": {
+            "brand": "Vietnam Airlines000",
+            "cost": 1000,
+            "destination": "Hai Phong",
+            "from": "Ha Noi000",
+            "name": "Flight000",
+            "time": "10/15/12/2024"
+        },
+        "Transport1": {
+            "brand": "Vietnam Airlines100",
+            "cost": 1000,
+            "destination": "Hai Phong",
+            "from": "Ha Noi100",
+            "name": "Flight100",
+            "time": "10/15/12/2024"
+        },
+        "name place": "Hai Phong",
+        "travel cost": 2000
+    }
+}

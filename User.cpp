@@ -179,3 +179,57 @@ void User::cancelTravel()
         }
     }
 }
+void User::bookTravel(vector<Travel>&t){
+    Travel travel;
+    int temp=-1;
+    while(1){   
+        cout<<"Enter your travel name: ";
+        travel.setPlace();
+        
+        for(int i=0;i<t.size();i++){
+            if(t[i].getPlace()!=travel.getPlace()){
+                continue;
+            }
+            break;
+        }
+        if(temp!=-1){
+            break;
+        }
+    }
+    Hotel hotel;
+    while(1){
+        cout<<"Enter your hotel name: ";
+        hotel.setName();
+        bool check=false;
+        for(int i=0;i<t[temp].getHotel().size();i++){
+            if(t[temp].getHotel()[i].getName()!=hotel.getName()){
+                
+                continue;
+            }
+            
+            check=true;
+            break;
+        }
+        if(check){
+            break;
+        }
+    }
+    Transport trans;
+    while(1){
+        cout<<"enter your hotel name: ";
+        trans.input();
+        bool check=false;
+        for(int i=0;i<t[temp].getTransport().size();i++){
+            if(t[temp].getTransport()[i].get_name()!=trans.get_name() && t[temp].getTransport()[i].get_brand()!=trans.get_brand() ){
+                continue;
+            }
+            check=true;
+            break;
+        }
+        if(check)
+        break;
+    }
+    travel.getHotel().push_back(hotel);
+    travel.getTransport().push_back(trans);
+    t.push_back(travel);
+}
