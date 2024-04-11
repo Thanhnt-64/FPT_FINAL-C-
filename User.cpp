@@ -45,7 +45,6 @@ void User::changeInfo()
         {
             string newAddress;
             cout << "Enter new address: ";
-            cin.ignore(); // Clear the input buffer
             getline(cin, newAddress);
             setAddress(newAddress);
             cout << "Address changed successfully." << endl;
@@ -171,11 +170,9 @@ void User::cancelTravel()
         {
             myTravel.erase(myTravel.begin() + i);
             cout << "Travel to " << location << " has been canceled." << endl;
+            cout << "Enter any key to continue...\n";
+            getline(cin, location);
             return;
-        }
-        else
-        {
-            cout << "The travel you are trying to cancel does not exist in your travel list." << endl;
         }
     }
 }

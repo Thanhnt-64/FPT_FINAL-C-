@@ -37,6 +37,7 @@ int main()
         cout << setw(5) << "Menu:\n";
         cout << "1. Login\n";
         cout << "2. Register\n";
+        cout << "3. Exit\n";
         cout << setw(10) << "Choose 1 or 2\n";
         cin >> choose; cin.ignore();
         switch (choose)
@@ -46,7 +47,9 @@ int main()
             u1 = {account, account};
             if(checkAccountAdmin(account)){
                 cout << "You are login as admin!\n";
-                sys.logInAccount();
+                if(!sys.logInAccount()){
+                    main();
+                }
                 sys.runAdmin(travels, users);
                 break;
             }
@@ -60,6 +63,8 @@ int main()
             user = sys.logInAccount(users, u1);
             sys.run(travels, user);
             break;
+        case 3:
+            return 0;
         default:
             break;
         }
