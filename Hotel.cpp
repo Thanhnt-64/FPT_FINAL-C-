@@ -93,7 +93,7 @@ bool Hotel::validateString(string &s){
         }
 }
 void Hotel::setName(){
-    cout<<"Input again Name: ";
+    cout<<"Input Name: ";
     while(1){
         if(validateString(name)){
             break;
@@ -105,7 +105,7 @@ void Hotel::setName(){
 }
 
 void Hotel::setAddress(){
-    cout<<"Input again Adress: ";
+    cout<<"Input Adress: ";
     while(1){
         if(validateString(address)){
             break;

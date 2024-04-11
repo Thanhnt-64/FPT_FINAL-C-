@@ -20,7 +20,6 @@ int main()
     Read_Service read_service("database_service.json");
     read_user.load_file();
     read_service.load_file(); 
-    
     users=read_user.read_Users();
     // cout << "error" << endl;
     travels=read_service.read_Travels();
@@ -64,6 +63,7 @@ int main()
         default:
             break;
         }
+        admin.saveData(users ,user->getTravel());
         system("cls");
     }
     return 0;

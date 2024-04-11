@@ -299,7 +299,6 @@ void System::runAdmin(vector<Travel> &travels, vector<User> &users){
         cout << setw(20) << "2. Show/Change Service's infomation" << endl;
         cout << setw(20) << "3. Search room/vehicle by place" << endl;
         cout << setw(20) << "4. Sort data follow time and cost" << endl;
-        cout << setw(20) << "5. Load and save data" << endl;
         cout << "Enter your choose: 1-5:__";
         cin >> choose; cin.ignore();
         system("cls");
@@ -319,20 +318,12 @@ void System::runAdmin(vector<Travel> &travels, vector<User> &users){
                 listPlace(travels);
                 sortTravel(travels);
                 break;
-            case 5:
-                cout << setw(20) << "Do you want to load and save data? 1-2__: \n1. Load data\n2. Save data\n";
-                cin >> choose; cin.ignore();
-                if(choose == 1){
-                    admin.loadData(users, travels);
-                }
-                if(choose == 2){
-                    admin.saveData(users, travels);
-                }
-                break;
             default:
                 cout << "Choose wrong, Enter again!" << endl;
                 break;
         }
+        admin.saveData(users, travels);
+        admin.loadData(users, travels);
     }
 }
 void showChangeInfo(User *user){
@@ -349,10 +340,27 @@ void showChangeInfo(User *user){
     }
 }
 
-void enterToExit(){
+void showChangeTravel(User *user){
     char chek;
-    cout << "Enter any key to exit!" << endl;
+    cout << "1. Show travel Infomation" << endl;
+    cout << "2. Change travel Infomation" << endl;
+    cout << "3. Back" << endl;
     cin >> chek; cin.ignore();
+    switch (chek)
+    {
+    case '1':
+        user->showTravelInfo();
+        break;
+    case '2':
+        user->changeTravelInfo();
+        break;
+    case '3':
+        return;
+    default:
+        system("cls");
+        showChangeTravel(user);
+    }
+    showChangeTravel(user);
 }
 
 void System::run(vector<Travel> &travels, User *user){
@@ -375,8 +383,7 @@ void System::run(vector<Travel> &travels, User *user){
                 showChangeInfo(user);
                 break;
             case 2:
-                user->showTravelInfo();
-                enterToExit();
+                showChangeTravel(user);
                 break;
             case 3:
                 user->cancelTravel();

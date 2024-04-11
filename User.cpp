@@ -87,20 +87,76 @@ void User::showTravelInfo()
 
 void User::changeTravelInfo()
 {
-    string location;
-    cout << "Enter the location you want to change: ";
-    getline(cin, location);
-    for (int i = 0; i < myTravel.size(); i++)
-    {
-        if (myTravel[i].getPlace() == location)
-        {
-            cout << "Enter name of Hotel you want to edit: ";
-            string hotel; getline(cin, hotel);
-            myTravel[i].getHotel();
+    string namePlace1;
+    int temp=-1;
+    while(1){
+        cout<<"Enter name place travel: ";
+        getline(cin,namePlace1);
+        for(int i=0;i<myTravel.size();i++){
+            if(myTravel[i].getPlace()!=namePlace1){
+                continue;
+            }
+            temp = i;
+            break;
         }
-        else
-        {
-            cout << "Can not find the above location";
+        if(temp != -1){
+            break;
+        }
+    }
+    while(1){
+        system("cls");
+        cout<<"1.Change information Hotel"<<endl;
+        cout<<"2.Change information Transport"<<endl;
+        cout<<"3.Back"<<endl;
+        int lc;
+        cout<<"Enter your choose: ";
+        cin>> lc; cin.ignore();
+        switch(lc){
+            case 1:{
+                string hotel;
+                cout<<"Enter your name hotel need to change: ";
+                getline(cin,hotel);
+                int temp1=-1;
+                for(int i=0;i<myTravel[temp].getHotel().size();i++){
+                    if(myTravel[temp].getHotel()[i].getName()!=hotel){
+                        continue;
+                    }
+                    temp1 = i;
+                    break;
+                }
+                if(temp1 == -1){
+                    continue;
+                }
+                string room;
+                cout<<"Enter your name room need to change: ";
+                getline(cin,room);
+                for(int i=0;i<myTravel[temp].getHotel()[temp1].getRooms().size();i++){
+                    if(myTravel[temp].getHotel()[temp1].getRooms()[i].getName()==room){
+                        cout<<"Enter new name for room: ";
+                        getline(cin,room);
+                        myTravel[temp].getHotel()[temp1].getRooms()[i].setName(room);
+                        break;
+                    }
+                }
+                break;
+            }
+
+            case 2:{
+                string trans;
+                cout<<"Enter your name trans need to change: ";
+                getline(cin,trans);
+                for(int i=0;i<myTravel[temp].getTransport().size();i++){
+                    if(myTravel[temp].getTransport()[i].get_name()==trans){
+                        myTravel[temp].getTransport()[i].input();
+                        break;
+                    }
+                }
+                break;
+            }
+            case 3:
+                return;
+            default: 
+                break;
         }
     }
 }

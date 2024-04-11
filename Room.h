@@ -2,6 +2,7 @@
 #define ROOM_H
 
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
 const string nonestring = "";
@@ -43,6 +44,7 @@ public:
     int getCost();
 
     void setCost(int cost);
+    void showinfoRoom();
 
 };
 
