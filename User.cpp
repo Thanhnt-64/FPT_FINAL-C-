@@ -45,7 +45,6 @@ void User::changeInfo()
         {
             string newAddress;
             cout << "Enter new address: ";
-            cin.ignore(); // Clear the input buffer
             getline(cin, newAddress);
             setAddress(newAddress);
             cout << "Address changed successfully." << endl;
