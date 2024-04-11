@@ -7,11 +7,11 @@ void Travel::showTravelInfo()
         cout << i + 1 << ". ";
         hotels[i].showRoomInfoBooked();
     }
+    cout << endl;
     for (int i = 0; i < transports.size(); i++)
     {
         cout << i + 1 << ". ";
         transports[i].output();
-        cout << endl;
     }
 }
 

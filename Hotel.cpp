@@ -32,7 +32,7 @@ void Hotel::showRoomInfoBooked()
         cout << setw(20) << left << rooms[i].getTypeRoom();
         cout << setw(20) << left << rooms[i].getStartTime();
         cout << setw(20) << left << rooms[i].getEndTime();
-        cout << setw(20) << left << rooms[i].getCost();
+        cout << setw(20) << left << rooms[i].getCost() << endl;
     }
 }
 

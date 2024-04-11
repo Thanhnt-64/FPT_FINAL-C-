@@ -2,6 +2,7 @@
 #define ADMIN_H
 #include <iostream>
 #include "User.h"
+#include <memory>
 using namespace std;
 
 class Admin : virtual public User

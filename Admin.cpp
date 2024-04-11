@@ -4,7 +4,7 @@
 unique_ptr<Admin> Admin::instance;
 Admin& Admin::getInstance()
 {
-    if ( instance == null )
+    if ( instance == nullptr)
     {
         instance.reset(new Admin());
     }

@@ -198,7 +198,7 @@ void Transport::validate_destination(string &s)
 void Transport::output()
 {
 	cout << left << setw(20) << name << setw(20) << brand << setw(20)
-		 << from << setw(20) << destination << setw(20) << time << setw(20) << cost;
+		 << from << setw(20) << destination << setw(20) << time << setw(20) << cost << endl;
 }
 bool Transport::operator>(Transport &t)
 {

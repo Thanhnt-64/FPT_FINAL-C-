@@ -81,7 +81,7 @@ void User::showTravelInfo()
     for (int i = 0; i < myTravel.size(); i++)
     {
         myTravel[i].showTravelInfo();
-        cout << endl;
+        cout << "____________________________________________________________________________" << endl;
     }
 }
 
@@ -90,17 +90,17 @@ void User::changeTravelInfo()
     string location;
     cout << "Enter the location you want to change: ";
     getline(cin, location);
-    for (int i = 0; i < travels.size(); i++)
+    for (int i = 0; i < myTravel.size(); i++)
     {
         if (myTravel[i].getPlace() == location)
         {
             cout << "Enter name of Hotel you want to edit: ";
             string hotel; getline(cin, hotel);
-            myTravel[i].getHotel()
+            myTravel[i].getHotel();
         }
         else
         {
-            cout << "Can not find the above location"
+            cout << "Can not find the above location";
         }
     }
 }
@@ -109,7 +109,7 @@ void User::cancelTravel()
     string location;
     cout << "Enter the location you want to cancel: ";
     getline(cin, location);
-    for (int i = 0; i < travels.size(); i++)
+    for (int i = 0; i < myTravel.size(); i++)
     {
         if (myTravel[i].getPlace() == location)
         {

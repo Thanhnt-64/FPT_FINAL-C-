@@ -57,4 +57,5 @@ static int paritionTime(vector<Travel> &travels, int low, int high);
 void sortWithTime(vector<Travel> &travels, int low, int high);
 /* Choose: Show or change User infor*/
 void showChangeInfo(User *user);
+void enterToExit();
 #endif // SYSTEM_H

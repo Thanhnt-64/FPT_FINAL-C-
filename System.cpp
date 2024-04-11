@@ -337,17 +337,22 @@ void System::runAdmin(vector<Travel> &travels, vector<User> &users){
 }
 void showChangeInfo(User *user){
     char a;
-    while(1){
-        cout << "Enter any charactor (0 to exit)?__";
-        cin >> a; cin.ignore();
-        if(a == '0'){
-            return;
-        }
-        else{
-            user->changeInfo();
-            user->showUserInfo();
-        }
+    user->changeInfo();
+    user->showUserInfo();
+    cout << "Enter any charactor (0 to exit)?__";
+    cin >> a; cin.ignore();
+    if(a == '0'){
+        return;
     }
+    else{
+        showChangeInfo(user);
+    }
+}
+
+void enterToExit(){
+    char chek;
+    cout << "Enter any key to exit!" << endl;
+    cin >> chek; cin.ignore();
 }
 
 void System::run(vector<Travel> &travels, User *user){
@@ -370,10 +375,11 @@ void System::run(vector<Travel> &travels, User *user){
                 showChangeInfo(user);
                 break;
             case 2:
-                user->showUserInfo();
+                user->showTravelInfo();
+                enterToExit();
                 break;
             case 3:
-                user->cancelTravel(travels[0]);
+                user->cancelTravel();
                 break;
             case 4:
                 searchByPlace(travels);
