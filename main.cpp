@@ -22,8 +22,9 @@ int main()
     read_service.load_file(); 
     
     users=read_user.read_Users();
+    // cout << "error" << endl;
     travels=read_service.read_Travels();
-    cout << "error" << endl;
+    
     read_user.~Read_User();
     read_service.~Read_Service();
 
@@ -33,15 +34,17 @@ int main()
     string account;
     int choose;
     while(1){
+        system("cls");
         cout << setw(5) << "Menu:\n";
-        cout << setw(10) << "1. Login\n";
-        cout << setw(10) << "2. Register\n";
+        cout << "1. Login\n";
+        cout << "2. Register\n";
         cout << setw(10) << "Choose 1 or 2\n";
         cin >> choose; cin.ignore();
         switch (choose)
         {
         case 1:
-            cout << "Enter your account: "; getline(cin, account);
+            cout << "Account: "; getline(cin, account);
+            u1 = {account, account};
             if(checkAccountAdmin(account)){
                 cout << "You are login as admin!\n";
                 sys.logInAccount();

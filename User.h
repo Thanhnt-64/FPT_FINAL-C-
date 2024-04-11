@@ -30,9 +30,9 @@ public:
     /* Displays traveling information */
     void showTravelInfo();
     /* Change traveling information */
-    void changeTravelInfo(const Travel& travel);
+    void changeTravelInfo();
     /* Cancel the travel */
-    void cancelTravel(const Travel& travel);
+    void cancelTravel();
     /* Input */
     void inputAccount() {getline(cin, account);}
     void inputPassword() {getline(cin, password);}

@@ -1,13 +1,6 @@
 {
     "Travel0": {
         "Hotel0": {
-            "Room0": {
-                "cost": 1000,
-                "end time": "15/10/12/2024",
-                "name": "100000",
-                "start time": "10/10/12/2024",
-                "type room": "Vip0000"
-            },
             "address": "HaiPhong",
             "name": "Rose000"
         },
@@ -20,17 +13,10 @@
             "time": "10/15/12/2024"
         },
         "name place": "Hai Phong",
-        "travel cost": 2000
+        "travel cost": 1000
     },
     "Travel1": {
         "Hotel0": {
-            "Room0": {
-                "cost": 1000,
-                "end time": "15/10/12/2024",
-                "name": "100000",
-                "start time": "10/10/12/2024",
-                "type room": "Vip0000"
-            },
             "address": "HaiPhong",
             "name": "Rose000"
         },
@@ -41,13 +27,6 @@
                 "name": "100000",
                 "start time": "10/10/12/2024",
                 "type room": "Vip0000"
-            },
-            "Room1": {
-                "cost": 1000,
-                "end time": "15/10/12/2024",
-                "name": "101000",
-                "start time": "10/10/12/2024",
-                "type room": "Vip1000"
             },
             "address": "HaiPhong",
             "name": "Rose100"
@@ -69,17 +48,10 @@
             "time": "10/15/12/2024"
         },
         "name place": "Hai Phong",
-        "travel cost": 2000
+        "travel cost": 1000
     },
     "Travel2": {
         "Hotel0": {
-            "Room0": {
-                "cost": 1000,
-                "end time": "15/10/12/2024",
-                "name": "100000",
-                "start time": "10/10/12/2024",
-                "type room": "Vip0000"
-            },
             "address": "HaiPhong",
             "name": "Rose000"
         },
@@ -90,13 +62,6 @@
                 "name": "100000",
                 "start time": "10/10/12/2024",
                 "type room": "Vip0000"
-            },
-            "Room1": {
-                "cost": 1000,
-                "end time": "15/10/12/2024",
-                "name": "101000",
-                "start time": "10/10/12/2024",
-                "type room": "Vip1000"
             },
             "address": "HaiPhong",
             "name": "Rose100"
@@ -115,13 +80,6 @@
                 "name": "101000",
                 "start time": "10/10/12/2024",
                 "type room": "Vip1000"
-            },
-            "Room2": {
-                "cost": 1000,
-                "end time": "15/10/12/2024",
-                "name": "102000",
-                "start time": "10/10/12/2024",
-                "type room": "Vip2000"
             },
             "address": "HaiPhong",
             "name": "Rose200"
@@ -151,17 +109,10 @@
             "time": "10/15/12/2024"
         },
         "name place": "Hai Phong",
-        "travel cost": 2000
+        "travel cost": 1000
     },
     "Travel3": {
         "Hotel0": {
-            "Room0": {
-                "cost": 1000,
-                "end time": "15/10/12/2024",
-                "name": "100000",
-                "start time": "10/10/12/2024",
-                "type room": "Vip0000"
-            },
             "address": "HaiPhong",
             "name": "Rose000"
         },
@@ -172,13 +123,6 @@
                 "name": "100000",
                 "start time": "10/10/12/2024",
                 "type room": "Vip0000"
-            },
-            "Room1": {
-                "cost": 1000,
-                "end time": "15/10/12/2024",
-                "name": "101000",
-                "start time": "10/10/12/2024",
-                "type room": "Vip1000"
             },
             "address": "HaiPhong",
             "name": "Rose100"
@@ -197,13 +141,6 @@
                 "name": "101000",
                 "start time": "10/10/12/2024",
                 "type room": "Vip1000"
-            },
-            "Room2": {
-                "cost": 1000,
-                "end time": "15/10/12/2024",
-                "name": "102000",
-                "start time": "10/10/12/2024",
-                "type room": "Vip2000"
             },
             "address": "HaiPhong",
             "name": "Rose200"
@@ -229,13 +166,6 @@
                 "name": "102000",
                 "start time": "10/10/12/2024",
                 "type room": "Vip2000"
-            },
-            "Room3": {
-                "cost": 1000,
-                "end time": "15/10/12/2024",
-                "name": "103000",
-                "start time": "10/10/12/2024",
-                "type room": "Vip3000"
             },
             "address": "HaiPhong",
             "name": "Rose300"
@@ -273,17 +203,10 @@
             "time": "10/15/12/2024"
         },
         "name place": "Hai Phong",
-        "travel cost": 2000
+        "travel cost": 1000
     },
     "Travel4": {
         "Hotel0": {
-            "Room0": {
-                "cost": 1000,
-                "end time": "15/10/12/2024",
-                "name": "100000",
-                "start time": "10/10/12/2024",
-                "type room": "Vip0000"
-            },
             "address": "HaiPhong",
             "name": "Rose000"
         },
@@ -294,13 +217,6 @@
                 "name": "100000",
                 "start time": "10/10/12/2024",
                 "type room": "Vip0000"
-            },
-            "Room1": {
-                "cost": 1000,
-                "end time": "15/10/12/2024",
-                "name": "101000",
-                "start time": "10/10/12/2024",
-                "type room": "Vip1000"
             },
             "address": "HaiPhong",
             "name": "Rose100"
@@ -319,13 +235,6 @@
                 "name": "101000",
                 "start time": "10/10/12/2024",
                 "type room": "Vip1000"
-            },
-            "Room2": {
-                "cost": 1000,
-                "end time": "15/10/12/2024",
-                "name": "102000",
-                "start time": "10/10/12/2024",
-                "type room": "Vip2000"
             },
             "address": "HaiPhong",
             "name": "Rose200"
@@ -351,13 +260,6 @@
                 "name": "102000",
                 "start time": "10/10/12/2024",
                 "type room": "Vip2000"
-            },
-            "Room3": {
-                "cost": 1000,
-                "end time": "15/10/12/2024",
-                "name": "103000",
-                "start time": "10/10/12/2024",
-                "type room": "Vip3000"
             },
             "address": "HaiPhong",
             "name": "Rose300"
@@ -390,13 +292,6 @@
                 "name": "103000",
                 "start time": "10/10/12/2024",
                 "type room": "Vip3000"
-            },
-            "Room4": {
-                "cost": 1000,
-                "end time": "15/10/12/2024",
-                "name": "104000",
-                "start time": "10/10/12/2024",
-                "type room": "Vip4000"
             },
             "address": "HaiPhong",
             "name": "Rose400"
@@ -442,17 +337,10 @@
             "time": "10/15/12/2024"
         },
         "name place": "Hai Phong",
-        "travel cost": 2000
+        "travel cost": 1000
     },
     "Travel5": {
         "Hotel0": {
-            "Room0": {
-                "cost": 1000,
-                "end time": "15/10/12/2024",
-                "name": "100000",
-                "start time": "10/10/12/2024",
-                "type room": "Vip0000"
-            },
             "address": "HaiPhong",
             "name": "Rose000"
         },
@@ -463,13 +351,6 @@
                 "name": "100000",
                 "start time": "10/10/12/2024",
                 "type room": "Vip0000"
-            },
-            "Room1": {
-                "cost": 1000,
-                "end time": "15/10/12/2024",
-                "name": "101000",
-                "start time": "10/10/12/2024",
-                "type room": "Vip1000"
             },
             "address": "HaiPhong",
             "name": "Rose100"
@@ -488,13 +369,6 @@
                 "name": "101000",
                 "start time": "10/10/12/2024",
                 "type room": "Vip1000"
-            },
-            "Room2": {
-                "cost": 1000,
-                "end time": "15/10/12/2024",
-                "name": "102000",
-                "start time": "10/10/12/2024",
-                "type room": "Vip2000"
             },
             "address": "HaiPhong",
             "name": "Rose200"
@@ -520,13 +394,6 @@
                 "name": "102000",
                 "start time": "10/10/12/2024",
                 "type room": "Vip2000"
-            },
-            "Room3": {
-                "cost": 1000,
-                "end time": "15/10/12/2024",
-                "name": "103000",
-                "start time": "10/10/12/2024",
-                "type room": "Vip3000"
             },
             "address": "HaiPhong",
             "name": "Rose300"
@@ -559,13 +426,6 @@
                 "name": "103000",
                 "start time": "10/10/12/2024",
                 "type room": "Vip3000"
-            },
-            "Room4": {
-                "cost": 1000,
-                "end time": "15/10/12/2024",
-                "name": "104000",
-                "start time": "10/10/12/2024",
-                "type room": "Vip4000"
             },
             "address": "HaiPhong",
             "name": "Rose400"
@@ -605,13 +465,6 @@
                 "name": "104000",
                 "start time": "10/10/12/2024",
                 "type room": "Vip4000"
-            },
-            "Room5": {
-                "cost": 1000,
-                "end time": "15/10/12/2024",
-                "name": "105000",
-                "start time": "10/10/12/2024",
-                "type room": "Vip5000"
             },
             "address": "HaiPhong",
             "name": "Rose500"
@@ -665,17 +518,10 @@
             "time": "10/15/12/2024"
         },
         "name place": "Hai Phong",
-        "travel cost": 2000
+        "travel cost": 1000
     },
     "Travel6": {
         "Hotel0": {
-            "Room0": {
-                "cost": 1000,
-                "end time": "15/10/12/2024",
-                "name": "100000",
-                "start time": "10/10/12/2024",
-                "type room": "Vip0000"
-            },
             "address": "HaiPhong",
             "name": "Rose000"
         },
@@ -686,13 +532,6 @@
                 "name": "100000",
                 "start time": "10/10/12/2024",
                 "type room": "Vip0000"
-            },
-            "Room1": {
-                "cost": 1000,
-                "end time": "15/10/12/2024",
-                "name": "101000",
-                "start time": "10/10/12/2024",
-                "type room": "Vip1000"
             },
             "address": "HaiPhong",
             "name": "Rose100"
@@ -711,13 +550,6 @@
                 "name": "101000",
                 "start time": "10/10/12/2024",
                 "type room": "Vip1000"
-            },
-            "Room2": {
-                "cost": 1000,
-                "end time": "15/10/12/2024",
-                "name": "102000",
-                "start time": "10/10/12/2024",
-                "type room": "Vip2000"
             },
             "address": "HaiPhong",
             "name": "Rose200"
@@ -743,13 +575,6 @@
                 "name": "102000",
                 "start time": "10/10/12/2024",
                 "type room": "Vip2000"
-            },
-            "Room3": {
-                "cost": 1000,
-                "end time": "15/10/12/2024",
-                "name": "103000",
-                "start time": "10/10/12/2024",
-                "type room": "Vip3000"
             },
             "address": "HaiPhong",
             "name": "Rose300"
@@ -782,13 +607,6 @@
                 "name": "103000",
                 "start time": "10/10/12/2024",
                 "type room": "Vip3000"
-            },
-            "Room4": {
-                "cost": 1000,
-                "end time": "15/10/12/2024",
-                "name": "104000",
-                "start time": "10/10/12/2024",
-                "type room": "Vip4000"
             },
             "address": "HaiPhong",
             "name": "Rose400"
@@ -828,13 +646,6 @@
                 "name": "104000",
                 "start time": "10/10/12/2024",
                 "type room": "Vip4000"
-            },
-            "Room5": {
-                "cost": 1000,
-                "end time": "15/10/12/2024",
-                "name": "105000",
-                "start time": "10/10/12/2024",
-                "type room": "Vip5000"
             },
             "address": "HaiPhong",
             "name": "Rose500"
@@ -881,13 +692,6 @@
                 "name": "105000",
                 "start time": "10/10/12/2024",
                 "type room": "Vip5000"
-            },
-            "Room6": {
-                "cost": 1000,
-                "end time": "15/10/12/2024",
-                "name": "106000",
-                "start time": "10/10/12/2024",
-                "type room": "Vip6000"
             },
             "address": "HaiPhong",
             "name": "Rose600"
@@ -949,17 +753,10 @@
             "time": "10/15/12/2024"
         },
         "name place": "Hai Phong",
-        "travel cost": 2000
+        "travel cost": 1000
     },
     "Travel7": {
         "Hotel0": {
-            "Room0": {
-                "cost": 1000,
-                "end time": "15/10/12/2024",
-                "name": "100000",
-                "start time": "10/10/12/2024",
-                "type room": "Vip0000"
-            },
             "address": "HaiPhong",
             "name": "Rose000"
         },
@@ -970,13 +767,6 @@
                 "name": "100000",
                 "start time": "10/10/12/2024",
                 "type room": "Vip0000"
-            },
-            "Room1": {
-                "cost": 1000,
-                "end time": "15/10/12/2024",
-                "name": "101000",
-                "start time": "10/10/12/2024",
-                "type room": "Vip1000"
             },
             "address": "HaiPhong",
             "name": "Rose100"
@@ -995,13 +785,6 @@
                 "name": "101000",
                 "start time": "10/10/12/2024",
                 "type room": "Vip1000"
-            },
-            "Room2": {
-                "cost": 1000,
-                "end time": "15/10/12/2024",
-                "name": "102000",
-                "start time": "10/10/12/2024",
-                "type room": "Vip2000"
             },
             "address": "HaiPhong",
             "name": "Rose200"
@@ -1027,13 +810,6 @@
                 "name": "102000",
                 "start time": "10/10/12/2024",
                 "type room": "Vip2000"
-            },
-            "Room3": {
-                "cost": 1000,
-                "end time": "15/10/12/2024",
-                "name": "103000",
-                "start time": "10/10/12/2024",
-                "type room": "Vip3000"
             },
             "address": "HaiPhong",
             "name": "Rose300"
@@ -1066,13 +842,6 @@
                 "name": "103000",
                 "start time": "10/10/12/2024",
                 "type room": "Vip3000"
-            },
-            "Room4": {
-                "cost": 1000,
-                "end time": "15/10/12/2024",
-                "name": "104000",
-                "start time": "10/10/12/2024",
-                "type room": "Vip4000"
             },
             "address": "HaiPhong",
             "name": "Rose400"
@@ -1112,13 +881,6 @@
                 "name": "104000",
                 "start time": "10/10/12/2024",
                 "type room": "Vip4000"
-            },
-            "Room5": {
-                "cost": 1000,
-                "end time": "15/10/12/2024",
-                "name": "105000",
-                "start time": "10/10/12/2024",
-                "type room": "Vip5000"
             },
             "address": "HaiPhong",
             "name": "Rose500"
@@ -1165,13 +927,6 @@
                 "name": "105000",
                 "start time": "10/10/12/2024",
                 "type room": "Vip5000"
-            },
-            "Room6": {
-                "cost": 1000,
-                "end time": "15/10/12/2024",
-                "name": "106000",
-                "start time": "10/10/12/2024",
-                "type room": "Vip6000"
             },
             "address": "HaiPhong",
             "name": "Rose600"
@@ -1225,13 +980,6 @@
                 "name": "106000",
                 "start time": "10/10/12/2024",
                 "type room": "Vip6000"
-            },
-            "Room7": {
-                "cost": 1000,
-                "end time": "15/10/12/2024",
-                "name": "107000",
-                "start time": "10/10/12/2024",
-                "type room": "Vip7000"
             },
             "address": "HaiPhong",
             "name": "Rose700"
@@ -1301,17 +1049,10 @@
             "time": "10/15/12/2024"
         },
         "name place": "Hai Phong",
-        "travel cost": 2000
+        "travel cost": 1000
     },
     "Travel8": {
         "Hotel0": {
-            "Room0": {
-                "cost": 1000,
-                "end time": "15/10/12/2024",
-                "name": "100000",
-                "start time": "10/10/12/2024",
-                "type room": "Vip0000"
-            },
             "address": "HaiPhong",
             "name": "Rose000"
         },
@@ -1322,13 +1063,6 @@
                 "name": "100000",
                 "start time": "10/10/12/2024",
                 "type room": "Vip0000"
-            },
-            "Room1": {
-                "cost": 1000,
-                "end time": "15/10/12/2024",
-                "name": "101000",
-                "start time": "10/10/12/2024",
-                "type room": "Vip1000"
             },
             "address": "HaiPhong",
             "name": "Rose100"
@@ -1347,13 +1081,6 @@
                 "name": "101000",
                 "start time": "10/10/12/2024",
                 "type room": "Vip1000"
-            },
-            "Room2": {
-                "cost": 1000,
-                "end time": "15/10/12/2024",
-                "name": "102000",
-                "start time": "10/10/12/2024",
-                "type room": "Vip2000"
             },
             "address": "HaiPhong",
             "name": "Rose200"
@@ -1379,13 +1106,6 @@
                 "name": "102000",
                 "start time": "10/10/12/2024",
                 "type room": "Vip2000"
-            },
-            "Room3": {
-                "cost": 1000,
-                "end time": "15/10/12/2024",
-                "name": "103000",
-                "start time": "10/10/12/2024",
-                "type room": "Vip3000"
             },
             "address": "HaiPhong",
             "name": "Rose300"
@@ -1418,13 +1138,6 @@
                 "name": "103000",
                 "start time": "10/10/12/2024",
                 "type room": "Vip3000"
-            },
-            "Room4": {
-                "cost": 1000,
-                "end time": "15/10/12/2024",
-                "name": "104000",
-                "start time": "10/10/12/2024",
-                "type room": "Vip4000"
             },
             "address": "HaiPhong",
             "name": "Rose400"
@@ -1464,13 +1177,6 @@
                 "name": "104000",
                 "start time": "10/10/12/2024",
                 "type room": "Vip4000"
-            },
-            "Room5": {
-                "cost": 1000,
-                "end time": "15/10/12/2024",
-                "name": "105000",
-                "start time": "10/10/12/2024",
-                "type room": "Vip5000"
             },
             "address": "HaiPhong",
             "name": "Rose500"
@@ -1517,13 +1223,6 @@
                 "name": "105000",
                 "start time": "10/10/12/2024",
                 "type room": "Vip5000"
-            },
-            "Room6": {
-                "cost": 1000,
-                "end time": "15/10/12/2024",
-                "name": "106000",
-                "start time": "10/10/12/2024",
-                "type room": "Vip6000"
             },
             "address": "HaiPhong",
             "name": "Rose600"
@@ -1577,13 +1276,6 @@
                 "name": "106000",
                 "start time": "10/10/12/2024",
                 "type room": "Vip6000"
-            },
-            "Room7": {
-                "cost": 1000,
-                "end time": "15/10/12/2024",
-                "name": "107000",
-                "start time": "10/10/12/2024",
-                "type room": "Vip7000"
             },
             "address": "HaiPhong",
             "name": "Rose700"
@@ -1644,13 +1336,6 @@
                 "name": "107000",
                 "start time": "10/10/12/2024",
                 "type room": "Vip7000"
-            },
-            "Room8": {
-                "cost": 1000,
-                "end time": "15/10/12/2024",
-                "name": "108000",
-                "start time": "10/10/12/2024",
-                "type room": "Vip8000"
             },
             "address": "HaiPhong",
             "name": "Rose800"
@@ -1728,17 +1413,10 @@
             "time": "10/15/12/2024"
         },
         "name place": "Hai Phong",
-        "travel cost": 2000
+        "travel cost": 1000
     },
     "Travel9": {
         "Hotel0": {
-            "Room0": {
-                "cost": 1000,
-                "end time": "15/10/12/2024",
-                "name": "100000",
-                "start time": "10/10/12/2024",
-                "type room": "Vip0000"
-            },
             "address": "HaiPhong",
             "name": "Rose000"
         },
@@ -1749,13 +1427,6 @@
                 "name": "100000",
                 "start time": "10/10/12/2024",
                 "type room": "Vip0000"
-            },
-            "Room1": {
-                "cost": 1000,
-                "end time": "15/10/12/2024",
-                "name": "101000",
-                "start time": "10/10/12/2024",
-                "type room": "Vip1000"
             },
             "address": "HaiPhong",
             "name": "Rose100"
@@ -1774,13 +1445,6 @@
                 "name": "101000",
                 "start time": "10/10/12/2024",
                 "type room": "Vip1000"
-            },
-            "Room2": {
-                "cost": 1000,
-                "end time": "15/10/12/2024",
-                "name": "102000",
-                "start time": "10/10/12/2024",
-                "type room": "Vip2000"
             },
             "address": "HaiPhong",
             "name": "Rose200"
@@ -1806,13 +1470,6 @@
                 "name": "102000",
                 "start time": "10/10/12/2024",
                 "type room": "Vip2000"
-            },
-            "Room3": {
-                "cost": 1000,
-                "end time": "15/10/12/2024",
-                "name": "103000",
-                "start time": "10/10/12/2024",
-                "type room": "Vip3000"
             },
             "address": "HaiPhong",
             "name": "Rose300"
@@ -1845,13 +1502,6 @@
                 "name": "103000",
                 "start time": "10/10/12/2024",
                 "type room": "Vip3000"
-            },
-            "Room4": {
-                "cost": 1000,
-                "end time": "15/10/12/2024",
-                "name": "104000",
-                "start time": "10/10/12/2024",
-                "type room": "Vip4000"
             },
             "address": "HaiPhong",
             "name": "Rose400"
@@ -1891,13 +1541,6 @@
                 "name": "104000",
                 "start time": "10/10/12/2024",
                 "type room": "Vip4000"
-            },
-            "Room5": {
-                "cost": 1000,
-                "end time": "15/10/12/2024",
-                "name": "105000",
-                "start time": "10/10/12/2024",
-                "type room": "Vip5000"
             },
             "address": "HaiPhong",
             "name": "Rose500"
@@ -1944,13 +1587,6 @@
                 "name": "105000",
                 "start time": "10/10/12/2024",
                 "type room": "Vip5000"
-            },
-            "Room6": {
-                "cost": 1000,
-                "end time": "15/10/12/2024",
-                "name": "106000",
-                "start time": "10/10/12/2024",
-                "type room": "Vip6000"
             },
             "address": "HaiPhong",
             "name": "Rose600"
@@ -2004,13 +1640,6 @@
                 "name": "106000",
                 "start time": "10/10/12/2024",
                 "type room": "Vip6000"
-            },
-            "Room7": {
-                "cost": 1000,
-                "end time": "15/10/12/2024",
-                "name": "107000",
-                "start time": "10/10/12/2024",
-                "type room": "Vip7000"
             },
             "address": "HaiPhong",
             "name": "Rose700"
@@ -2071,13 +1700,6 @@
                 "name": "107000",
                 "start time": "10/10/12/2024",
                 "type room": "Vip7000"
-            },
-            "Room8": {
-                "cost": 1000,
-                "end time": "15/10/12/2024",
-                "name": "108000",
-                "start time": "10/10/12/2024",
-                "type room": "Vip8000"
             },
             "address": "HaiPhong",
             "name": "Rose800"
@@ -2145,13 +1767,6 @@
                 "name": "108000",
                 "start time": "10/10/12/2024",
                 "type room": "Vip8000"
-            },
-            "Room9": {
-                "cost": 1000,
-                "end time": "15/10/12/2024",
-                "name": "109000",
-                "start time": "10/10/12/2024",
-                "type room": "Vip9000"
             },
             "address": "HaiPhong",
             "name": "Rose900"
@@ -2237,6 +1852,6 @@
             "time": "10/15/12/2024"
         },
         "name place": "Hai Phong",
-        "travel cost": 2000
+        "travel cost": 1000
     }
 }
