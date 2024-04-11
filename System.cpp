@@ -2,7 +2,6 @@
 #include "Lib/File.h"
 
 User* System::logInAccount(vector<User> &users, User &u1){
-    cout << "Account: "; u1.inputAccount();
     cout << "Password: "; u1.inputPassword();
     if(searchAccount(users, u1.getAccount()) && searchPassword(users, u1.getPassword())){
         for(int i = 0; i < users.size(); i++){
@@ -13,6 +12,7 @@ User* System::logInAccount(vector<User> &users, User &u1){
     }
     else{
         cout << "Wrong account or password!\n";
+        cout << "Account: "; u1.inputAccount();
         logInAccount(users, u1);
     }
     return nullptr;
@@ -351,25 +351,28 @@ void showChangeInfo(User *user){
 
 void showChangeTravel(User *user){
     char chek;
-    cout << "1. Show travel Infomation" << endl;
-    cout << "2. Change travel Infomation" << endl;
-    cout << "3. Back" << endl;
-    cin >> chek; cin.ignore();
-    switch (chek)
-    {
-    case '1':
-        user->showTravelInfo();
-        break;
-    case '2':
-        user->changeTravelInfo();
-        break;
-    case '3':
-        return;
-    default:
+    while(1){
         system("cls");
-        showChangeTravel(user);
+        cout << "1. Show travel Infomation" << endl;
+        cout << "2. Change travel Infomation" << endl;
+        cout << "3. Back" << endl;
+        cin >> chek; cin.ignore();
+        switch (chek)
+        {
+        case '1':
+            user->showTravelInfo();
+            break;
+        case '2':
+            user->changeTravelInfo();
+            break;
+        case '3':
+            return;
+        default:
+            continue;
+        }
+        cout << "Enter any charactor to continue\n";
+        cin >> chek; cin.ignore();
     }
-    showChangeTravel(user);
 }
 
 void System::run(vector<Travel> &travels, User *user){
@@ -401,6 +404,7 @@ void System::run(vector<Travel> &travels, User *user){
                 searchByPlace(travels);
                 break;
             case 5:
+                system("cls");
                 listPlace(travels);
                 sortTravel(travels);
                 break;
@@ -469,12 +473,15 @@ void sortWithTime(vector<Transport> &trans, int low, int high){
 
 void sortTravel(vector<Travel> &travels){
     char chak;
+while(1){
+    system("cls");
     if (travels.empty()) {
         cout << "No travels to sort." << endl;
         return;
     }
     cout << "1. Sort hotel with cost" << endl;
     cout << "2. Sort transport with time" << endl;
+    cout << "3. Exit" << endl;
     cin >> chak; cin.ignore();
     switch (chak)
     {
@@ -495,7 +502,7 @@ void sortTravel(vector<Travel> &travels){
         for(int i = 0; i < travels.size(); i++){
             auto transports = travels[i].getTransport();
             cout << "Sort transport in " << travels[i].getPlace() << endl;
-            if(transports.empty()){
+            if(!transports.empty()){
                 sortWithTime(transports, 0, (transports.size() - 1));
                 for(auto i:transports){
                     i.output();
@@ -504,12 +511,12 @@ void sortTravel(vector<Travel> &travels){
             }
         }
         break;
+    case '3':
+        return;
     default:
         break;
     }
-    cout << "Enter any key to Exit: ";
+    cout << "Enter any key to continue: ";
     cin >> chak; cin.ignore();
-    if(chak == '0'){
-        return;
-    }
+}
 }
