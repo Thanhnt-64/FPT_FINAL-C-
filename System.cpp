@@ -1,5 +1,5 @@
-#include "System.h"
-#include "File.h"
+#include "Lib/System.h"
+#include "Lib/File.h"
 
 User* System::logInAccount(vector<User> &users, User &u1){
     cout << "Password: "; u1.inputPassword();

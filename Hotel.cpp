@@ -1,4 +1,4 @@
-#include "Hotel.h"
+#include "Lib/Hotel.h"
 
 void Hotel::showRoomInfo()
 {

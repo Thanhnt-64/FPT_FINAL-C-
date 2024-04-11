@@ -1,10 +1,10 @@
-#include "Admin.h"
-#include "Hotel.h"
-#include "Room.h"
-#include "System.h"
-#include "Travel.h"
-#include "User.h"
-#include "File.h"
+#include "Lib/Admin.h"
+#include "Lib/Hotel.h"
+#include "Lib/Room.h"
+#include "Lib/System.h"
+#include "Lib/Travel.h"
+#include "Lib/User.h"
+#include "Lib/File.h"
 bool checkAccountAdmin(const string &s){
     return s == "admin";
 }
@@ -16,8 +16,8 @@ int main()
     vector<Travel> travels;
 
     //Load data from files
-    Read_User read_user("database_user.json");
-    Read_Service read_service("database_service.json");
+    Read_User read_user("JsonData/database_user.json");
+    Read_Service read_service("JsonData/database_service.json");
     read_user.load_file();
     read_service.load_file(); 
     users=read_user.read_Users();

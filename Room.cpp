@@ -1,4 +1,4 @@
-#include "Room.h"
+#include "Lib/Room.h"
 
 void Room::setCost(int cost)
 {
