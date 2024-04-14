@@ -80,7 +80,6 @@ void User::showTravelInfo()
     for (int i = 0; i < myTravel.size(); i++)
     {
         myTravel[i].showTravelInfo();
-        cout << "____________________________________________________________________________" << endl;
     }
 }
 

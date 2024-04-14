@@ -249,8 +249,8 @@ void Admin::deleteService(vector<Travel>& travels)
 
 void Admin::loadData(vector <User>& users, vector <Service>& services) {
     // Code to load data from files
-    Read_User read_user("JsonData/user_database.json");
-    Read_Service read_service("JsonData/service_database.json");
+    Read_User read_user("JsonData/database_user.json");
+    Read_Service read_service("JsonData/database_service.json");
     read_user.load_file();
     read_service.load_file(); 
     users=read_user.read_Users();
@@ -259,8 +259,8 @@ void Admin::loadData(vector <User>& users, vector <Service>& services) {
 
 void Admin::saveData(vector <User>& users, vector <Service>& services) {
     // Code to save data to files
-    Write_User write_user("JsonData/user_database.json");
-    Write_Service write_service("JsonData/service_database.json");
+    Write_User write_user("JsonData/database_user.json");
+    Write_Service write_service("JsonData/database_service.json");
     write_user.write_Users(users);
     write_service.write_Travels(services);
     write_user.pushfile();

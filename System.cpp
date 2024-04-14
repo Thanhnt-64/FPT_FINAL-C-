@@ -164,12 +164,13 @@ void System::searchByPlace(vector<Travel> &travels){
     }
 }
 void System::listPlace(vector<Travel> &travels){
+    cout << "==================================================\n";
     cout << setw(20) << "Our system support the following places: " << endl;
     for(int i = 0; i < travels.size(); i++){
-        cout << setw(20) << i+1 << travels[i].getPlace() << endl;
-        
+        cout  << left << setw(10) << i+1 <<  "|| "<< right << setw(20) << travels[i].getPlace() 
+        << setw(17) << " ||" << endl;
     }
-    cout << "__________________________________________________\n";
+    cout << "==================================================\n";
 }
 bool System::validateAccount(const string &s){
     for (auto i : s){
