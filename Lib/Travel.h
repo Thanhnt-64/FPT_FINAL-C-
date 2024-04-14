@@ -11,7 +11,8 @@ class Travel{
         string namePlace;
         int travelCost;
     public:
-        Travel(vector <Hotel> hotels,vector <Transport> trans,string namePlace,int travelCost);
+        Travel(vector <Hotel> hotels,vector <Transport> trans,string namePlace,int travelCost); 
+        Travel(){}
         //Show travel info
         // Hotel Name|Room Name |Type Room |Start Time  |End Time  |Cost |Transport |Brand |From |To |Time |Cost     
         void showTravelInfo();

@@ -5,7 +5,7 @@
 #include <memory>
 using namespace std;
 
-class Admin : virtual public User
+class Admin
 {
 private:
     Admin() {

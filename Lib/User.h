@@ -55,5 +55,6 @@ public:
     int getNumMember() const { return numMember; }
     void setNumMember(int newNumMember) { numMember = newNumMember; }
     vector <Travel>& getTravel() {return myTravel;}
+    void bookTravel(vector<Travel>&);
 };
 #endif // USER_H
